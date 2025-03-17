@@ -7,21 +7,24 @@ struct list{
 }typedef node;
 
 void insert(node **, node **);
+void insertAtBegining(node **);
 void display(node **);
 
 int main(){
     node *l=NULL, *r=NULL;
     int ch;
     do{
-        printf("1.Insert\n2.Display\nEnter choice: ");
+        printf("1.Insert at end\n2.Insert at Begining\n3.Display\nEnter choice: ");
         scanf("%d",&ch);
         switch(ch){
             case 1: insert(&l, &r);
             break;
-            case 2: display(&l);
+            case 2: insertAtBegining(&l);
+            break;
+            case 3: display(&l);
             break;
         }
-    }while(ch<=2);
+    }while(ch<=5);
 }
 
 void insert(node **l, node **r){
@@ -39,6 +42,23 @@ void insert(node **l, node **r){
             (*r)->next=ptr;
             *r=ptr;
         }
+    }else{
+        printf("Memory not allocated\n");
+    }
+}
+
+void insertAtBegining(node **l){
+    node *ptr = NULL;
+    ptr = (node*)malloc(sizeof(node));
+    if(ptr!=NULL){
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        ptr->data = x;
+        ptr->next = *l;
+        *l=ptr;
+    }else{
+        printf("Memory not allocated\n");
     }
 }
 
