@@ -8,20 +8,23 @@ struct list{
 
 void insert(node **, node **);
 void insertAtBegining(node **);
+void insertAfterFirstNode(node **);
 void display(node **);
 
 int main(){
     node *l=NULL, *r=NULL;
     int ch;
     do{
-        printf("1.Insert at end\n2.Insert at Begining\n3.Display\nEnter choice: ");
+        printf("1.Insert at end\n2.Insert at Begining\n3.Insert after firstNode\n4.Display\nEnter choice: ");
         scanf("%d",&ch);
         switch(ch){
             case 1: insert(&l, &r);
             break;
             case 2: insertAtBegining(&l);
             break;
-            case 3: display(&l);
+            case 3: insertAfterFirstNode(&l);
+            break;
+            case 4: display(&l);
             break;
         }
     }while(ch<=5);
@@ -62,6 +65,21 @@ void insertAtBegining(node **l){
     }
 }
 
+void insertAfterFirstNode(node **l){
+    node *ptr = NULL, *temp=NULL;
+    ptr = (node*)malloc(sizeof(node));
+    if(ptr!=NULL){
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d",&x);
+        temp = *l; //because it will not modify the l in main
+        ptr->data = x;
+        ptr->next = temp->next;
+        temp->next = ptr;
+    }else{
+        printf("Memory not allocated\n");
+    }
+}
 void display(node **l){
     node *temp = NULL;
     temp = *l;
