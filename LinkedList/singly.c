@@ -9,6 +9,7 @@ struct list{
 void insert(node **, node **);
 void insertAtBegining(node **);
 void insertAfterFirstNode(node **);
+void insertBeforeLastNode(node **);
 void delete(node **);
 void display(node **);
 
@@ -16,7 +17,7 @@ int main(){
     node *l=NULL, *r=NULL;
     int ch;
     do{
-        printf("1.Insert at end\n2.Insert at Begining\n3.Insert after firstNode\n4.Display\n5.Delete\nEnter choice: ");
+        printf("1.Insert at end\n2.Insert at Begining\n3.Insert after firstNode\n4.Insert before last\n5.Display\n6.Delete\nEnter choice: ");
         scanf("%d",&ch);
         switch(ch){
             case 1: insert(&l, &r);
@@ -25,12 +26,14 @@ int main(){
             break;
             case 3: insertAfterFirstNode(&l);
             break;
-            case 4: display(&l);
+            case 4: insertBeforeLastNode(&l);
             break;
-            case 5: delete(&l);
+            case 5: display(&l);
+            break;
+            case 6: delete(&l);
             break;
         }
-    }while(ch<=5);
+    }while(ch<=7);
 }
 
 void insert(node **l, node **r){
@@ -84,6 +87,26 @@ void insertAfterFirstNode(node **l){
     }
 }
 
+void insertBeforeLastNode(node **l){
+    node *ptr=NULL, *temp=NULL, *prev=NULL;
+    ptr = (node*)malloc(sizeof(node));
+    if(ptr!=NULL){
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        ptr->data=x;
+        temp = *l;
+        while(temp->next!=NULL){
+            prev=temp;
+            temp=temp->next;
+        }
+        prev->next = ptr;
+        ptr->next = temp;
+    }else{
+        printf("Memory not allocated\n");
+    }
+}
+
 void delete(node **l){
     node *temp = NULL;
     temp = *l;
@@ -95,7 +118,6 @@ void delete(node **l){
         free(temp);
     }
 }
-
 
 
 void display(node **l){
