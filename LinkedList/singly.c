@@ -11,13 +11,14 @@ void insertAtBegining(node **);
 void insertAfterFirstNode(node **);
 void insertBeforeLastNode(node **);
 void delete(node **);
+void deleteSpecificNode(node **);
 void display(node **);
 
 int main(){
     node *l=NULL, *r=NULL;
     int ch;
     do{
-        printf("1.Insert at end\n2.Insert at Begining\n3.Insert after firstNode\n4.Insert before last\n5.Display\n6.Delete\nEnter choice: ");
+        printf("1.Insert at end\n2.Insert at Begining\n3.Insert after firstNode\n4.Insert before last\n5.Display\n6.Delete from beginning\n7.Delete specific\nEnter choice: ");
         scanf("%d",&ch);
         switch(ch){
             case 1: insert(&l, &r);
@@ -31,6 +32,8 @@ int main(){
             case 5: display(&l);
             break;
             case 6: delete(&l);
+            break;
+            case 7: deleteSpecificNode(&l);
             break;
         }
     }while(ch<=7);
@@ -119,6 +122,23 @@ void delete(node **l){
     }
 }
 
+void deleteSpecificNode(node **l){
+    node *temp = *l,*temp1 = *l, *prev=NULL;
+    while(temp1!=NULL){
+        printf("%d\t", temp1->data);
+        temp1=temp1->next;
+    }    
+    int x;
+    printf("\nEnter the node you want to delete: ");
+    scanf("%d", &x);
+    while(temp->data!=x){
+        prev=temp;
+        temp=temp->next;
+    }
+    prev->next = temp->next;
+    free(temp);
+    printf("Node deleted\n");
+}
 
 void display(node **l){
     node *temp = NULL;
