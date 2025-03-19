@@ -6,26 +6,27 @@ struct DoubleList{
     struct DoubleList *prev;
 } typedef node;
 
-node* insert(node*);
+node* insert(node**, node**);
 void display(node*);
+
 int main(){
-    node *r=NULL;
+    node *r=NULL, *l=NULL;
     int ch;
     do{
         printf("1.Insert\n2.Delete\n3.Display\nEnter you choice: ");
         scanf("%d", &ch);
         switch(ch){
-            case 1: r = insert(r);
+            case 1: insert(&r, &l);
             break;
             // case 2: last = delete(last);
             // break;
-            case 3: display(r);
+            case 3: display(l);
             break;
         }
     }while(ch<=3);
 }
 
-node* insert(node *r){
+node* insert(node **r, node **l){
     node *ptr = NULL;
     ptr = (node*)malloc(sizeof(node));
     if(ptr!=NULL){
@@ -34,28 +35,27 @@ node* insert(node *r){
         scanf("%d", &x);
         ptr->data = x;
         ptr->next = NULL;
-        if(r == NULL){
-            r = ptr;
-            r->prev = NULL;
+        if((*r) == NULL && (*l) == NULL){
+            (*l) = (*r) = ptr;
+            (*l)->prev = NULL;
         }else{
-            r->next = ptr;
-            ptr->prev = r;
-            r = ptr;
+            (*r)->next = ptr;
+            ptr->prev = (*r);
+            (*r) = ptr;
         }
     }else{
         printf("Memory not allocated\n");
     }
-    return r;
 }
 
-void display(node *r){
-    if(r == NULL){
+void display(node *l){
+    if(l == NULL){
         printf("List is empty\n");
     }else{
-        node *temp = r;
+        node *temp = l;
         while(temp!=NULL){
             printf("%d\t", temp->data);
-            temp = temp->prev;
+            temp = temp->next;
         }
         printf("\n");
     }
