@@ -7,7 +7,7 @@ struct DoubleList{
 } typedef node;
 
 node* insert(node*);
-
+void display(node*);
 int main(){
     node *r=NULL;
     int ch;
@@ -19,8 +19,8 @@ int main(){
             break;
             // case 2: last = delete(last);
             // break;
-            // case 3: display(last);
-            // break;
+            case 3: display(r);
+            break;
         }
     }while(ch<=3);
 }
@@ -33,18 +33,30 @@ node* insert(node *r){
         printf("Enter the value to insert: ");
         scanf("%d", &x);
         ptr->data = x;
+        ptr->next = NULL;
         if(r == NULL){
             r = ptr;
             r->prev = NULL;
-            r->next = r;
         }else{
-            ptr->prev = r;
             r->next = ptr;
+            ptr->prev = r;
             r = ptr;
         }
-        r->next = NULL;
     }else{
         printf("Memory not allocated\n");
     }
     return r;
+}
+
+void display(node *r){
+    if(r == NULL){
+        printf("List is empty\n");
+    }else{
+        node *temp = r;
+        while(temp!=NULL){
+            printf("%d\t", temp->data);
+            temp = temp->prev;
+        }
+        printf("\n");
+    }
 }
