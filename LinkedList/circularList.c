@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-struct list{
+struct CircularList{
     int data;
     struct list *next;
 }typedef node;
