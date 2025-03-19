@@ -6,27 +6,29 @@ struct DoubleList{
     struct DoubleList *prev;
 } typedef node;
 
-node* insert(node**, node**);
-void display(node*);
+node* insertAtRight(node**, node**);
+node* inserAtLeft(node** , node**);
+void displayAtRight(node*);
+void displayAtLeft(node*);
 
 int main(){
     node *r=NULL, *l=NULL;
     int ch;
     do{
-        printf("1.Insert\n2.Delete\n3.Display\nEnter you choice: ");
+        printf("1.Insert At Right\n2.Insert At left\n3.Display\nEnter you choice: ");
         scanf("%d", &ch);
         switch(ch){
-            case 1: insert(&r, &l);
+            case 1: insertAtRight(&r, &l);
             break;
-            // case 2: last = delete(last);
-            // break;
-            case 3: display(l);
+            case 2: inserAtLeft(&r, &l);
+            break;
+            case 3: displayAtRight(l);
             break;
         }
-    }while(ch<=3);
+    }while(ch<=4);
 }
 
-node* insert(node **r, node **l){
+node* insertAtRight(node **r, node **l){
     node *ptr = NULL;
     ptr = (node*)malloc(sizeof(node));
     if(ptr!=NULL){
@@ -35,9 +37,9 @@ node* insert(node **r, node **l){
         scanf("%d", &x);
         ptr->data = x;
         ptr->next = NULL;
-        if((*r) == NULL && (*l) == NULL){
-            (*l) = (*r) = ptr;
-            (*l)->prev = NULL;
+        if(*r == NULL && *l == NULL){
+            *l = *r = ptr;
+            ptr->prev = NULL;
         }else{
             (*r)->next = ptr;
             ptr->prev = (*r);
@@ -48,7 +50,29 @@ node* insert(node **r, node **l){
     }
 }
 
-void display(node *l){
+node* inserAtLeft(node **r, node **l){
+    node *ptr = NULL;
+    ptr = (node*)malloc(sizeof(node));
+    if(ptr!=NULL){
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        ptr->data = x;
+        ptr->prev = NULL;
+        if(*l==NULL && *r==NULL){
+            *l = *r = ptr;
+            ptr->next = NULL;
+        }else{
+            (*l)->prev = ptr;
+            ptr->next = (*l);
+            (*l) = ptr;
+        }
+    }else{
+        printf("Memory not allocated\n");
+    }
+}
+
+void displayAtRight(node *l){
     if(l == NULL){
         printf("List is empty\n");
     }else{
@@ -60,3 +84,16 @@ void display(node *l){
         printf("\n");
     }
 }
+
+// void displayAtLeft(node *l){
+//     if(l == NULL){
+//         printf("List is empty\n");
+//     }else{
+//         node *temp = l;
+//         while(temp!=NULL){
+//             printf("%d\t", temp->data);
+//             temp = temp->prev;
+//         }
+//         printf("\n");
+//     }
+// }
