@@ -8,7 +8,7 @@ struct stack{
 void push(stk *);
 void pop(stk *);
 void display(stk *);
-// void peek(stk *);
+void peek(stk *);
 
 int main(){
     stk s;
@@ -20,12 +20,12 @@ int main(){
         switch(ch){
             case 1: push(&s);
             break;
-            case 2: display(&s);
+            case 2: pop(&s);
             break;
-            // case 3: display(&s);
-            // break;
-            // case 4: peek(&s);
-            // break;
+            case 3: display(&s);
+            break;
+            case 4: peek(&s);
+            break;
             default:printf("Not a valid choice\n");
         }
     }while(ch<=4);
@@ -43,6 +43,15 @@ void push(stk *s){
     }
 }
 
+void pop(stk *s){
+    if(s->top== -1){
+        printf("Stack underflow\n");
+    }else{
+        printf("Popped element: %d\n", s->arr[s->top]);
+        s->top -=1;
+    }
+}
+
 void display(stk *s){
     if(s->top==-1){
         printf("Stack is empty\n");
@@ -54,3 +63,4 @@ void display(stk *s){
         printf("\n");
     }
 }
+
