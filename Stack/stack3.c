@@ -64,3 +64,10 @@ void display(stk *s){
     }
 }
 
+void peek(stk *s){
+    if(s->top==-1){
+        printf("Stack is empty\n");
+    }else{
+        printf("Peeked element: %d", s->arr[s->top]);
+    }
+}
