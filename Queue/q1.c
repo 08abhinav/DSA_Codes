@@ -30,7 +30,7 @@ int main(){
     }while(ch<=3);
 }
 
-int insert(int r){
+int insert(int arr[max], int r){
     if(r==max-1){
         printf("Queue is \n");
     }else{
@@ -43,4 +43,12 @@ int insert(int r){
     return r;
 }
 
-
+int delete(int arr[max], int f){
+    if(f==-1){
+        printf("Queue is already empty\n");
+    }else{
+        printf("Deleted item: %d\n", arr[f]);
+        f++;
+    }
+    return f;
+}
