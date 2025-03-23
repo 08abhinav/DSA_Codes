@@ -52,3 +52,15 @@ int delete(int arr[max], int f){
     }
     return f;
 }
+
+void display(int arr[max], int f, int r){
+    if(f==-1 || r==-1){
+        printf("Queue is empty\n");
+    }else{
+        printf("Queue items\n");
+        for(int i=f;i<=r;i++){
+            printf("%d\t", arr[i]);
+        }
+        printf("\n");
+    }
+}
