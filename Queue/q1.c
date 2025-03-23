@@ -1,3 +1,4 @@
+//Simple Queue using call by value
 #include<stdio.h>
 #define max 5
 

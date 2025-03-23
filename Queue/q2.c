@@ -1,4 +1,4 @@
-//Queue using call by address
+//Simple Queue using call by address
 #include<stdio.h>
 #define max 5
 
