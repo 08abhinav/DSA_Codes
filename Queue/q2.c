@@ -12,13 +12,13 @@ int main(){
         printf("1.Insert\n2.Delete\n3.Display\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
-            case 1: r = insert(arr, &r);
+            case 1: insert(arr, &r);
             if(f==-1){
                 f=0;
             }
             break;
 
-            case 2: f = delete(arr, &f, &r);
+            case 2: delete(arr, &f, &r);
             break;
 
             case 3: display(arr, &f, &r);
