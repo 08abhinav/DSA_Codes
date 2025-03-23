@@ -1,3 +1,4 @@
+//Queue using call by address
 #include<stdio.h>
 #define max 5
 
@@ -36,5 +37,17 @@ void insert(int arr[max], int *r){
         scanf("%d", &x);
         (*r) += 1;
         arr[*r] = x;
+    }
+}
+
+void delete(int arr[max], int *f, int *r){
+    if(*f==-1){
+        printf("Queue is empty\n");
+    }else{
+        printf("Delete element: %d\n", arr[*f]);
+        (*f) += 1;
+        if(*f>*r){
+            *f=*r=-1;
+        }
     }
 }
