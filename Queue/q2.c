@@ -51,3 +51,15 @@ void delete(int arr[max], int *f, int *r){
         }
     }
 }
+
+void display(int arr[max], int *f, int *r){
+    if(*f==-1){
+        printf("Queue is empty\n");
+    }else{
+        printf("Element in queue\n");
+        for(int i=*f; i<=*r; i++){
+            printf("%d\t", arr[i]);
+        }
+        printf("\n");
+    }
+}
