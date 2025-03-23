@@ -2,7 +2,7 @@
 #define max 5
 
 int insert(int[], int);
-int delete(int[], int);
+int delete(int[], int, int);
 void display(int[], int, int);
 
 int main(){
@@ -17,13 +17,10 @@ int main(){
             }
             break;
 
-            case 2: f = delete(f);
-            if(f==r){
-                f=r=-1;
-            }
+            case 2: f = delete(arr, f, r);
             break;
 
-            case 3: display(f, r);
+            case 3: display(arr, f, r);
             break;
             
         }
@@ -32,7 +29,7 @@ int main(){
 
 int insert(int arr[max], int r){
     if(r==max-1){
-        printf("Queue is \n");
+        printf("Queue is full\n");
     }else{
         int x;
         printf("Enter the value to insert: ");
@@ -43,18 +40,22 @@ int insert(int arr[max], int r){
     return r;
 }
 
-int delete(int arr[max], int f){
+int delete(int arr[max], int f, int r){
     if(f==-1){
-        printf("Queue is already empty\n");
+        printf("Queue is empty\n");
     }else{
         printf("Deleted item: %d\n", arr[f]);
         f++;
+        if(f>r){
+            f=r=-1;
+        }
+       
     }
     return f;
 }
 
 void display(int arr[max], int f, int r){
-    if(f==-1 || r==-1){
+    if(f==-1){
         printf("Queue is empty\n");
     }else{
         printf("Queue items\n");
