@@ -20,4 +20,13 @@ public class Stack{
             stk[top] = x;
         }
     }
+
+    void pop(){
+        if(top==-1){
+            System.out.print("Stack underflow\n");
+        }else{
+            System.out.print("Popped item: "+stk[top]+"\n");
+            top -= 1;
+        }
+    }
 }
