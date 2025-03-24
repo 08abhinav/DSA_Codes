@@ -29,4 +29,16 @@ public class Stack{
             top -= 1;
         }
     }
+
+    void display(){
+        if(top==-1){
+            System.out.print("Queue is empty\n");
+        }else{
+            System.out.print("Items in stack\n");
+            for(int i: stk){
+                System.out.print(i);
+            }
+            System.out.println("");
+        }
+    }
 }
