@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Stack{
-    Scanner sc;
+    Scanner sc = new Scanner(System.in);
     private int top = -1;
     private int max;
     private int[] stk;
@@ -36,7 +36,7 @@ public class Stack{
         }else{
             System.out.print("Items in stack\n");
             for(int i: stk){
-                System.out.print(i);
+                System.out.print("\t"+i);
             }
             System.out.println("");
         }
