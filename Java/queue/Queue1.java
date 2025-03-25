@@ -25,5 +25,16 @@ class Queue1{
         }
     }
 
-    
+    void pop(){
+        if(f==-1){
+            System.out.print("Queue is empty\n");
+        }else{
+            System.out.print("Popped element: "+q[f]);
+            if(f==r){
+                f=r=0;
+            }else{
+                f+=1;
+            }
+        }
+    }
 }
