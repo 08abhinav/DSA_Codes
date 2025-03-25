@@ -29,12 +29,23 @@ class Queue1{
         if(f==-1){
             System.out.print("Queue is empty\n");
         }else{
-            System.out.print("Popped element: "+q[f]);
+            System.out.print("Popped element: "+q[f]+"\n");
             if(f==r){
                 f=r=0;
             }else{
                 f+=1;
             }
+        }
+    }
+
+    void display(){
+        if(f==-1){
+            System.out.print("Queue is empty\n");
+        }else{
+            for(int i=f; i<=r; i++){
+                System.out.print("\t"+q[i]);
+            }
+            System.out.println("");
         }
     }
 }
