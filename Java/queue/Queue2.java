@@ -9,17 +9,16 @@ class Queue2{
     }
 
     void insert(){
-        if((r+1)%size==size-1){
+        if((r+1)%size==f){
             System.out.print("Queue is full\n");
         }else{
             int x;
             System.out.print("Enter the value to insert: ");
             x = sc.nextInt();
+            r = (r+1)%size;
+            q[r] = x;
             if(f==-1){
                 f=0;
-            }else{
-                r = (r+1)%size;
-                q[r] = x;
             }
         }
     }
@@ -41,9 +40,13 @@ class Queue2{
         if(f==-1){
             System.out.print("Queue is empty\n");
         }else{
-            while(f!=r){
-                System.out.print(q[f]+"\t");
-                f = (f+1)%size;
+            int i=f;
+            while(true){
+                System.out.print(q[i]+"\t");
+                if(i==r){
+                    break;
+                }
+                i = (i+1)%size;
             }
             System.out.print("\n");
         }
