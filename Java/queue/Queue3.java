@@ -8,4 +8,17 @@ class Queue3{
         q = new int[n];
         this.size = n;
     }
+    
+    void insertRear(){
+        if(f==size-1){
+            System.out.print("Queue is full\n");
+        }else{
+            int x;
+            r = size;
+            System.out.print("Enter the element to insert: ");
+            x = sc.nextInt();
+            r --;
+            q[r] = x;
+        }
+    }
 }
