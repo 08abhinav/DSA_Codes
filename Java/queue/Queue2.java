@@ -23,4 +23,17 @@ class Queue2{
             }
         }
     }
+
+    void delete(){
+        if(f==-1){
+            System.out.print("Queue is empty\n");
+        }else{
+            System.out.print("Delete item: "+q[f]+"\n");
+            if(f==r){
+                f=r=-1;
+            }else{
+                f = (f+1)%size;
+            }
+        }
+    }
 }
