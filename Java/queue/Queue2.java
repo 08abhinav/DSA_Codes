@@ -36,4 +36,16 @@ class Queue2{
             }
         }
     }
+
+    void display(){
+        if(f==-1){
+            System.out.print("Queue is empty\n");
+        }else{
+            while(f!=r){
+                System.out.print(q[f]+"\t");
+                f = (f+1)%size;
+            }
+            System.out.print("\n");
+        }
+    }
 }
