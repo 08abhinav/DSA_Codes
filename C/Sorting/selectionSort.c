@@ -1,28 +1,30 @@
 #include<stdio.h>
-#define max 5
-void print(int[]);
-void selectionSort(int[]);
+void print(int[], int);
+void selectionSort(int[], int);
 
 int main(){
-    int arr[max];
+    int arr[100], n;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    arr[n];
     printf("Enter the elements\n");
-    for(int i=0;i<max;i++){
+    for(int i=0;i<n;i++){
         scanf("%d", &arr[i]);
     }
     printf("Before sorting\n");
-    print(arr);
-    selectionSort(arr);
+    print(arr, n);
+    selectionSort(arr, n);
     printf("\nAfter Sorting\n");
-    print(arr);
+    print(arr, n);
 }
 
-void print(int arr[max]){
+void print(int arr[10], int max){
     for(int i=0;i<max;i++){
         printf("%d\t", arr[i]);
     }
 }
 
-void selectionSort(int arr[max]){
+void selectionSort(int arr[10],  int max){
     for(int i=0;i<max-1;i++){
         int min_ind = i;
         for(int j=i+1;j<max;j++){
@@ -30,8 +32,10 @@ void selectionSort(int arr[max]){
                 min_ind = j;
             }
         }
-        int temp = arr[i];
-        arr[i] = arr[min_ind];
-        arr[min_ind] = temp;
+        if(min_ind != i){
+            int temp = arr[i];
+            arr[i] = arr[min_ind];
+            arr[min_ind] = temp;
+        }
     }
 }
