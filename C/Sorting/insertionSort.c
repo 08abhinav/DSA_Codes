@@ -13,7 +13,25 @@ int main(){
     }
     printf("Before sorting\n");
     print(arr, n);
-    selectionSort(arr, n);
+    insertionSort(arr, n);
     printf("\nAfter Sorting\n");
     print(arr, n);
+}
+
+void print(int arr[], int max){
+    for(int i=0;i<max;i++){
+        printf("%d\t", arr[i]);
+    }
+}
+
+void insertionSort(int arr[], int max){
+    for(int i=1; i<max;i++){
+        int temp = arr[i];
+        int j = i-1;
+        while(j>=0 && temp<arr[j]){
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = temp; 
+    }
 }
