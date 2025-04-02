@@ -64,3 +64,16 @@ void insert(node **l, node **r){
         }
     }
 }
+
+void display(node **l){
+    if(*l==NULL){
+        printf("List is empty\n");
+    }else{
+        node *temp = *l;
+        while(temp!=NULL){
+            printf("%d - %d\t", temp->data, temp->expo);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
+}
