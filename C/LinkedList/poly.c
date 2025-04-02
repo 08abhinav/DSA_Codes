@@ -17,6 +17,7 @@ it should not inserted in list
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 struct list{
     int data, expo;
@@ -38,8 +39,10 @@ int main(){
             break;
             case 2: display(&l);
             break;
+            case 3: evaluate(&l);
+            break;
         }
-    }while(ch<=2);
+    }while(ch<=3);
 }
 
 void insert(node **l, node **r){
@@ -75,5 +78,21 @@ void display(node **l){
             temp = temp->next;
         }
         printf("\n");
+    }
+}
+
+void evaluate(node **l){
+    if(*l==NULL){
+        printf("List is empty\n");
+    }else{
+        node *temp = *l;
+        int sum=0, x;
+        printf("Enter the value of x: ");
+        scanf("%d", &x);
+        while(temp!=NULL){
+            sum += (pow(x, temp->expo)*temp->data);
+            temp = temp->next;
+        }
+        printf("Evaluated value: %d\n", sum);
     }
 }
