@@ -14,3 +14,30 @@ it should not inserted in list
 
 -> there should be three function 1.Insert 2.Display 3.Evaluate
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct list{
+    int data, expo;
+    struct list *next;
+}typedef node;
+
+void insert(node **, node **);
+void display(node **);
+void evaluate(node **);
+
+int main(){
+    node *l=NULL, *r=NULL;
+    int ch;
+    do{
+        printf("1.Insert\n2.Display\n3.Evaluate\nEnter your choice: ");
+        scanf("%d", &ch);
+        switch(ch){
+            case 1: insert(&l, &r);
+            break;
+            case 2: display(&l);
+            break;
+        }
+    }while(ch<=2);
+}
