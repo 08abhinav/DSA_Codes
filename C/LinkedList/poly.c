@@ -41,3 +41,26 @@ int main(){
         }
     }while(ch<=2);
 }
+
+void insert(node **l, node **r){
+    node *ptr = NULL;
+    ptr = (node *)malloc(sizeof(node));
+    if(!ptr){
+        printf("Memory not allocated\n");
+    }else{
+        int x, y;
+        printf("Enter the coefficient: ");
+        scanf("%d", &x);
+        printf("Enter the exponent: ");
+        scanf("%d", &y);
+        ptr->data = x;
+        ptr->expo = y;
+        ptr->next = NULL;
+        if(*l==NULL && *r==NULL){
+            *l = *r = ptr;
+        }else{
+            (*r)->next = ptr;
+            *r = ptr;
+        }
+    }
+}
