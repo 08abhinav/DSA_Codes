@@ -61,6 +61,12 @@ void insert(node **l, node **r){
         ptr->next = NULL;
         if(*l==NULL && *r==NULL){
             *l = *r = ptr;
+        }else if( (*l)->expo == ptr->expo ){
+            printf("Exponent already exists\n");
+            free(ptr);
+        }else if( (*l)->expo < ptr->expo ){
+            ptr->next = *l;
+            *l = ptr;
         }else{
             (*r)->next = ptr;
             *r = ptr;
