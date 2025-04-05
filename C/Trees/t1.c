@@ -42,3 +42,16 @@ node* createNode(int data){
     }
     return ptr;
 }
+
+node* insert(node *root, int data){
+    if(root==NULL){
+        root = createNode(data);
+    }
+    if(data < root->data){
+        root->left = insert(root, data);
+    }
+    else if(data > root->data){
+        root->right = insert(root, data);
+    }
+    return root;
+}
