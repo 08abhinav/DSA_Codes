@@ -28,3 +28,17 @@ int main(){
         }
     }while(ch>0 && ch<=2);
 }
+
+node* createNode(int data){
+    node *ptr = NULL;
+    ptr = (node*)malloc(sizeof(node));
+    if(!ptr){
+        printf("Memory not allocated");
+        return;
+    }else{
+        ptr->left = NULL;
+        ptr->data = data;
+        ptr->right = NULL;
+    }
+    return ptr;
+}
