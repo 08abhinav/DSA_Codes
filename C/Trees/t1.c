@@ -33,7 +33,7 @@ node* createNode(int data){
     node *ptr = NULL;
     ptr = (node*)malloc(sizeof(node));
     if(!ptr){
-        printf("Memory not allocated");
+        printf("Memory not allocated\n");
         return;
     }else{
         ptr->left = NULL;
@@ -54,4 +54,15 @@ node* insert(node *root, int data){
         root->right = insert(root, data);
     }
     return root;
+}
+
+void display(node *root){
+    if(root==NULL){
+        printf("Tree is empty\n");
+        return;
+    }else{
+        display(root->left);
+        printf("%d", root->data);
+        display(root->right);
+    }
 }
