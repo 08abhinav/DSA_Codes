@@ -7,9 +7,8 @@ struct list{
     struct list *right;
 }typedef node;
 
-node* createNode(int);
 node* insert(node*, int);
-node* display(node*);
+void display(node*);
 
 int main(){
     node *root = NULL;
@@ -23,46 +22,38 @@ int main(){
             root = insert(root, data);
             break;
 
-            case 2: display(root);
+            case 2: if(root==NULL){
+                printf("Tree is empty\n");
+            }else{
+                display(root);
+            }
             break;
         }
     }while(ch>0 && ch<=2);
 }
 
-node* createNode(int data){
+node* insert(node *root, int data){
     node *ptr = NULL;
-    ptr = (node*)malloc(sizeof(node));
-    if(!ptr){
-        printf("Memory not allocated\n");
-        return;
-    }else{
-        ptr->left = NULL;
+    if(root==NULL){
+        ptr = (node*)malloc(sizeof(node));
+        ptr->left = NULL:
         ptr->data = data;
         ptr->right = NULL;
     }
-    return ptr;
-}
-
-node* insert(node *root, int data){
-    if(root==NULL){
-        root = createNode(data);
-    }
-    if(data < root->data){
-        root->left = insert(root, data);
+    else if(data < root->data){
+        root->left = insert(root->left, data);
     }
     else if(data > root->data){
-        root->right = insert(root, data);
+        root->right = insert(root->right, data);
     }
     return root;
 }
 
 void display(node *root){
-    if(root==NULL){
-        printf("Tree is empty\n");
-        return;
-    }else{
+    if(root!=NULL){
+        printf("%d\t", root->data);
         display(root->left);
-        printf("%d", root->data);
         display(root->right);
     }
+    printf('\n');
 }
