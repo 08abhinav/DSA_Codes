@@ -10,7 +10,7 @@ struct list{
 node* insert(node*, int);
 void inOrder(node*);
 void postOrder(node*);
-void preOrder(node*)
+void preOrder(node*);
 
 int main(){
     node *root = NULL;
@@ -45,7 +45,7 @@ int main(){
             }
             break;
         }
-    }while(ch>0 && ch<=2);
+    }while(ch>0 && ch<=4);
 }
 
 node* insert(node *root, int data){
@@ -66,20 +66,11 @@ node* insert(node *root, int data){
     return root;
 }
 
-void display(node *root){
-    if(root!=NULL){
-        printf("%d\t", root->data);
-        display(root->left);
-        display(root->right);
-    }
-    printf("\n");
-}
-
 void inOrder(node *root){
     if(root!=NULL){
-        inorder(root->left);
+        inOrder(root->left);
         printf("%d\t", root->data);
-        inorder(root->right);   
+        inOrder(root->right);   
     }
 }
 
