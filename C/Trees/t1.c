@@ -36,9 +36,10 @@ node* insert(node *root, int data){
     node *ptr = NULL;
     if(root==NULL){
         ptr = (node*)malloc(sizeof(node));
-        ptr->left = NULL:
+        ptr->left = NULL;
         ptr->data = data;
         ptr->right = NULL;
+        return ptr;
     }
     else if(data < root->data){
         root->left = insert(root->left, data);
@@ -55,5 +56,5 @@ void display(node *root){
         display(root->left);
         display(root->right);
     }
-    printf('\n');
+    printf("\n");
 }
