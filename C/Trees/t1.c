@@ -8,13 +8,14 @@ struct list{
 }typedef node;
 
 node* insert(node*, int);
+void inorder(node*);
 void display(node*);
 
 int main(){
     node *root = NULL;
     int ch, data;
     do{
-        printf("1.Insert\n2.Display\nEnter your choice: ");
+        printf("1.Insert\n2.Display\n3.Inorder\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
             case 1: printf("Enter the value you want to insert: ");
@@ -26,6 +27,12 @@ int main(){
                 printf("Tree is empty\n");
             }else{
                 display(root);
+            }
+
+            case 3: if(root==NULL){
+                printf("Tree is empty\n");
+            }else{
+                inorder(root);
             }
             break;
         }
@@ -57,4 +64,12 @@ void display(node *root){
         display(root->right);
     }
     printf("\n");
+}
+
+void inorder(node *root){
+    if(root!=NULL){
+        inorder(root->left);
+        printf("%d\t", root->data);
+        inorder(root->right);   
+    }
 }
