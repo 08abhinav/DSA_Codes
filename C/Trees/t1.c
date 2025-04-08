@@ -90,3 +90,11 @@ void preOrder(node *root){
         preOrder(root->right);
     }
 }
+
+void postOrder(node *root){
+    if(root!=NULL){
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d\t", root->data);
+    }
+}
