@@ -81,3 +81,12 @@ void inOrder(tree *rt){
     }
     printf("\n");
 }
+
+void preOrder(tree *rt){
+    if(rt!=NULL){
+        printf("%d\t", rt->data);
+        preOrder(rt->left);
+        preOrder(rt->right);
+    }
+    printf("\n");
+}
