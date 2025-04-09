@@ -9,8 +9,8 @@ typedef struct list{
     struct list *right;
 }tree;
 
-void insert(node **);
-void inOrder(node *);
+void insert(tree **);
+void inOrder(tree *);
 
 int main(){
     tree *rt = NULL;
@@ -18,5 +18,49 @@ int main(){
     do{
         printf("1.Insert\n2.Inorder\nEnter your choice: ");
         scanf("%d",&ch);
+        switch(ch){
+            case 1: insert(&rt);
+            break;
+        }
     }while(ch<=1);
+}
+
+void insert(tree **rt){
+    tree *t=*p=*c=NULL;
+    t = (tree *)malloc(sizeof(tree));
+    if(!t){
+        printf("Memory not allocated\n");
+    }else{
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        t->left = NULL;
+        t->data = x;
+        t->right = NULL;
+    
+        if(*rt==NULL){
+            *rt = t;
+        }
+
+        p = c = *rt;
+
+        while(c!=NULL){
+            if(c->data > x){
+                p = c;
+                c = p->left;
+            }
+            else if(c->data < x){
+                p = c;
+                c = p->right;
+            }
+            else{
+                free(t);
+                return;
+            }
+        }
+        if(p->data > x){
+            p->left = t;
+        }else{
+            p->right = t;
+        }
+    }
 }
