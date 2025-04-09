@@ -1,4 +1,4 @@
-// Implementing tree's insertion without using recursion
+// Implementing binary search tree's insertion without using recursion
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -21,24 +21,31 @@ int main(){
         switch(ch){
             case 1: insert(&rt);
             break;
+
+            case 2: inOrder(rt);
+            break;
         }
-    }while(ch<=1);
+    }while(ch<=3);
 }
 
 void insert(tree **rt){
-    tree *t=*p=*c=NULL;
+    tree *t = NULL;
+    tree *p = NULL;
+    tree *c = NULL;
+
     t = (tree *)malloc(sizeof(tree));
     if(!t){
         printf("Memory not allocated\n");
     }else{
+        int x;
         printf("Enter the value to insert: ");
         scanf("%d", &x);
-        t->left = NULL;
+        t->left = t->right = NULL;
         t->data = x;
-        t->right = NULL;
     
         if(*rt==NULL){
             *rt = t;
+            return;
         }
 
         p = c = *rt;
@@ -53,6 +60,7 @@ void insert(tree **rt){
                 c = p->right;
             }
             else{
+                printf("Already exits\n");
                 free(t);
                 return;
             }
@@ -63,4 +71,13 @@ void insert(tree **rt){
             p->right = t;
         }
     }
+}
+
+void inOrder(tree *rt){
+    if (rt!=NULL){
+        inOrder(rt->left);
+        printf("%d\t", rt->data);
+        inOrder(rt->right);
+    }
+    printf("\n");
 }
