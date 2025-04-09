@@ -90,3 +90,12 @@ void preOrder(tree *rt){
     }
     printf("\n");
 }
+
+void postOrder(tree *rt){
+    if(rt!=NULL){
+        postOrder(rt->left);
+        postOrder(rt->right);
+        printf("%d\t", rt->data);
+    }
+    printf("\n");
+}
