@@ -28,7 +28,7 @@ int main(){
             break;
             
         }
-    }while(ch<=3);
+    }while(ch>=1 && ch<=3);
 }
 
 int insert(int arr[max], int r){
