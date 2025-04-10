@@ -22,12 +22,13 @@ int main(){
             break;
             
         }
-    }while(ch<=3);
+    }while(ch>=1 && ch<=3);
 }
 
 void insert(int arr[max], int *r, int *f){
     if(*r==max-1){
         printf("Queue is Full\n");
+        return;
     }else{
         int x;
         printf("Enter the value to insert: ");
@@ -43,6 +44,7 @@ void insert(int arr[max], int *r, int *f){
 void delete(int arr[max], int *f, int *r){
     if(*f==-1){
         printf("Queue is empty\n");
+        return;
     }else{
         printf("Delete element: %d\n", arr[*f]);
         (*f) += 1;
@@ -55,6 +57,7 @@ void delete(int arr[max], int *f, int *r){
 void display(int arr[max], int *f, int *r){
     if(*f==-1){
         printf("Queue is empty\n");
+        return;
     }else{
         printf("Element in queue\n");
         for(int i=*f; i<=*r; i++){
