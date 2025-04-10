@@ -6,8 +6,8 @@ struct DoubleList{
     struct DoubleList *prev;
 } typedef node;
 
-node* insertAtRight(node**, node**);
-node* inserAtLeft(node** , node**);
+void insertAtRight(node**, node**);
+void inserAtLeft(node** , node**);
 void displayAtRight(node*);
 void displayAtLeft(node*);
 
@@ -28,7 +28,7 @@ int main(){
     }while(ch<=4);
 }
 
-node* insertAtRight(node **r, node **l){
+void insertAtRight(node **r, node **l){
     node *ptr = NULL;
     ptr = (node*)malloc(sizeof(node));
     if(ptr!=NULL){
@@ -50,7 +50,7 @@ node* insertAtRight(node **r, node **l){
     }
 }
 
-node* inserAtLeft(node **r, node **l){
+void inserAtLeft(node **r, node **l){
     node *ptr = NULL;
     ptr = (node*)malloc(sizeof(node));
     if(ptr!=NULL){
