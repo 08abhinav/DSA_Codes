@@ -2,7 +2,7 @@
 #include<stdio.h>
 #define max 5
 
-void insert(int [], int*);
+void insert(int [], int*, int*);
 void delete(int [], int*, int*);
 void display(int [], int*, int*);
 
@@ -12,10 +12,7 @@ int main(){
         printf("1.Insert\n2.Delete\n3.Display\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
-            case 1: insert(arr, &r);
-            if(f==-1){
-                f=0;
-            }
+            case 1: insert(arr, &r, &f);
             break;
 
             case 2: delete(arr, &f, &r);
@@ -28,7 +25,7 @@ int main(){
     }while(ch<=3);
 }
 
-void insert(int arr[max], int *r){
+void insert(int arr[max], int *r, int *f){
     if(*r==max-1){
         printf("Queue is Full\n");
     }else{
@@ -37,6 +34,9 @@ void insert(int arr[max], int *r){
         scanf("%d", &x);
         (*r) += 1;
         arr[*r] = x;
+        if(*f == -1){
+            *f = 0;
+        }
     }
 }
 
@@ -46,7 +46,7 @@ void delete(int arr[max], int *f, int *r){
     }else{
         printf("Delete element: %d\n", arr[*f]);
         (*f) += 1;
-        if(*f>*r){
+        if(*f > *r){
             *f=*r=-1;
         }
     }
