@@ -8,6 +8,7 @@ typedef struct list{
 
 queue* enqueue(queue *);
 queue* delete(queue *);
+void display(queue *);
 
 int main(){
     queue *f=NULL, *r=NULL;
@@ -27,8 +28,11 @@ int main(){
                 f=r=NULL;
             }
             break;
+
+            case 3: display(f);
+            break;
         }
-    }while(ch>=1 && ch<=2);
+    }while(ch>=1 && ch<=3);
 }
 
 queue* enqueue(queue *r){
@@ -46,8 +50,8 @@ queue* enqueue(queue *r){
             r = ptr;
         }else{
             r->next = ptr;
-            r = ptr;
         }
+        r = ptr;
     }
     return r;
 }
@@ -57,9 +61,22 @@ queue* delete(queue *f){
         printf("Queue is empty\n");
     }else{
         queue *temp = f;
-        printf("Delete element: %d", temp->data);
-        temp = temp->next;
+        printf("Delete element: %d\n", temp->data);
+        f = f->next;
         free(temp);
     }
     return f;
+}
+
+void display(queue *f){
+    if(f==NULL){
+        printf("Queue is empty\n");
+    }else{
+        queue *temp = f;
+        while(temp!=NULL){
+            printf("%d\t", temp->data);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
 }
