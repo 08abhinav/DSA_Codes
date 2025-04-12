@@ -30,3 +30,24 @@ int main(){
         }
     } 
 }
+
+node* enqueue(node *r){
+    node *ptr=NULL;
+    ptr = (node *)malloc(sizeof(node));
+    if(ptr==NULL){
+        printf("Memory not allocated\n");
+    }else{
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        ptr->data = x;
+        ptr->next = NULL;
+        if(r==NULL){
+            r = ptr;
+        }else{
+            r->next = ptr;
+            r = ptr;
+        }
+    }
+    return r;
+}
