@@ -6,8 +6,8 @@ typedef struct list{
     struct list *next;
 }queue;
 
-queue* enqueue(node *);
-queue* dequeue(node *);
+queue* enqueue(queue *);
+queue* delete(queue *);
 
 int main(){
     queue *f=NULL, *r=NULL;
@@ -22,18 +22,18 @@ int main(){
             }
             break;
 
-            case 2: f = dequeue(f);
+            case 2: f = delete(f);
             if(f>r){
                 f=r=NULL;
             }
             break;
         }
-    } 
+    }while(ch>=1 && ch<=2);
 }
 
-node* enqueue(node *r){
-    node *ptr=NULL;
-    ptr = (node *)malloc(sizeof(node));
+queue* enqueue(queue *r){
+    queue *ptr=NULL;
+    ptr = (queue *)malloc(sizeof(queue));
     if(ptr==NULL){
         printf("Memory not allocated\n");
     }else{
@@ -50,4 +50,16 @@ node* enqueue(node *r){
         }
     }
     return r;
+}
+
+queue* delete(queue *f){
+    if(f==NULL){
+        printf("Queue is empty\n");
+    }else{
+        queue *temp = f;
+        printf("Delete element: %d", temp->data);
+        temp = temp->next;
+        free(temp);
+    }
+    return f;
 }
