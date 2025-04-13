@@ -26,11 +26,11 @@ int main(){
             case 3: display(top);
             break;
         }
-    }
+    }while(ch<=3);
 }
 
 void push(stack **top){
-    stack *ptr = NULL:
+    stack *ptr = NULL;
     ptr = (stack *)malloc(sizeof(stack));
     if(!ptr){
         printf("Memory not allocated\n");
@@ -47,5 +47,19 @@ void push(stack **top){
             (*top)->next = ptr;
             *top = ptr;
         }
+    }
+}
+
+
+void display(stack *top){
+    if(top == NULL){
+        printf("Stack is empty\n");
+    }else{
+        stack *temp = top;
+        while(temp != NULL){
+            printf("%d\n", temp->data);
+            temp = temp->next;
+        }
+        printf("\n");
     }
 }
