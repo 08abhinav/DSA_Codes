@@ -28,3 +28,24 @@ int main(){
         }
     }
 }
+
+void push(stack **top){
+    stack *ptr = NULL:
+    ptr = (stack *)malloc(sizeof(stack));
+    if(!ptr){
+        printf("Memory not allocated\n");
+    }else{
+        int x;
+        printf("Enter the value to push: ");
+        scanf("%d", &x);
+        ptr->data = x;
+        ptr->next = NULL;
+        if(*top == NULL){
+            *top = ptr;
+            return;
+        }else{
+            (*top)->next = ptr;
+            *top = ptr;
+        }
+    }
+}
