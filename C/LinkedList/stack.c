@@ -12,7 +12,7 @@ void display(stack *);
 
 int main(){
     int ch;
-    stack *top;
+    stack *top=NULL;
     do{
         printf("1.Push\n2.Pop\n3.Display\nEnter your choice: ");
         scanf("%d", &ch);
@@ -39,17 +39,21 @@ void push(stack **top){
         printf("Enter the value to push: ");
         scanf("%d", &x);
         ptr->data = x;
-        ptr->next = NULL;
-        if(*top == NULL){
-            *top = ptr;
-            return;
-        }else{
-            (*top)->next = ptr;
-            *top = ptr;
-        }
+        ptr->next = *top;
+        *top = ptr;
     }
 }
 
+void pop(stack **top){
+    if(*top==NULL){
+        printf("Stack is empty\n");
+    }else{
+        stack *temp = *top;
+        printf("Deleted element: %d\n", temp->data);
+        *top = temp->next;
+        free(temp);
+    }
+}
 
 void display(stack *top){
     if(top == NULL){
