@@ -103,3 +103,10 @@ void search(tree *root){
     printf(" %d not found in the tree\n", value);
 }
 
+void inorder(tree *root){
+    if(root !=NULL){
+        inorder(root->left);
+        printf("%d\t", root->data);
+        inorder(root->right);
+    }
+}
