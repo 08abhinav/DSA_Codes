@@ -41,9 +41,7 @@ int main(){
 }
 
 void insert(tree **rt){
-    tree *t = NULL;
-    tree *p = NULL;
-    tree *c = NULL;
+    tree *t = NULL, *p = NULL, *c = NULL;
 
     t = (tree *)malloc(sizeof(tree));
     if(!t){
