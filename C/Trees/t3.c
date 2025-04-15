@@ -9,6 +9,10 @@ typedef struct list{
     struct list *right;
 }tree;
 
+tree* insert(tree *);
+void search(tree *);
+void inorder(tree *);
+
 int main(){
     struct *root=NULL;
     int ch;
