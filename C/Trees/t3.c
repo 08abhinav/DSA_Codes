@@ -23,7 +23,7 @@ int main(){
             case 1: root = insert(root);
             break;
 
-            case 2: search(root):
+            case 2: search(root);
             break;
 
             case 3: inorder(root);
@@ -74,3 +74,32 @@ tree* insert(tree *root){
     }
 
 }
+
+
+void search(tree *root){
+    if(root == NULL){
+        printf("Tree is empty\n");
+        return;
+    }
+
+    tree *temp = root;
+    int value;
+    printf("Enter the value to search: ");
+    scanf("%d", &value);
+
+    while(temp != NULL){
+        if(temp->data == value){
+            printf(" %d found in the tree\n", value);
+            return;
+        }
+        else if(value < temp->data){
+            temp = temp->left;
+        }
+        else{
+            temp = temp->right;
+        }
+    }
+
+    printf(" %d not found in the tree\n", value);
+}
+
