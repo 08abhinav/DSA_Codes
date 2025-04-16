@@ -13,6 +13,8 @@ tree* insert(tree *);
 void search(tree *);
 void inorder(tree *);
 
+tree* p = NULL;
+
 int main(){
     tree *root=NULL;
     int ch;
@@ -82,21 +84,33 @@ void search(tree *root){
         return;
     }
 
-    tree *temp = root;
+    tree *c = NULL;
+    p = c = root;
     int value;
     printf("Enter the value to search: ");
     scanf("%d", &value);
+    if(p->data == value){
+        printf(" %d found\n %d is root node\n", p->data, value);
+        return;
+    }
+    while(c != NULL){
 
-    while(temp != NULL){
-        if(temp->data == value){
+        if(c->data == value){
             printf(" %d found in the tree\n", value);
+            if(value < p->data){
+                printf("%d is the parent of %d and %d is it's left child\n", p->data, value, value);
+            }else{
+                printf("%d is the parent of %d and %d is it's right child\n", p->data, value, value);
+            }
             return;
         }
-        else if(value < temp->data){
-            temp = temp->left;
+        else if(value < c->data){
+            p=c;
+            c = p->left;
         }
         else{
-            temp = temp->right;
+            p=c;
+            c = p->right;
         }
     }
 
