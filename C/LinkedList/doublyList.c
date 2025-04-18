@@ -85,15 +85,3 @@ void displayAtRight(node *l){
     }
 }
 
-// void displayAtLeft(node *l){
-//     if(l == NULL){
-//         printf("List is empty\n");
-//     }else{
-//         node *temp = l;
-//         while(temp!=NULL){
-//             printf("%d\t", temp->data);
-//             temp = temp->prev;
-//         }
-//         printf("\n");
-//     }
-// }
