@@ -31,7 +31,7 @@ int main(){
 void insertAtRight(node **r, node **l){
     node *ptr = NULL;
     ptr = (node*)malloc(sizeof(node));
-    if(ptr!=NULL){
+    if(){
         int x;
         printf("Enter the value to insert: ");
         scanf("%d", &x);
