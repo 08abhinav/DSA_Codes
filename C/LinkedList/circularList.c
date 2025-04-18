@@ -29,7 +29,7 @@ int main(){
 node* insert(node *last){
     node *ptr=NULL;
     ptr = (node*)malloc(sizeof(node));
-    if(ptr!=NULL){
+    if(ptr){
         int x;
         printf("Enter the value to insert: ");
         scanf("%d", &x);
