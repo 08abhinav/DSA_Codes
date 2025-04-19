@@ -27,6 +27,7 @@ int main(){
             case 2: if(root==NULL){
                 printf("Tree is empty\n");
             }else{
+                printf("Inorder traversal of tree\n");
                 inOrder(root);
             }
             break;
