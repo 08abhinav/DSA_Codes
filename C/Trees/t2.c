@@ -25,7 +25,9 @@ int main(){
             case 1: insert(&rt);
             break;
 
-            case 2: inOrder(rt);
+            case 2: 
+            printf("Inorder traversal of tree\n");
+            inOrder(rt);
             break;
 
             case 3: preOrder(rt);
