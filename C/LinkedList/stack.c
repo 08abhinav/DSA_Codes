@@ -32,15 +32,15 @@ int main(){
 void push(stack **top){
     stack *ptr = NULL;
     ptr = (stack *)malloc(sizeof(stack));
-    if(!ptr){
-        printf("Memory not allocated\n");
-    }else{
+    if(ptr){
         int x;
         printf("Enter the value to push: ");
         scanf("%d", &x);
         ptr->data = x;
         ptr->next = *top;
         *top = ptr;
+    }else{
+        printf("Memory not allocated\n");        
     }
 }
 
