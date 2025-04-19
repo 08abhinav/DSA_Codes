@@ -43,6 +43,7 @@ int main(){
             case 4: if(root==NULL){
                 printf("Tree is empty\n");
             }else{
+                printf("Postorder traversal of tree\n");
                 postOrder(root);
             }
             break;
