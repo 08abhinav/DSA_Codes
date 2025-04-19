@@ -38,9 +38,7 @@ int main(){
 queue* enqueue(queue *r){
     queue *ptr=NULL;
     ptr = (queue *)malloc(sizeof(queue));
-    if(ptr==NULL){
-        printf("Memory not allocated\n");
-    }else{
+    if(ptr){
         int x;
         printf("Enter the value to insert: ");
         scanf("%d", &x);
@@ -52,6 +50,8 @@ queue* enqueue(queue *r){
             r->next = ptr;
         }
         r = ptr;
+    }else{
+        printf("Memory not allocated\n");        
     }
     return r;
 }
