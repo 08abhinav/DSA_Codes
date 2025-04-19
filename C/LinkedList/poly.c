@@ -48,9 +48,7 @@ int main(){
 void insert(node **l, node **r){
     node *ptr = NULL;
     ptr = (node *)malloc(sizeof(node));
-    if(!ptr){
-        printf("Memory not allocated\n");
-    }else{
+    if(ptr){
         int x, y;
         printf("Enter the coefficient: ");
         scanf("%d", &x);
@@ -71,6 +69,8 @@ void insert(node **l, node **r){
             (*r)->next = ptr;
             *r = ptr;
         }
+    }else{
+        printf("Memory not allocated\n");        
     }
 }
 
