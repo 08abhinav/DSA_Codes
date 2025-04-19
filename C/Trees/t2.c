@@ -30,7 +30,9 @@ int main(){
             inOrder(rt);
             break;
 
-            case 3: preOrder(rt);
+            case 3:
+            printf("Preorder traversal of tree\n");
+            preOrder(rt);
             break;
 
             case 4: postOrder(rt);
