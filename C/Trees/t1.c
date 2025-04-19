@@ -35,6 +35,7 @@ int main(){
             case 3: if(root==NULL){
                 printf("Tree is empty\n");
             }else{
+                printf("Preorder traversal of tree\n");
                 preOrder(root);
             }
             break;
