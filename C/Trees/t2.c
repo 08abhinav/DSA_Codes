@@ -35,7 +35,9 @@ int main(){
             preOrder(rt);
             break;
 
-            case 4: postOrder(rt);
+            case 4: 
+            printf("Preorder traversal of tree\n");
+            postOrder(rt);
             break;
 
             case 5: countNodes(rt);
