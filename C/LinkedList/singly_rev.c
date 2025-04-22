@@ -42,7 +42,7 @@ node* insert(node *r){
         printf("Enter the value to inser: ");
         scanf("%d", &x);
         ptr->data = x;
-        ptr->next = NULL:
+        ptr->next = NULL;
 
         if(r==NULL){
             r = ptr;
@@ -64,6 +64,31 @@ void display(node *h){
         return;
     }else{
         node *temp = h;
+        while(temp!=NULL){
+            printf("%d\t", temp->data);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
+}
+
+void reverse(node *h){
+    if(h==NULL){
+        printf("List is empty\n");
+        return;
+    }else{
+        node *c=h, *next = NULL, *prev = NULL;
+
+        while(c!=NULL){
+            next = c->next;
+            c->next = prev;
+            prev = c;
+            c = next;
+        }
+        h = prev;
+
+        node *temp = h;
+        printf("List after reversing\n");
         while(temp!=NULL){
             printf("%d\t", temp->data);
             temp = temp->next;
