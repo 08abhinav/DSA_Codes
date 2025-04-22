@@ -53,3 +53,17 @@ node* insert(node *r){
     }
     return r;
 }
+
+void display(node *l){
+    if(l==NULL){
+        printf("List is empty\n");
+        return;
+    }else{
+        node *temp = l;
+        while(temp!=NULL){
+            printf("%d"\t, temp->data);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
+}
