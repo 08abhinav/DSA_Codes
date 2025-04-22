@@ -4,27 +4,32 @@
 #include<stdlib.h>
 
 typedef struct list{
-    struct list* pre;
+    struct list* prev;
     int data;
     struct list* next;
 }node;
 
 node* insert(node*);
 void display(node *);
+node* reverseList(node *);
 
 int main(){
     node *h = NULL, *r=NULL;
+    int ch;
     do{
         printf("1.Insert\n2.Display\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
             case 1: r = insert(r);
-            if(l==NULL){
-                l = r;
+            if(h==NULL){
+                h = r;
             }
             break;
 
-            case 2: display(r);
+            case 2: display(h);
+            break;
+
+            case 3: reverseList(r);
             break;
         }
     }while(ch>=1 && ch<=2);
@@ -54,16 +59,18 @@ node* insert(node *r){
     return r;
 }
 
-void display(node *l){
-    if(l==NULL){
+void display(node *h){
+    if(h==NULL){
         printf("List is empty\n");
         return;
     }else{
-        node *temp = l;
+        node *temp = h;
         while(temp!=NULL){
-            printf("%d"\t, temp->data);
+            printf("%d\t", temp->data);
             temp = temp->next;
         }
         printf("\n");
     }
 }
+
+
