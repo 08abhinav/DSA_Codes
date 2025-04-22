@@ -11,13 +11,13 @@ typedef struct list{
 
 node* insert(node*);
 void display(node *);
-node* reverseList(node *);
+void reverseList(node *);
 
 int main(){
     node *h = NULL, *r=NULL;
     int ch;
     do{
-        printf("1.Insert\n2.Display\nEnter your choice: ");
+        printf("1.Insert\n2.Display\n3.Reverse\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
             case 1: r = insert(r);
@@ -29,10 +29,10 @@ int main(){
             case 2: display(h);
             break;
 
-            case 3: reverseList(r);
+            case 3: reverseList(h);
             break;
         }
-    }while(ch>=1 && ch<=2);
+    }while(ch>=1 && ch<=3);
 }
 
 node* insert(node *r){
@@ -73,4 +73,31 @@ void display(node *h){
     }
 }
 
+void reverseList(node* head) {
+    if (head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
 
+    node* current = head;
+    node* temp = NULL;
+
+    while (current != NULL) {
+        temp = current->prev;
+        current->prev = current->next;
+        current->next = temp;
+        current = current->prev;  
+    }
+
+    if (temp != NULL) {
+        head = temp->prev;
+    }
+
+    current = head;
+    printf("List after reversing:\n");
+    while (current != NULL) {
+        printf("%d\t", current->data);
+        current = current->next;
+    }
+    printf("\n");
+}
