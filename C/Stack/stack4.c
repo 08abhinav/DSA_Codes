@@ -7,6 +7,7 @@ typedef struct stk{
 
 void push(stack *);
 void pop(stack *);
+void display(stack *);
 
 int main(){
     stack s;
@@ -31,7 +32,7 @@ void push(stack *s){
     }else{
         char ch;
         printf("Enter character to push: ");
-        scanf("%c", &ch);
+        scanf(" %c", &ch);
         s->str[++(s->top)] = ch;
     }
 }
