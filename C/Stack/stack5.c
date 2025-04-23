@@ -30,5 +30,11 @@ void push(stack *s, char ch) {
     }
 }
 
-
-
+char pop(stack *s) {
+    if (s->top == -1) {
+        printf("Stack underflow\n");
+        return '\0';  
+    } else {
+        return s->arr[s->top--];  
+    }
+}
