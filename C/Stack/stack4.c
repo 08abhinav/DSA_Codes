@@ -1,6 +1,7 @@
 #include<stdio.h>
+#define max 100
 typedef struct stk{
-    char str[];
+    char str[max];
     int top;
 }stack;
 
@@ -21,5 +22,16 @@ int main(){
             case 2: pop(&s);
             break;
         }
+    }
+}
+
+void push(stack *s){
+    if(s->top==max-1){
+        printf("Stack overflow\n");
+    }else{
+        char ch;
+        printf("Enter character to push: ");
+        scanf("%c", &ch);
+        s->str[++(s->top)] = ch;
     }
 }
