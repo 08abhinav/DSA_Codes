@@ -35,3 +35,12 @@ void push(stack *s){
         s->str[++(s->top)] = ch;
     }
 }
+
+void pop(stack *s){
+    if(s->top==-1){
+        printf("Stack underflow\n");
+    }else{
+        printf("Popped element is: %c\n", s->str[s->top]);
+        s->top --;
+    }
+}
