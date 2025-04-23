@@ -14,7 +14,7 @@ int main(){
     s.top = -1;
     int ch;
     do{
-        printf("1.Push\n2.Pop\nEnter your choice: ");
+        printf("1.Push\n2.Pop\n3.Dipslay\nEnter your choice: ");
         scanf("%d",&ch);
         switch(ch){
             case 1: push(&s);
