@@ -44,3 +44,13 @@ void pop(stack *s){
         s->top --;
     }
 }
+
+void display(stack *s){
+    if(s->top==-1){
+        printf("Stack is empty\n");
+    }else{
+        for(int i=s->top; i>=0; i--){
+            printf("%c\n", s->str[i]);
+        }
+    }
+}
