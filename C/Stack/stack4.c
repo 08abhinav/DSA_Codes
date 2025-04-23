@@ -22,8 +22,11 @@ int main(){
 
             case 2: pop(&s);
             break;
+
+            case 3: display(&s);
+            break;
         }
-    }
+    }while(ch>=1 && ch<=3);
 }
 
 void push(stack *s){
