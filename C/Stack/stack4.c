@@ -1,3 +1,5 @@
+// Stack for character
+
 #include<stdio.h>
 #define max 100
 typedef struct stk{
