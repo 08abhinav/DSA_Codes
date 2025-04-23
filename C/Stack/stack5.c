@@ -38,3 +38,30 @@ char pop(stack *s) {
         return s->arr[s->top--];  
     }
 }
+
+int checkValidParentheses(char str[max]) {
+    stack s;
+    s.top = -1;  
+    
+    for (int i = 0; str[i] != '\0'; i++) {
+        char c = str[i];
+
+        if (c == '[' || c == '{' || c == '(') {
+            push(&s, c);
+        }
+        
+        else if (c == ']' || c == '}' || c == ')') {
+            if (s.top == -1) {
+                return 0;  
+            }
+            char poppedChar = pop(&s);  
+            
+            if ((c == ']' && poppedChar != '[') || 
+            (c == '}' && poppedChar != '{') || 
+            (c == ')' && poppedChar != '(')) {
+            return 0; 
+        }
+        }
+    }
+    return s.top == -1 ? 1 : 0;
+}
