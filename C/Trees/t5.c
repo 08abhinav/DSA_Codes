@@ -75,3 +75,21 @@ tree* insert(tree* root){
         printf("Memory not allocated\n");
     }
 }
+
+void dispaly(tree* root){
+    tree** stk = (tree**)malloc(sizeof(tree*)*100);
+    int top = -1;
+    tree* current = root;
+
+    while(current != NULL || top!=-1){
+        while(current != NULL){
+            stk[top++] = current;
+            current = current->left;
+        }
+        current = stk[top--];
+        printf("%d\t", current->data);
+        current = current->right;
+    }
+    printf("\n");
+    free(stk);
+}
