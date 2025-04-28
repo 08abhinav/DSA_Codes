@@ -68,7 +68,7 @@ tree* insert(tree* root){
         if(p->data > x){
             p->left = ptr;
         }else{
-            p->rigth = ptr;
+            p->right = ptr;
         }
         return root;
     }else{
