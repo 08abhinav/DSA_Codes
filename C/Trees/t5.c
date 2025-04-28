@@ -83,7 +83,7 @@ void display(tree* root){
 
     while(current != NULL || top!=-1){
         while(current != NULL){
-            stk[top++] = current;
+            stk[++top] = current;
             current = current->left;
         }
         current = stk[top--];
