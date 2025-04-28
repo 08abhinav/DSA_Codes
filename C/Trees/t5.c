@@ -35,3 +35,43 @@ int main(){
         }
     }
 }
+
+tree* insert(tree* root){
+    tree *ptr=NULL, *p=NULL, *c=NULL;
+    int x;
+    ptr = (tree*)malloc(sizeof(tree));
+    if(ptr){
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        ptr->data = x;
+        ptr->left = NULL;
+        ptr->right = NULL;
+
+        if(root==NULL){
+            root = ptr;
+            return root;
+        }
+        p = c = root;
+
+        while(c!=NULL){
+            p=c;
+            if(c->data > x){
+                c = p->left;
+            }else if(c->data < x){
+                c = p->right;
+            }else{
+                printf("Data already exist\n");
+                free(ptr);
+                return root;
+            }
+        }
+        if(p->data > x){
+            p->left = ptr;
+        }else{
+            p->rigth = ptr;
+        }
+        return root;
+    }else{
+        printf("Memory not allocated\n");
+    }
+}
