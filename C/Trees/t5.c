@@ -33,7 +33,7 @@ int main(){
             case 3: display(root);
             break;
         }
-    }
+    }while(ch>=1 && ch<=3);
 }
 
 tree* insert(tree* root){
