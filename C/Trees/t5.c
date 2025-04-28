@@ -76,7 +76,7 @@ tree* insert(tree* root){
     }
 }
 
-void dispaly(tree* root){
+void display(tree* root){
     tree** stk = (tree**)malloc(sizeof(tree*)*100);
     int top = -1;
     tree* current = root;
@@ -92,4 +92,25 @@ void dispaly(tree* root){
     }
     printf("\n");
     free(stk);
+}
+
+int countNodes(tree* root){
+    if(root==NULL){
+        return 0;
+    }
+    tree** stk = (tree**)malloc(sizeof(tree*)*100);
+    int top = -1, count=0;
+    tree* current = root;
+    
+    while(current != NULL || top!=-1){
+        while(current != NULL){
+            stk[++top] = current;
+            current = current->left;
+        }
+        current = stk[top--];
+        count ++;
+        current = current->right;
+    }
+    free(stk);
+    return count;
 }
