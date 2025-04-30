@@ -13,6 +13,7 @@ Worst case: O(n^2) when pivot is always smallest or largest element.
 #include<stdio.h>
 #define max 5
 void quickSort(int arr[], int, int);
+void swap(int *, int *);
 
 int main(){
     int arr[max];
@@ -31,6 +32,12 @@ int main(){
     }
 }
 
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 void quickSort(int arr[], int low, int high){
     if(low>=high){
         return;
@@ -41,16 +48,11 @@ void quickSort(int arr[], int low, int high){
     for(int j=low; j<high;j++){
         if(arr[j]<pivot){
             i++;
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            swap(&arr[i], &arr[j]);
         }
     }
 
-    int temp = arr[i+1];
-    arr[i+1] = arr[high];
-    arr[high] = temp;
-
+    swap(&arr[i+1], &arr[high]);
     int pi = i+1;
     quickSort(arr, low, pi-1);
     quickSort(arr, pi+1, high);
