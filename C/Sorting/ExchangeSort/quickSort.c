@@ -25,8 +25,33 @@ int main(){
         printf("%d\t", arr[i]);
     }
     quickSort(arr, 0, max-1);
-    printf("After applying quick sort\n");
+    printf("\nAfter applying quick sort\n");
     for(int i=0;i<max;i++){
         printf("%d\t", arr[i]);
     }
+}
+
+void quickSort(int arr[], int low, int high){
+    if(low>=high){
+        return;
+    }
+    int pivot = arr[high];
+    int i = low-1;
+
+    for(int j=low; j<high;j++){
+        if(arr[j]<pivot){
+            i++;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+    int temp = arr[i+1];
+    arr[i+1] = arr[high];
+    arr[high] = temp;
+
+    int pi = i+1;
+    quickSort(arr, low, pi-1);
+    quickSort(arr, pi+1, high);
 }
