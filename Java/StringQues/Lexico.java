@@ -6,5 +6,19 @@
  */
 
 class Lexico{
-    
+    public String getSmallestString(int n, int k){
+        char[] res = new char[n];
+        int numValue=0;
+        for(int i=0;i<n;i++){
+            res[i] = 'a';
+            k--;
+        }
+        while(k>0){
+            numValue = Math.min(25, k);
+            res[--n] += numValue;
+            k -= numValue;
+        }
+
+        return String.valueOf(res);
+    }
 }
