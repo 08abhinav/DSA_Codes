@@ -1,6 +1,4 @@
-import java.util.Scanner;
 class L1{
-    // Node node;
     static class Node{
         int data;
         Node next;
