@@ -1,4 +1,11 @@
 /**Merge Sort
+Algorithm:
+-> Divide: divide the array recrusively into two halves
+unitl it can no more be divided.
+-> Each subarray is sorted individually using the merge sort algorithm
+
+-> the sorted subarrays are merged back together in sorted order.
+The process continues until all elements from both subarrays have been merged.
 Time complexity O(nlog(n))
 n time for merging array
 log(n) for dividing the array
