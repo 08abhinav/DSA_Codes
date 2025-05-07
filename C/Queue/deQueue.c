@@ -57,10 +57,61 @@ int main(){
                         }
                         break;
                     }
-                }while(ch>=1 && ch<=4);
+                }while(ch2>=1 && ch2<=4);
             break;
-        }
+
+          
     }while(ch>=1 && ch<=2);
 }
+}
 
+
+
+int insertion(int q[], int f, int r){
+    if(r==max-1){
+        printf("Queue is full\n");
+        return r;
+    }else{
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        r++;
+        q[r] = x;
+    }
+    return r;
+}
+
+int delAtRear(int q[], int r){
+    if(r==-1){
+        printf("Queue is empty\n");
+        return r;
+    }else{
+        printf("Element to be deleted: %d\n", q[r]);
+        r--;
+    }
+    return r;
+}
+
+int delAtFront(int q[], int f){
+    if(f==-1){
+        printf("Queue is empty\n");
+        return f;
+    }else{
+        printf("Element to be deleted: %d\n", q[f]);
+        f++;
+    }
+    return f;
+}
+
+void display(int q[], int f, int r){
+    if(f==-1 || r==-1){
+        printf("Queue is empty\n");
+        return;
+    }else{
+        printf("Element is queue are\n");
+        for(int i=f;i<=r;i++){
+            printf("%d\t", q[i]);
+        }
+        printf("\n");
+    }
 }
