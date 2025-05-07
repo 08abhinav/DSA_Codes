@@ -1,3 +1,6 @@
+/**Binary search
+Time complexity O(log(n)) 
+*/
 #include<stdio.h>
 #define max 5
 void binarySearch(int[], int, int, int);
