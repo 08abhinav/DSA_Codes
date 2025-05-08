@@ -19,7 +19,8 @@ There are two types of dequeue:
 #include<stdio.h>
 #define max 5
 
-int insertion(int[], int, int);
+int insertion(int[], int);
+int insertFront(int[], int);
 int delAtRear(int[], int);
 int delAtFront(int[], int);
 void display(int[], int , int);
@@ -36,7 +37,7 @@ int main(){
                     scanf("%d", &ch2);
                 
                     switch(ch2){
-                        case 1: r = insertion(q, f, r);
+                        case 1: r = insertion(q, r);
                         if(f==-1){
                             f=0;
                         }
@@ -60,14 +61,35 @@ int main(){
                 }while(ch2>=1 && ch2<=4);
             break;
 
-          
+            case 2:
+            do{
+                printf("1.Insertion at rear\n2.Insertion at front\n3.Display\n4.Delete\nEnter your choice: ");
+                scanf("%d", &ch3);
+                switch(ch3){
+                    case 1: r = insertion(q, r);
+                    if(f==-1){
+                        f=0;
+                    }
+                    break;
+
+                    case 3: display(q, f, r);
+                    break;
+
+                    case 4: f = delAtFront(q, f);
+                    if(f>r){
+                        f=r=-1;
+                    }
+                    break;
+                }
+            }while(ch3>=1 && ch3<=4);
+        }  
     }while(ch>=1 && ch<=2);
 }
-}
 
 
 
-int insertion(int q[], int f, int r){
+
+int insertion(int q[], int r){
     if(r==max-1){
         printf("Queue is full\n");
         return r;
@@ -80,6 +102,18 @@ int insertion(int q[], int f, int r){
     }
     return r;
 }
+
+// int insertFront(int q[], int f){
+//     if(f==0){
+//         printf("Queue is full\n");
+//         return f;
+//     }else{
+//         int x;
+//         printf("Enter the value to insert: ");
+//         scanf("%d", &x);
+        
+//     }
+// }
 
 int delAtRear(int q[], int r){
     if(r==-1){
