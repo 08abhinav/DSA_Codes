@@ -19,7 +19,7 @@ There are two types of dequeue:
 #include<stdio.h>
 #define max 5
 
-int insertion(int[], int);
+int insertAtRear(int[], int);
 int insertFront(int[], int);
 int delAtRear(int[], int);
 int delAtFront(int[], int);
@@ -37,7 +37,7 @@ int main(){
                     scanf("%d", &ch2);
                 
                     switch(ch2){
-                        case 1: r = insertion(q, r);
+                        case 1: r = insertAtRear(q, r);
                         if(f==-1){
                             f=0;
                         }
@@ -66,7 +66,7 @@ int main(){
                 printf("1.Insertion at rear\n2.Insertion at front\n3.Display\n4.Delete\nEnter your choice: ");
                 scanf("%d", &ch3);
                 switch(ch3){
-                    case 1: r = insertion(q, r);
+                    case 1: r = insertAtRear(q, r);
                     if(f==-1){
                         f=0;
                     }
@@ -89,7 +89,7 @@ int main(){
 
 
 
-int insertion(int q[], int r){
+int insertAtRear(int q[], int r){
     if(r==max-1){
         printf("Queue is full\n");
         return r;
