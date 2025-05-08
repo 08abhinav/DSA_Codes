@@ -20,7 +20,7 @@ There are two types of dequeue:
 #define max 5
 
 int insertAtRear(int[], int);
-int insertFront(int[], int);
+int insertFront(int[], int, int);
 int delAtRear(int[], int);
 int delAtFront(int[], int);
 void display(int[], int , int);
@@ -72,6 +72,12 @@ int main(){
                     }
                     break;
 
+                    case 2: f = insertFront(q, f, r);
+                    if(r==-1){
+                        r=0;
+                    }
+                    break;
+
                     case 3: display(q, f, r);
                     break;
 
@@ -95,7 +101,7 @@ int insertAtRear(int q[], int r){
         return r;
     }else{
         int x;
-        printf("Enter the value to insert: ");
+        printf("Enter the value to insert at rear: ");
         scanf("%d", &x);
         r++;
         q[r] = x;
@@ -103,17 +109,22 @@ int insertAtRear(int q[], int r){
     return r;
 }
 
-// int insertFront(int q[], int f){
-//     if(f==0){
-//         printf("Queue is full\n");
-//         return f;
-//     }else{
-//         int x;
-//         printf("Enter the value to insert: ");
-//         scanf("%d", &x);
-        
-//     }
-// }
+int insertFront(int q[], int f, int r){
+    if(f==0){
+        printf("Queue is full\n");
+    }else if(f==-1 && r==-1){
+        f++;    
+        printf("Enter the value to insert front: ");
+        scanf("%d", &q[f]);
+    }else{
+        int x;
+        printf("Enter the value to insert at front: ");
+        scanf("%d", &x);
+        f--; 
+        q[f] = x;
+    }
+    return f;
+}
 
 int delAtRear(int q[], int r){
     if(r==-1){
