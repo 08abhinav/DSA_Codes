@@ -98,7 +98,6 @@ int main(){
 int insertAtRear(int q[], int r){
     if(r==max-1){
         printf("Queue is full\n");
-        return r;
     }else{
         int x;
         printf("Enter the value to insert at rear: ");
@@ -129,7 +128,6 @@ int insertFront(int q[], int f, int r){
 int delAtRear(int q[], int r){
     if(r==-1){
         printf("Queue is empty\n");
-        return r;
     }else{
         printf("Element to be deleted: %d\n", q[r]);
         r--;
@@ -140,7 +138,6 @@ int delAtRear(int q[], int r){
 int delAtFront(int q[], int f){
     if(f==-1){
         printf("Queue is empty\n");
-        return f;
     }else{
         printf("Element to be deleted: %d\n", q[f]);
         f++;
@@ -151,7 +148,6 @@ int delAtFront(int q[], int f){
 void display(int q[], int f, int r){
     if(f==-1 || r==-1){
         printf("Queue is empty\n");
-        return;
     }else{
         printf("Element is queue are\n");
         for(int i=f;i<=r;i++){
