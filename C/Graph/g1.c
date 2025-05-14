@@ -58,3 +58,15 @@ vertex* insert(vertex* head) {
     return head;
 }
 
+void display(vertex* head, edge* s) {
+    vertex* temp = head;
+    if (temp == NULL) {
+        printf("Empty\n");
+    } else {
+        printf("Vertices are\n");
+        while (temp != NULL) {
+            printf("\t%c\n", temp->name); 
+            temp = temp->link;  
+        }
+    }
+}
