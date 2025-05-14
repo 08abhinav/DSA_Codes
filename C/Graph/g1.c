@@ -1,44 +1,64 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-struct node{
+struct node {
     char name;
     struct node* link;
     struct edge* s; 
-}typedef vertex;
+} typedef vertex;
 
-struct ed{
+struct ed {
     vertex* data;
     struct ed* edg;
-}typedef edge;
+} typedef edge;
 
-void insert(vertex *);
+vertex* insert(vertex*);
+void display(vertex*, edge*);
 
-int main(){
-    vertex*head = NULL;
+int main() {
+    vertex* head = NULL;
+    edge* s = NULL; 
     int ch;
-    do{
-        printf("1.Insert vertex\n2.Create Link\n3.Display\nEnter your choice: ");
+    do {
+        printf("1. Insert vertex\n2. Create Link\n3. Display\nEnter your choice: ");
         scanf("%d", &ch);
-        switch(ch){
-            case 1: insert(head);
-            break;
+        getchar();  
+        switch(ch) {
+            case 1:
+                head = insert(head); 
+                break;
+            case 2:
+                display(head, s);
+                break;
+        }
+    } while (ch < 3);
+}
+
+vertex* insert(vertex* head) {
+    vertex* temp = NULL;
+    temp = (vertex*)malloc(sizeof(vertex));
+    if (temp) {
+        char name;
+        printf("Enter the vertex: ");
+        scanf("%c", &name);  
+        temp->name = name;
+        temp->s = NULL;
+        temp->link = head;  
+        head = temp;  
+    } else {
+        printf("Memory not allocated\n");
+    }
+    return head;
+}
+
+void display(vertex* head, edge* s) {
+    vertex* temp = head;
+    if (temp == NULL) {
+        printf("Empty\n");
+    } else {
+        while (temp != NULL) {
+            printf("%c\n", temp->name); 
+            temp = temp->link;  
         }
     }
 }
-
-void insert(vertex* head){
-    vertex* temp = NULL;
-    temp = (vertex*)malloc(sizeof(vertext));
-    if(temp){
-        char ch;
-        printf("Enter the vertex: ");
-        scanf("%c", &ch);
-        temp->name = ch;
-        temp->s = NULL;
-        temp->next = NULL;
-    }else{
-        printf("Memory not allocated\n");
-    }
-}
-
