@@ -20,7 +20,7 @@ int main() {
     edge* s = NULL; 
     int ch;
     do {
-        printf("1. Insert vertex\n2. Create Link\n3. Display\nEnter your choice: ");
+        printf("\n1. Insert vertex\n2. Create Link\n3. Display\nEnter your choice: ");
         scanf("%d", &ch);
         getchar();  
         switch(ch) {
@@ -35,30 +35,26 @@ int main() {
 }
 
 vertex* insert(vertex* head) {
-    vertex* temp = NULL;
-    temp = (vertex*)malloc(sizeof(vertex));
+    vertex* temp = (vertex*)malloc(sizeof(vertex));
     if (temp) {
         char name;
-        printf("Enter the vertex: ");
-        scanf("%c", &name);  
+        printf("\n\tEnter the vertex: ");
+        scanf(" %c", &name);  
         temp->name = name;
         temp->s = NULL;
-        temp->link = head;  
-        head = temp;  
+        temp->link = NULL;
+        if (head == NULL) {
+            head = temp;
+        } else {
+            vertex* ptr = head;
+            while (ptr->link != NULL) {
+                ptr = ptr->link;
+            }
+            ptr->link = temp;
+        }
     } else {
         printf("Memory not allocated\n");
     }
     return head;
 }
 
-void display(vertex* head, edge* s) {
-    vertex* temp = head;
-    if (temp == NULL) {
-        printf("Empty\n");
-    } else {
-        while (temp != NULL) {
-            printf("%c\n", temp->name); 
-            temp = temp->link;  
-        }
-    }
-}
