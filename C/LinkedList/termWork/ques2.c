@@ -1,62 +1,68 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct list{
+typedef struct list{
     int data;
-    struct list* next;
-}typedef node;
+    struct list *next;
+}node;
 
-node* insert(node*);
-void display(node*);
+node* insert(node *);
+void display(node *);
 
 int main(){
-    node* head = NULL, *right = NULL;
+    node *r=NULL, *h=NULL;
     int ch;
     do{
         printf("1.Insert\n2.Display\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
-            case 1: right = insert(right);
-            if(head == NULL){
-                head = right;
+            case 1: r = insert(r);
+            if(h==NULL){
+                h = r;
             }
             break;
 
-            case 2: display(head);
+            case 2: display(h);
             break;
         }
-    }
+    }while(ch>=1 && ch<=3);
 }
 
-node* insert(node* right){
-    node* ptr = (node*)malloc(sizeof(node));
+
+node* insert(node *r){
+    node *ptr=NULL;
+    int x;
+    ptr = (node*)malloc(sizeof(node));
     if(ptr){
-        int x;
-        printf("Enter the value to insert: ");
-        scanf("%d", x);
+        printf("Enter the value to inser: ");
+        scanf("%d", &x);
         ptr->data = x;
         ptr->next = NULL;
-        if(right==NULL){
-            right = ptr;
+
+        if(r==NULL){
+            r = ptr;
         }else{
-            right->next = ptr;
-            right = ptr;
+            r->next = ptr;
+            r = ptr;
         }
-        return right;
     }else{
         printf("Memory not allocated\n");
     }
+    return r;
 }
 
-void display(node* head){
-    if(head){
-        printf("Elements of list are\n")
-        while(head!=NULL){
-            printf("\t%d\t", head->data);
-            head = head->next;
+
+void display(node *h){
+    if(h==NULL){
+        printf("List is empty\n");
+        return;
+    }else{
+        node *temp = h;
+        while(temp!=NULL){
+            printf("%d\t", temp->data);
+            temp = temp->next;
         }
         printf("\n");
-    }else{
-        printf("List is empty\n");
     }
 }
+
