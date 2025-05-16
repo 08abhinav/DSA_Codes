@@ -4,18 +4,17 @@
 typedef struct list{
     int data;
     struct list *next;
-}node, node2, node3;
+}node;
 
 node* insert(node*);
-node2* insertInSec(node*);
-node3* mergeList(node*, node2*);
+node* mergeTwoSortedList(node*, node*);
 void displayList1(node *);
 void displayList2(node *);
-void displayBoth(node*, node2*);
+void displayBoth(node*, node*);
 
 int main(){
     node *r=NULL, *h=NULL;
-    node2 *r2=NULL, *h2=NULL;
+    node *r2=NULL, *h2=NULL;
     int ch;
     do{
         printf("1.Insert in List1\n2.Insert in List2\n3.Display List1\n4.Display List2\n5.Display both\nEnter your choice: ");
@@ -27,16 +26,16 @@ int main(){
             }
             break;
 
-            case 2: r2 = insertInSec(r2);
+            case 2: r2 = insert(r2);
             if(h2==NULL){
                 h2 = r2;
             }
             break;
 
-            case 3: displayList1(h);
+            case 3: displayList(h);
             break;
 
-            case 4: displayList2(h2);
+            case 4: displayList(h2);
             break;
 
             case 5: displayBoth(h, h2);
@@ -69,33 +68,30 @@ node* insert(node *r){
 }
 
 
-// Insert into second list
-node2* insertInSec(node2 *r){
-    node2 *ptr=NULL;
-    int x;
-    ptr = (node2*)malloc(sizeof(node2));
-    if(ptr){
-        printf("Enter the value to insert: ");
-        scanf("%d", &x);
-        ptr->data = x;
-        ptr->next = NULL;
+// Merge two sorted lists
+node* mergeTwoSortedList(node* h1, node* h2) {
+    node dummy;
+    node* tail = &dummy;
+    dummy.next = NULL;
 
-        if(r==NULL){
-            r = ptr;
-        }else{
-            r->next = ptr;
-            r = ptr;
+    while (h1 != NULL && h2 != NULL) {
+        if (h1->data < h2->data) {
+            tail->next = h1;
+            h1 = h1->next;
+        } else {
+            tail->next = h2;
+            h2 = h2->next;
         }
-    }else{
-        printf("Memory not allocated\n");
+        tail = tail->next;
     }
-    return r;
+
+    // Attach the remaining nodes
+    tail->next = (h1 != NULL) ? h1 : h2;
+
+    return dummy.next;
 }
 
-
-
-// Display list 1
-void displayList1(node *h){
+void displayList(node *h){
     if(h==NULL){
         printf("List is empty\n");
         return;
@@ -110,27 +106,12 @@ void displayList1(node *h){
     }
 }
 
-// Display List 2
-void displayList2(node *h){
-    if(h==NULL){
-        printf("List is empty\n");
-        return;
-    }else{
-        node *temp = h;
-        printf("\n\t");
-        while(temp!=NULL){
-            printf("%d\t", temp->data);
-            temp = temp->next;
-        }
-        printf("\n\n");
-    }
-}
 
 // Dislay Both the list
-void displayBoth(node *h1, node2* h2){
+void displayBoth(node *h1, node* h2){
     node*temp = h1;
     node2*temp2 = h2;
-    if(h1 || h2){
+    if(h1 && h2){
         printf("List1 Elements\n");
         while(temp!=NULL){
             printf("\t%d\t", temp->data);
@@ -142,5 +123,7 @@ void displayBoth(node *h1, node2* h2){
             temp2 = temp2->next;
         }
         printf("\n\n");
+    }else{
+        printf("list are empty\n");
     }
 }
