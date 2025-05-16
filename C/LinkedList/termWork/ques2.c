@@ -47,3 +47,16 @@ node* insert(node* right){
         printf("Memory not allocated\n");
     }
 }
+
+void display(node* head){
+    if(head){
+        printf("Elements of list are\n")
+        while(head!=NULL){
+            printf("\t%d\t", head->data);
+            head = head->next;
+        }
+        printf("\n");
+    }else{
+        printf("List is empty\n");
+    }
+}
