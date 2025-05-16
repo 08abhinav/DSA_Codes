@@ -8,12 +8,13 @@ typedef struct list{
 
 node* insert(node *);
 void display(node *);
+node* insertAtNth(node *);
 
 int main(){
     node *r=NULL, *h=NULL;
     int ch;
     do{
-        printf("1.Insert\n2.Display\nEnter your choice: ");
+        printf("1.Insert\n2.Insert at nth position\n3.Display\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
             case 1: r = insert(r);
@@ -22,7 +23,10 @@ int main(){
             }
             break;
 
-            case 2: display(h);
+            case 2: h = insertAtNth(h);
+            break;
+
+            case 3: display(h);
             break;
         }
     }while(ch>=1 && ch<=3);
@@ -58,11 +62,54 @@ void display(node *h){
         return;
     }else{
         node *temp = h;
+        printf("\n\t");
         while(temp!=NULL){
             printf("%d\t", temp->data);
             temp = temp->next;
         }
         printf("\n");
     }
+}
+
+node* insertAtNth(node *h){
+    node* ptr = NULL, *temp = NULL;
+    ptr = (node*) malloc(sizeof(node));
+    int x, info;
+    if(ptr){
+        if(!h){
+            printf("List is empty\n");
+            free(ptr);
+            return h;
+        }
+
+        temp = h;
+        printf("\tCurrent List\n");
+        while(temp!=NULL){
+            printf("%d\t", temp->data);
+            temp = temp->next;
+        }
+        
+        printf("\nEnter the node after which you want to insert: ");
+        scanf("%d", &x);
+
+        temp = h;
+        while(temp!=NULL){
+            if(temp->data == x){
+                printf("\n Enter value to insert: ");
+                scanf("%d", &info);
+                ptr->data = info;
+                ptr->next = temp->next;
+                temp->next = ptr;
+                printf("Value inserted\n");
+                return h;
+            }
+            temp = temp->next;
+        }
+        printf("%d value not found\n");
+        free(ptr);
+    }else{
+        printf("Memory not allocated\n");
+    }
+    return h;
 }
 
