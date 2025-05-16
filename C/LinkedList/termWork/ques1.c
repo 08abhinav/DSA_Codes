@@ -45,7 +45,7 @@ int main(){
     }while(ch>=1 && ch<=5);
 }
 
-
+// Insert into first list
 node* insert(node *r){
     node *ptr=NULL;
     int x;
@@ -68,12 +68,14 @@ node* insert(node *r){
     return r;
 }
 
+
+// Insert into second list
 node2* insertInSec(node2 *r){
     node2 *ptr=NULL;
     int x;
     ptr = (node2*)malloc(sizeof(node2));
     if(ptr){
-        printf("Enter the value to inser: ");
+        printf("Enter the value to insert: ");
         scanf("%d", &x);
         ptr->data = x;
         ptr->next = NULL;
@@ -92,7 +94,7 @@ node2* insertInSec(node2 *r){
 
 
 
-
+// Display list 1
 void displayList1(node *h){
     if(h==NULL){
         printf("List is empty\n");
@@ -108,6 +110,7 @@ void displayList1(node *h){
     }
 }
 
+// Display List 2
 void displayList2(node *h){
     if(h==NULL){
         printf("List is empty\n");
@@ -123,6 +126,7 @@ void displayList2(node *h){
     }
 }
 
+// Dislay Both the list
 void displayBoth(node *h1, node2* h2){
     node*temp = h1;
     node2*temp2 = h2;
