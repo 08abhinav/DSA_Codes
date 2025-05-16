@@ -27,3 +27,23 @@ int main(){
         }
     }
 }
+
+node* insert(node* right){
+    node* ptr = (node*)malloc(sizeof(node));
+    if(ptr){
+        int x;
+        printf("Enter the value to insert: ");
+        scanf("%d", x);
+        ptr->data = x;
+        ptr->next = NULL;
+        if(right==NULL){
+            right = ptr;
+        }else{
+            right->next = ptr;
+            right = ptr;
+        }
+        return right;
+    }else{
+        printf("Memory not allocated\n");
+    }
+}
