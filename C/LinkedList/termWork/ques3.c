@@ -58,3 +58,20 @@ node* insert(node *r){
 }
 
 
+// Display list
+void displayList(node *h){
+    node* temp = NULL;
+    if(h){
+        temp = h;
+        printf("\nNodes in list are\n");
+        while(temp!=NULL){
+            printf("%d\t", temp->data);
+            temp = temp->next;
+        }
+        printf("\n");
+    }else{
+        printf("List is empty\n");
+    }
+}
+
+
