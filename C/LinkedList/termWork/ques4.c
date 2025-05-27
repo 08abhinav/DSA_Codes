@@ -12,13 +12,13 @@ typedef struct task {
     struct task* next;
 } process;
 
-process* createProcess(int, int);
+process* createprocess(int, int);
 process* insert(process*, int, int);
 void calculate(process*);
 
 int main() {
     int n, bt;
-    Process* tail = NULL;
+    process* tail = NULL;
 
     printf("Enter number of processes: ");
     scanf("%d", &n);
@@ -35,8 +35,8 @@ int main() {
 }
 
 
-Process* createProcess(int id, int bt) {
-    Process* newNode = (Process*)malloc(sizeof(Process));
+process* createprocess(int id, int bt) {
+    process* newNode = (process*)malloc(sizeof(process));
     newNode->pid = id;
     newNode->burst_time = bt;
     newNode->remaining_time = bt;
@@ -46,8 +46,8 @@ Process* createProcess(int id, int bt) {
     return newNode;
 }
 
-Process* insert(Process* tail, int id, int bt) {
-    Process* newNode = createProcess(id, bt);
+process* insert(process* tail, int id, int bt) {
+    process* newNode = createprocess(id, bt);
     if (tail == NULL) {
         newNode->next = newNode;
         return newNode;
@@ -59,10 +59,10 @@ Process* insert(Process* tail, int id, int bt) {
 }
 
 
-void calculate(Process* tail) {
+void calculate(process* tail) {
     int time = 0, completed = 0;
     int total_processes = 0;
-    Process* ptr = tail->next;
+    process* ptr = tail->next;
 
     // Count total processes
     do {
