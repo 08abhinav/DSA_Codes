@@ -35,5 +35,26 @@ int main(){
     }while(ch>=1 && ch<=3);
 }
 
+// Insert into list
+node* insert(node *r){
+    node* ptr = NULL;
+    int x;
+    ptr = (node*)malloc(sizeof(node));
+    if(ptr){
+        printf("Enter the value to insert: ");
+        scanf("%d", &x);
+        ptr->data = x;
+        ptr->next = NULL;
+        if(r==NULL){
+            r = ptr;
+        }else{
+            r->next = ptr;
+            r = ptr;
+        }
+    }else{
+        printf("Memory not allocated\n");
+    }
+    return r;
+}
 
 
