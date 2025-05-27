@@ -33,3 +33,65 @@ int main() {
 
     return 0;
 }
+
+
+Process* createProcess(int id, int bt) {
+    Process* newNode = (Process*)malloc(sizeof(Process));
+    newNode->pid = id;
+    newNode->burst_time = bt;
+    newNode->remaining_time = bt;
+    newNode->completion_time = 0;
+    newNode->waiting_time = 0;
+    newNode->next = NULL;
+    return newNode;
+}
+
+Process* insert(Process* tail, int id, int bt) {
+    Process* newNode = createProcess(id, bt);
+    if (tail == NULL) {
+        newNode->next = newNode;
+        return newNode;
+    } else {
+        newNode->next = tail->next;
+        tail->next = newNode;
+        return newNode;
+    }
+}
+
+
+void calculate(Process* tail) {
+    int time = 0, completed = 0;
+    int total_processes = 0;
+    Process* ptr = tail->next;
+
+    // Count total processes
+    do {
+        total_processes++;
+        ptr = ptr->next;
+    } while (ptr != tail->next);
+
+    ptr = tail->next;
+
+    while (completed < total_processes) {
+        if (ptr->remaining_time > 0) {
+            if (ptr->remaining_time > TIME_QUANTUM) {
+                time += TIME_QUANTUM;
+                ptr->remaining_time -= TIME_QUANTUM;
+            } else {
+                time += ptr->remaining_time;
+                ptr->completion_time = time;
+                ptr->waiting_time = time - ptr->burst_time;
+                ptr->remaining_time = 0;
+                completed++;
+            }
+        }
+        ptr = ptr->next;
+    }
+
+    printf("\nPID\tBurst\tCompletion\tWaiting\n");
+    ptr = tail->next;
+    do {
+        printf("P%d\t%d\t%d\t\t%d\n", ptr->pid, ptr->burst_time, ptr->completion_time, ptr->waiting_time);
+        ptr = ptr->next;
+    } while (ptr != tail->next);
+}
