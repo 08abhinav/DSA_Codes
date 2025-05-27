@@ -12,7 +12,6 @@ void displayList(node *);
 
 int main(){
     node *r=NULL, *h=NULL;
-    node *r2=NULL, *h2 = NULL;
     int ch;
     do{
         printf("1.Insert in List\n2.Remove duplicates \n3.Display List\nEnter your choice: ");
@@ -24,11 +23,9 @@ int main(){
             }
             break;
 
-            case 2: r2 = insert(r2);
-            if(h2==NULL){
-                h2 = r2;
-            }
+            case 2: h = removeDuplicates(h);
             break;
+
             case 3: displayList(h);
             break;
         }
@@ -57,21 +54,52 @@ node* insert(node *r){
     return r;
 }
 
+// Remove duplicates
+node* removeDuplicates(node* h){
+    node* curr = h;
+    node* prev = NULL;
+    node* temp = NULL;
+    if(h==NULL){
+        printf("List is empty\n");
+        return h;
+    }
+    printf("Before removing duplicates\n");
+    displayList(curr);
+    while(curr!=NULL){
+        prev = curr;
+        temp = curr->next;
+        
+        while(temp!=NULL){
+            if(curr->data == temp->data){
+                prev->next = temp->next;
+                free(temp);
+                temp = prev->next;
+            }else{
+                prev = temp;
+                temp = temp->next;
+            }
+        }
+        curr = curr->next;
+    }
+    printf("After removing duplicates\n");
+    displayList(h);
+    return h;
+}
 
 // Display list
 void displayList(node *h){
     node* temp = NULL;
-    if(h){
-        temp = h;
-        printf("\nNodes in list are\n");
-        while(temp!=NULL){
-            printf("%d\t", temp->data);
-            temp = temp->next;
-        }
-        printf("\n");
-    }else{
+    if(h==NULL){
         printf("List is empty\n");
+        return;
     }
+    temp = h;
+    printf("\nNodes in list are\n");
+    while(temp!=NULL){
+        printf("%d\t", temp->data);
+        temp = temp->next;
+    }
+    printf("\n\n");
 }
 
 
