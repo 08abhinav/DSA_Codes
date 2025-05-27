@@ -26,3 +26,19 @@ int main(){
 
     return 0;
 }
+
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void quickSort(int arr[], int low, int high){
+    if(low < high){
+        int p = partition(arr, low, high);
+        quickSort(arr, low, p - 1);
+        quickSort(arr, p + 1, high);
+    }
+}
+
+
