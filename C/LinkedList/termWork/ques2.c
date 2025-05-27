@@ -32,7 +32,7 @@ int main(){
     }while(ch>=1 && ch<=3);
 }
 
-
+//Insert into list
 node* insert(node *r){
     node *ptr=NULL;
     int x;
@@ -55,7 +55,7 @@ node* insert(node *r){
     return r;
 }
 
-
+// Display
 void display(node *h){
     if(h==NULL){
         printf("List is empty\n");
@@ -71,6 +71,7 @@ void display(node *h){
     }
 }
 
+//InsertNth position
 node* insertAtNth(node *h){
     node* ptr = NULL, *temp = NULL;
     ptr = (node*) malloc(sizeof(node));
