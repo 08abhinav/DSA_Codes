@@ -12,25 +12,31 @@ Worst case: O(n^2) when pivot is always smallest or largest element.
 */
 #include<stdio.h>
 #define max 5
+
 void quickSort(int [], int, int);
-int partion(int [], int, int);
+int partition(int [], int, int);
 void swap(int *, int *);
 
 int main(){
     int arr[max];
     printf("Enter the elements of array\n");
-    for(int i=0;i<max;i++){
-        scanf("%d",&arr[i]);
+    for(int i = 0; i < max; i++){
+        scanf("%d", &arr[i]);
     }
-    printf("Before applying quick sort\n");
-    for(int i=0;i<max;i++){
+
+    printf("Before applying quick sort:\n");
+    for(int i = 0; i < max; i++){
         printf("%d\t", arr[i]);
     }
-    quickSort(arr, 0, max-1);
-    printf("\nAfter applying quick sort\n");
-    for(int i=0;i<max;i++){
+
+    quickSort(arr, 0, max - 1);
+
+    printf("\nAfter applying quick sort:\n");
+    for(int i = 0; i < max; i++){
         printf("%d\t", arr[i]);
     }
+
+    return 0;
 }
 
 void swap(int *a, int *b){
@@ -39,52 +45,32 @@ void swap(int *a, int *b){
     *b = temp;
 }
 
-// void quickSort(int arr[], int low, int high){
-//     if(low>=high){
-//         return;
-//     }
-//     int pivot = arr[high];
-//     int i = low-1;
-
-//     for(int j=low; j<high;j++){
-//         if(arr[j]<pivot){
-//             i++;
-//             swap(&arr[i], &arr[j]);
-//         }
-//     }
-
-//     swap(&arr[i+1], &arr[high]);
-//     int pi = i+1;
-//     quickSort(arr, low, pi-1);
-//     quickSort(arr, pi+1, high);
-// }
-
 void quickSort(int arr[], int low, int high){
-    int p;
-    if(low<=high){
-        p = partion(arr, low, high);
-        quickSort(arr, low, p-1);
-        quickSort(arr, p+1, high);
+    if(low < high){
+        int p = partition(arr, low, high);
+        quickSort(arr, low, p - 1);
+        quickSort(arr, p + 1, high);
     }
 }
 
-int partion(int arr[], int low, int high){
-    int i, j, k, f=1;
-    i = low+1;
-    j=high;
-    k = arr[low];
-    while(f){
-        while(k>arr[i] && i<=j){
-            i++;
-        }
-        while(k<arr[j]){
-            j--;
-        }
+int partition(int arr[], int low, int high){
+    int pivot = arr[low];
+    int i = low + 1;
+    int j = high;
 
-        if(i<j){
+    while(1){
+        while(i <= high && arr[i] <= pivot)
+            i++;
+        while(arr[j] > pivot)
+            j--;
+
+        if(i < j){
             swap(&arr[i], &arr[j]);
-        }else{
-            f=0;
+        } else {
+            break;
         }
     }
+    swap(&arr[low], &arr[j]);
+
+    return j;
 }
