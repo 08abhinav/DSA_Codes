@@ -54,4 +54,14 @@ class T1{
         }
         return li;
     }
+    
+    public List<Integer> postorderTraversal(Node root){
+        List<Integer> li = new ArrayList<>();
+        if(root!=null){
+            li.add(root.data);
+            li.addAll(postorderTraversal(root.left));
+            li.addAll(postorderTraversal(root.right));
+        }
+        return li;
+    }
 }
