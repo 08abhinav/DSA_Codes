@@ -45,4 +45,13 @@ class T1{
     return result;
 }
 
+    public List<Integer> preorderTraversal(Node root){
+        List<Integer> li = new ArrayList<>();
+        if(root!=null){
+            li.addAll(preorderTraversal(root.left));
+            li.addAll(preorderTraversal(root.right));
+            li.add(root.data);
+        }
+        return li;
+    }
 }
