@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 class T1{
     class Node{
         int data;
@@ -11,32 +11,38 @@ class T1{
     }
 
     public Node insertNode(Node root, int data){
-        Node curr = root;
-        while(true){
-            if(curr == null){
-                curr.data = data;
-                curr.left = null;
-                curr.right = null;
-            }
-            else if(curr.data > data){
-                if(curr.left == null){
-                    curr.left = new Node(data);
-                    break;
-                }else{
-                    curr = curr.left;
-                }
-            }else if(curr.data < data){
-                if(curr.right == null){
-                    curr.right  =new Node(data);
-                    break;
-                }else{
-                    curr = curr.right;
-                }
+        if(root == null){
+            return new Node(data);
+        }
+        Node child = root;
+        Node parent = null;
+
+        while(child!=null){
+            parent = child;
+            if(data < child.data){
+                child = child.left;
+            }else if(data > child.data){
+                child = child.right;
             }else{
                 System.out.println("Data already present");
-                break;
             }
+        }
+        if(parent.data > data){
+            parent.left = new Node(data);
+        }else{
+            parent.right = new Node(data);
         }
         return root;
     }
+
+    public List<Integer> inorderTraversal(Node root) {
+    List<Integer> result = new ArrayList<>();
+    if (root != null) {
+        result.addAll(inorderTraversal(root.left));
+        result.add(root.data);
+        result.addAll(inorderTraversal(root.right));
+    }
+    return result;
+}
+
 }
