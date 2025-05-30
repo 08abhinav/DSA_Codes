@@ -20,8 +20,17 @@ public class Test {
                     List<Integer> li = t.inorderTraversal(root);
                     System.out.println("Inorder Traversal: "+li);
                     break;
-                    
+
+                case 3: 
+                    List<Integer> li2 = t.preorderTraversal(root);
+                    System.out.println("Inorder Traversal: "+li2);
+                    break;
+
+                case 4: 
+                List<Integer> li3 = t.postorderTraversal(root);
+                System.out.println("Inorder Traversal: "+li3);
+                break;
             }
-        }while(ch<=2);
+        }while(ch<=4);
     }
 }
