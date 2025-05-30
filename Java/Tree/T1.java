@@ -10,7 +10,7 @@ class T1{
         }
     }
 
-    public Node insertBST(Node root, int data){
+    public Node insertNode(Node root, int data){
         Node curr = root;
         while(true){
             if(curr == null){
