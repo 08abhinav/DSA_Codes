@@ -11,5 +11,32 @@ class RemoveDuplicate{
     }
     Node head = null;
     
+    public void insert(int x){
+        Node n = new Node(x);
+        n.next = null;
+        if(head == null){
+            head = n;
+        }else{
+            Node temp = head;
+            while(temp.next != null){
+                temp = temp.next;
+            }
+            temp.next = n;
+        }
+    }
+
+    public void display(){
+        Node temp = head;
+        if(head == null){
+            System.out.println("List is empty\n");
+        }else{
+            System.out.println("Nodes in list are");
+            while(temp != null){
+                System.out.println(temp.data);
+                temp = temp.next;
+            }
+        }
+    }
+
 
 }
