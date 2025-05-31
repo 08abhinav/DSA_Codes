@@ -10,7 +10,7 @@ class RemoveDuplicate{
         }
     }
     Node head = null;
-    
+
     public void insert(int x){
         Node n = new Node(x);
         n.next = null;
@@ -38,5 +38,22 @@ class RemoveDuplicate{
         }
     }
 
+    public Node removeDuplicate(Node head){
+        Node dummy = new Node(0);
+        Node prev = dummy;
+
+        while(head!=null){
+            if(head.next != null && head.data == head.next.data){
+                while(head.next != null && head.data == head.next.data){
+                    head = head.next;
+                }
+                prev.next = head.next;
+            }else{
+                prev = prev.next;
+            }
+            head = head.next;
+        }
+        return dummy.next;
+    }
 
 }
