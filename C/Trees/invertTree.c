@@ -84,3 +84,17 @@ tree* inorder(tree *rt){
         inorder(rt->right);
     }
 } 
+
+tree* invert(tree *rt){
+    if(rt == NULL){
+        return rt;
+    }else{
+        tree* temp = rt->left;
+        rt->left = rt->right;
+        rt->right = temp;
+
+        invert(rt->left);
+        invert(rt->right);
+    }
+    return rt;
+}
