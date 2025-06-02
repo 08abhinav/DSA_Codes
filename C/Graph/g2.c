@@ -39,7 +39,7 @@ int main(){
             insertEdge(head, src, dest, weight);
             break;
 
-            case 3: display(head);
+            case 3: displayGraph(head);
             break;
         }
     }while(ch>=1 && ch<=3);
@@ -94,7 +94,9 @@ void insertEdge(vertex* head, int from, int to, int weight){
     printf("\t\tEdge added successfully\n");
 }
 
-
+/* This method will find the source and the destination node if they are prsent in graph or not.
+if yes it will return the node and if not it will return the null.
+*/
 vertex* findVertex(vertex* head, int val){
     vertex* ptr = head;
     while(ptr != NULL){
