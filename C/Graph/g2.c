@@ -16,7 +16,7 @@ struct ed{
 vertex* insertVertex(vertex*);
 vertex* findVertex(vertex*, int);
 void insertEdge(vertex*, int, int, int);
-void display(vertex*);
+void displayGraph(vertex*);
 
 int main(){
     vertex* head = NULL;
@@ -69,9 +69,44 @@ vertex* insertVertex(vertex* head){
     return head;
 }
 
+void insertEdge(vertex* head, int from, int to, int weight){
+    vertex* src = findVertex(head, from);
+    vertex* dest = findVertex(head, to);
+
+    if(src == NULL || dest == NULL){
+        printf("Source or destination nodes are not present in graph\n");
+        return;
+    }
+    edge* newEdge = (edge*)malloc(sizeof(edge));
+    newEdge->weight = weight;
+    newEdge->dest = dest;
+    newEdge->next = NULL;
+
+    if(src->edgList == NULL){
+        src->edgList = newEdge;
+    }else{
+        edge* temp = src->edgList;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next = newEdge;
+    }
+    printf("\t\tEdge added successfully\n");
+}
 
 
-void display(vertex *head){
+vertex* findVertex(vertex* head, int val){
+    vertex* ptr = head;
+    while(ptr != NULL){
+        if(ptr->data == val){
+            return ptr;
+        }
+        ptr = ptr->link;
+    }
+    return NULL;
+}
+
+void displayGraph(vertex *head){
     vertex* temp = head;
     if(head==NULL){
         printf("Graph is empty\n");
