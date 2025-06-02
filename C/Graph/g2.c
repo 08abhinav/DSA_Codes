@@ -1,3 +1,4 @@
+// Implementing the graph with integer vertex(node) and the their weights
 #include<stdio.h>
 #include<stdlib.h>
 
