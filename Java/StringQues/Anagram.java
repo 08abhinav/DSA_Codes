@@ -11,6 +11,8 @@ public class Anagram {
     }
 
     public static void main(String...args){
-        
+        String s = "geeks";
+        String s2 = "geek";
+        System.out.println(Anagram.validAnagram(s, s2));
     }
 }
