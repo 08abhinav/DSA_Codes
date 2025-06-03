@@ -18,6 +18,12 @@ class Parenthese{
         return stk.isEmpty();
     }
     public static void main(String... args){
-        
+        boolean res = Parenthese.validParenthese("{[()]}");
+
+        if(res == true){
+            System.out.println("Given parenthese are valid");
+        }else{
+            System.out.println("Given parenthese are not valid");
+        }
     }
 }
