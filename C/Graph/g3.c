@@ -53,3 +53,20 @@ void createGraph(edge** graph, int vertices){
         scanf("%d", &ch);
     }while(ch==1);
 }
+
+void displayGraph(edge** graph, int vertices){
+    if(*graph == NULL){
+        printf("Graph is empty\n");
+        return;
+    }else{
+        for(int i=0;i<vertices;i++){
+            printf("Vertex: %d", i);
+            edge* temp = graph[i];
+            while(temp != NULL){
+                printf("-> (%d, weight: %d)\n", temp->dest, temp->weight);
+                temp = temp->next;
+            }
+        }
+        printf("\n");
+    }
+}
