@@ -11,7 +11,7 @@ Best/Average: O(n log(n))
 Worst case: O(n^2) when pivot is always smallest or largest element.
 */
 #include<stdio.h>
-#define max 5
+#define max 8
 
 void quickSort(int [], int, int);
 int partition(int [], int, int);
@@ -55,21 +55,35 @@ void quickSort(int arr[], int low, int high){
 
 int partition(int arr[], int low, int high){
     int pivot = arr[low];
-    int i = low + 1;
-    int j = high;
-
-    while(1){
-        while(i <= high && arr[i] <= pivot)
+    // int i = low + 1;
+    int i = low;
+    int j = high; 
+    
+    while(i<j){
+        do{
             i++;
-        while(arr[j] > pivot)
-            j--;
+        }while(arr[i] <= pivot);
 
-        if(i < j){
+        do{
+            j--;
+        }while(arr[j] > pivot);
+
+        if(i<j){
             swap(&arr[i], &arr[j]);
-        } else {
-            break;
         }
     }
+
+    // while(1){
+    //     while(i <= j && arr[i] <= pivot)
+    //         i++;
+    //     while(arr[j] > pivot)
+    //         j--;
+    //     if(i < j){
+    //         swap(&arr[i], &arr[j]);
+    //     } else {
+    //         break;
+    //     }
+    // }
     swap(&arr[low], &arr[j]);
 
     return j;
