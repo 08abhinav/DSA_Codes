@@ -1,15 +1,17 @@
+/*Implementing graph for character nodes */
 #include <stdio.h>
 #include <stdlib.h>
 
 struct node {
     char name;
     struct node* link;
-    struct edge* s; 
+    struct edge* edgList; 
 } typedef vertex;
 
 struct ed {
-    vertex* data;
-    struct ed* edg;
+    vertex* dest;
+    // int weight;
+    struct ed* next;
 } typedef edge;
 
 vertex* insert(vertex*);
