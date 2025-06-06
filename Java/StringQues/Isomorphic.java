@@ -1,3 +1,6 @@
+/**Isomorphic String 
+ * Two strings are said to be isomorphic if characters in String s1 can be changed to get s2.
+ */
 public class Isomorphic {
     public static boolean checkIsomorphic(String s1, String s2){
         if(s1.length() != s2.length()) return false;
