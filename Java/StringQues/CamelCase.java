@@ -1,3 +1,4 @@
+/**Converting a string to Camel Case */
 public class CamelCase{
     public static String convertToCamelCase(String s){
         if(s == null) return "";
