@@ -1,3 +1,8 @@
+/**
+ * Give an array of non-negative integers and we have to find how many jumps are required from starting to end
+ -> for eg arr = [0, 1, 3, 4] it will return -1 because starting index is 0 we can't go anywhere from here.
+           arr = [1, 2, 4, 5] it will return 2 because 1 jump from first index to second and 2 jumps from second to reach at last
+ */
 class MaxJumps{
     public static int countJumps(int[] arr){
         int n = arr.length;
