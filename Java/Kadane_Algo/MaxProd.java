@@ -1,3 +1,5 @@
+/* Maximum product of subarray 
+ */
 class MaxProd{
     public static int calcProd(int[] nums){
         if(nums.length == 0) return 0;
