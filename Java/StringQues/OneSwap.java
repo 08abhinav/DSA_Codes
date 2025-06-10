@@ -1,3 +1,6 @@
+/**Given a string s, return the number of distinct strings that can be obtained by 
+exactly one swap of two different indices (i < j). 
+*/
 import java.util.HashSet;
 import java.util.Set;
 
