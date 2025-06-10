@@ -21,6 +21,7 @@ public class OneSwap {
         return set.size();
     }
     public static void main(String[] args) {
-        
+        String s = "geek";
+        System.out.println(OneSwap.countSwap(s));
     }
 }
