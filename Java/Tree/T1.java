@@ -17,7 +17,7 @@ class T1{
         Node child = root;
         Node parent = null;
 
-        while(child!=null){
+        while(child != null){
             parent = child;
             if(data < child.data){
                 child = child.left;
@@ -63,5 +63,24 @@ class T1{
             li.addAll(postorderTraversal(root.right));
         }
         return li;
+    }
+
+    public List<List<Integer>> levelOrder(Node root){
+        Queue<Node> queue = new LinkedList<>();
+        List<List<Integer>> res = new LinkedList<List<Integer>>();
+        if(root == null) return res;
+        queue.offer(root);
+
+        while(!queue.isEmpty()){
+            int levelNum = queue.size();
+            List<Integer> li = new LinkedList<>();
+            for(int i=0; i<levelNum; i++){
+                if(queue.peek().left != null) queue.offer(queue.peek().left);
+                if(queue.peek().right != null) queue.offer(queue.peek().right);
+                li.add(queue.poll().data);
+            }
+            res.add(li);
+        }
+        return res;
     }
 }
