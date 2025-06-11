@@ -20,6 +20,10 @@ class RemoveBalls{
         return stack.size();
     }
     public static void main(String[] args) {
-        
+        // int[] colors = {2, 3, 5};
+        // int[] radius = {3, 3, 5};
+        int[] colors = {2, 2, 5};
+        int[] radius = {3, 3, 5};
+        System.out.println(RemoveBalls.findLen(colors, radius));
     }
 }
