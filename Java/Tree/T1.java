@@ -1,3 +1,10 @@
+/** Binary Search Tree
+ * InsertNode method to insert a new node in bst
+ * Inorder Traversal 
+ * Preorder Traversal 
+ * PostOrder Traversal
+ * LevelOrder Traversal
+ */
 import java.util.*;
 class T1{
     class Node{
