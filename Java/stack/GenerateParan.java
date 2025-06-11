@@ -14,13 +14,15 @@ class GenerateParan{
         }
 
         if(openP < n){
-            dfs(openP + 1, closeP, "(", n, res);
+            dfs(openP + 1, closeP, s + "(", n, res);
         }
 
         if(closeP < openP){
-            dfs(openP, closeP + 1, ")", n, res);
+            dfs(openP, closeP + 1, s + ")", n, res);
         }
     }
     public static void main(String[] args){
+        int n = 3;
+        System.out.println(GenerateParan.generateParan(n));
     }
 }
