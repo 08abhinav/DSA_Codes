@@ -16,6 +16,7 @@ public class IntegerToRoman {
         return s.toString();
     }
     public static void main(String[] args) {
-        
+        int num = 2002;
+        System.out.println(IntegerToRoman.integerToRoman(num));
     }
 }
