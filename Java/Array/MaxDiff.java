@@ -8,6 +8,7 @@ public class MaxDiff{
         return maxDiff;
     }
     public static void main(String[] args) {
-        
+        int[] nums = {1, 2, 4};
+        System.out.println(MaxDiff.maxDifference(nums));
     }
 }
