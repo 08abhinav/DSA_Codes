@@ -1,3 +1,4 @@
+/**Given a circular array nums, find the maximum absolute difference between adjacent elements. */
 public class MaxDiff{
     public static int maxDifference(int[] nums){
         int maxDiff = 0;
