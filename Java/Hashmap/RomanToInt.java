@@ -1,3 +1,4 @@
+/**Convert the given roman string to its corresponding integer value*/
 import java.util.HashMap;
 import java.util.Map;
 
