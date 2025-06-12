@@ -23,6 +23,7 @@ public class RomanToInt {
         return res + map.get(s.charAt(s.length() - 1));
     }
     public static void main(String[] args) {
-        
+        String s = "III";
+        System.out.println(RomanToInt.romanToInt(s));
     }
 }
