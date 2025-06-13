@@ -20,6 +20,7 @@ class AnagramGroup{
         return new ArrayList<>(map.values());
     }
     public static void main(String[] args) {
-        
+        String str[] = {"bad", "cat", "tac", "eat", "ate", "tea"};
+        System.out.println(AnagramGroup.groupAna(str));
     }
 }
