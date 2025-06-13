@@ -21,6 +21,7 @@ class Atoi{
         return (int) (res * sign);
     }
     public static void main(String... args){
-
+        String s = "-043";
+        System.out.println(Atoi.myAtoi(s));
     }
 }
