@@ -1,3 +1,4 @@
+/**Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer. */
 class Atoi{
     public static int myAtoi(String s){
         s = s.trim();
