@@ -30,6 +30,7 @@ public class RemapDigit{
         return maxVal - minVal;
     }
     public static void main(String[] args) {
-        
+        int num = 11891;
+        System.out.println(RemapDigit.maxDiff(num));
     }
 }
