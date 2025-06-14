@@ -1,3 +1,6 @@
+/**You are given an integer num. You know that Bob will sneakily remap one of the 10 possible digits (0 to 9) to another digit.
+
+Return the difference between the maximum and minimum values Bob can make by remapping exactly one digit in num. */
 public class RemapDigit{
     public static int maxDiff(int num){
         char[] maxChars = String.valueOf(num).toCharArray();
