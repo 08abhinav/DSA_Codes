@@ -44,6 +44,7 @@ public class MaxDiff2{
         return maxVal - minVal;
     }
     public static void main(String[] args) {
-
+        int num = 123456;
+        System.out.println(MaxDiff2.maxDiff(num));
     }
 }
