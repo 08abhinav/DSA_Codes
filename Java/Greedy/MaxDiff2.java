@@ -21,7 +21,7 @@ public class MaxDiff2{
         char replace = ' ';
 
         if(ch2[0] != '1'){
-            minReplace = ch[0];
+            minReplace = ch2[0];
             replace  = '1';
         }else{
             for(int i=1; i<ch2.length; i++){
