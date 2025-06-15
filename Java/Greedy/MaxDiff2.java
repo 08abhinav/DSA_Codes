@@ -41,9 +41,9 @@ public class MaxDiff2{
         int maxVal = Integer.parseInt(sb.toString());
         int minVal = Integer.parseInt(s.toString());
 
-        return maxVal - minVal
+        return maxVal - minVal;
     }
     public static void main(String[] args) {
-            
+
     }
 }
