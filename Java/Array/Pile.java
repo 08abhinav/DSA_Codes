@@ -41,6 +41,8 @@ public class Pile{
         return low;
     }
     public static void main(String[] args){
-
+        int[] arr = {2, 2, 2, 2};
+        int k = 0;
+        System.out.println(Pile.minCoins(arr, 0));
     }
 }
