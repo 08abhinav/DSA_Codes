@@ -1,3 +1,7 @@
+/**You are given an array arr[] of integers, where each element represents the number of coins in a pile. You are also given an integer k.
+Your task is to remove the minimum number of coins such that the absolute difference between the number of coins in any two updated piles is at most k.
+
+Note: You can also remove a pile by removing all the coins of that pile. */
 import java.util.Arrays;
 
 public class Pile{
