@@ -15,6 +15,8 @@ public class DivideArray{
         return res.toArray(new int[res.size()][]);
     }
     public static void main(String[] args) {
-        
+        int[] nums = {1,3,4,8,7,9,3,5,1};
+        int k = 2;
+        System.out.println(Arrays.deepToString(DivideArray.minDiff(nums, k)));
     }
-}
+}   
