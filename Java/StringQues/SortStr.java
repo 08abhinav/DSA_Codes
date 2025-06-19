@@ -1,5 +1,8 @@
+/**Given a string s consisting of only uppercase and lowercase characters. 
+ The task is to sort uppercase and lowercase letters separately such that 
+ if the ith place in the original string had an Uppercase character then 
+ it should not have a lowercase character after being sorted and vice versa. */
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Collections;
 import java.util.List;
 
