@@ -31,6 +31,7 @@ public class SortStr{
         return res.toString();
     }
     public static void main(String[] args){
-
+        String s = "GEekS";
+        System.out.println(SortStr.caseSort(s));
     }
 }
