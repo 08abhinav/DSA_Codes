@@ -8,8 +8,8 @@ import java.util.List;
 
 public class SortStr{
     public static String caseSort(String s){
-        List<Character> upper = new ArrayList();
-        List<Character> lower = new ArrayList();
+        List<Character> upper = new ArrayList<>();
+        List<Character> lower = new ArrayList<>();
 
         for(char c : s.toCharArray()){
             if(Character.isUpperCase(c)){
