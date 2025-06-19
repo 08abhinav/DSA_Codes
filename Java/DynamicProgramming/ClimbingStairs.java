@@ -3,7 +3,7 @@ public class ClimbingStairs {
         if(n <= 3) return n;
 
         int prev1 = 3, prev2 = 2, curr = 0;
-        for(int i=0; i<n; i++){
+        for(int i=3; i<=n; i++){
             curr = prev1 + prev2;
             prev2 = prev1;
             prev1 = curr;
@@ -11,6 +11,7 @@ public class ClimbingStairs {
         return curr;
     }
     public static void main(String[] args) {
-        
+        int n = 5;
+        System.out.println(ClimbingStairs.countSteps(n));
     }
 }
