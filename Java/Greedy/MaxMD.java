@@ -18,6 +18,8 @@ public class MaxMD{
         return ans;
     }
     public static void main(String[] args){
-
+        String s = "NSWE";
+        int k = 1;
+        System.out.println(MaxMD.maxManhattanDis(s, k));
     }
 }
