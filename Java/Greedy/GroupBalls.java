@@ -20,6 +20,8 @@ public class GroupBalls {
         return true;
     }
     public static void main(String[] args){
-
+        int[] arr = {10, 1, 2, 11};
+        int k = 2;
+        System.out.println(GroupBalls.groupBalls(arr, k));
     }
 }
