@@ -1,5 +1,5 @@
 public class PolThief{
-    public static int catchThief(int[] arr, int k){
+    public static int catchThief(char[] arr, int k){
         int n = arr.length;
         int i = 0, j = 0, count = 0;
         while(i < n && j < n){
@@ -23,6 +23,8 @@ public class PolThief{
         return count;
     }
     public static void main(String[] args) {
-        
+        char[] arr = {'P', 'T', 'P', 'T'};
+        int k = 1;
+        System.out.println(PolThief.catchThief(arr, k));
     }
 }
