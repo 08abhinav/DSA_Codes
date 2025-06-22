@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class KGroupString {
     public static String[] divideString(String s, int k , String fill){
         int n = s.length();
@@ -19,6 +21,10 @@ public class KGroupString {
         return res;
     }
     public static void main(String[] args) {
-        
+        String s = "abcdefghi";
+        // String s = "abcdefghij";
+        int k = 3;
+        String fill = "x";
+        System.out.println(Arrays.toString(KGroupString.divideString(s, k, fill)));
     }
 }
