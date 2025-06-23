@@ -37,6 +37,7 @@ public class KMirrorNum {
     }
 
     public static void main(String...args){
-
+        int n = 5, k = 2;
+        System.out.println(KMirrorNum.kMirror(k, n));
     }
 }
