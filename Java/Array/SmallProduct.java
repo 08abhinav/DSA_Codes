@@ -39,6 +39,9 @@ public class SmallProduct{
         return count;
     }
     public static void main(String[] args) {
-        
+        int[] arr = {-4,-2,0,3};
+        int[] arr2 = {2, 4};
+        int k = 6;
+        System.out.println(SmallProduct.smallestProduct(arr, arr2, k));
     }
 }
