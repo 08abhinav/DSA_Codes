@@ -22,6 +22,8 @@ public class LongestBi {
         return cnt;
     }
     public static void main(String... args){
-
+        String s = "1001010";
+        int k = 5;
+        System.out.println(LongestBi.longestSubsequence(s, k));
     }
 }
