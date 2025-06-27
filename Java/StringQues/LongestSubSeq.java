@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class LongestSubSeq{
-    public String longestSubsequenceRepeatedK(String s, int k) {
+    public static String longestSubsequenceRepeatedK(String s, int k) {
         String r="";
         Queue<String> q=new LinkedList<>();
         for(q.add("");!q.isEmpty();) {
@@ -17,7 +17,7 @@ public class LongestSubSeq{
         }
         return r;
     }
-    boolean isK(String s,String t,int k) {
+    static boolean isK(String s,String t,int k) {
         int c=0,i=0;
         for(char ch:t.toCharArray()) {
             if(ch==s.charAt(i)) {
@@ -30,6 +30,8 @@ public class LongestSubSeq{
         return false;
     }
     public static void main(String... args){
-
+        String s = "letsleetcode";
+        int k = 2;
+        System.out.println(LongestSubSeq.longestSubsequenceRepeatedK(s, k));
     }
 }
