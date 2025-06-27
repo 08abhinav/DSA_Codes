@@ -17,6 +17,18 @@ public class LongestSubSeq{
         }
         return r;
     }
+    boolean isK(String s,String t,int k) {
+        int c=0,i=0;
+        for(char ch:t.toCharArray()) {
+            if(ch==s.charAt(i)) {
+                if(++i==s.length()) {
+                    i=0;
+                    if(++c==k) return true;
+                }
+            }
+        }
+        return false;
+    }
     public static void main(String... args){
 
     }
