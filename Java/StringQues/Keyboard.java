@@ -13,6 +13,15 @@ public class Keyboard {
         }
         return res.toArray(new String[0]);
     }
+
+    private static boolean isInRow(String s, String row){
+        for(char c:s.toCharArray()){
+            if(row.indexOf(Character.toLowerCase(c)) == -1){
+                return false;
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
         
     }
