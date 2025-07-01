@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Keyboard {
     public static String[] findWords(String words[]) {
@@ -7,7 +8,7 @@ public class Keyboard {
         String row2 = "asdfghjkl";
         String row3 = "zxcvbnm";
         for(String i : words){
-            if(isInRow(i, row1) || isInRow(i, row2) || isIntRow(i, row3)){
+            if(isInRow(i, row1) || isInRow(i, row2) || isInRow(i, row3)){
                 res.add(i);
             }
         }
@@ -23,6 +24,7 @@ public class Keyboard {
         return true;
     }
     public static void main(String[] args) {
-        
+        String[] word = {"Hello","Alaska","Dad","Peace"};
+        System.out.println(Arrays.toString(Keyboard.findWords(word)));
     }
 }
