@@ -12,6 +12,7 @@ public class PascalTriangleII {
         return row;
     }
     public static void main(String...args){
-
+        int rowIndex = 4;
+        System.out.println(PascalTriangleII.getRow(rowIndex));
     }
 }
