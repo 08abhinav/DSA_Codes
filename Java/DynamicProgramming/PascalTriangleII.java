@@ -1,3 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class PascalTriangleII {
-    public static void main(String...args){}
+    public static List<Integer> getRow(int rowIndex){
+        List<Integer> row = new ArrayList<>();
+        long ans = 0;
+        for(int i=0; i<=rowIndex; i++){
+            row.add((int)ans);
+            ans = ans * (rowIndex - i) / (i + 1);
+        }
+        return row;
+    }
+    public static void main(String...args){
+
+    }
 }
