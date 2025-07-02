@@ -1,3 +1,4 @@
+/**Given an integer numRows, return the first numRows of Pascal's triangle. */
 import java.util.ArrayList;
 import java.util.List;
 
