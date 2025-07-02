@@ -25,6 +25,7 @@ public class PascalTriangle{
         return res;
     }
     public static void main(String[] args) {
-        
+        int numRows = 5;
+        System.out.println(PascalTriangle.generate(numRows));
     }
 }
