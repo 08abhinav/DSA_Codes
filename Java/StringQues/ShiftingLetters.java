@@ -9,6 +9,8 @@ public class ShiftingLetters{
         return new String(ch);
     }
     public static void main(String[] args) {
-        
+        int[] shifts = {3, 5, 9};
+        String s = "abc";
+        System.out.println(ShiftingLetters.shifitLetters(s, shifts));
     }
 }
