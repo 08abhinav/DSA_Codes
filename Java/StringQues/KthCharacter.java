@@ -4,12 +4,13 @@ public class KthCharacter{
         while(sb.length() < k){
             int size = sb.length();
             for(int i=0; i<size; i++){
-                sb.append((char) ('a' - ((sb.charAt(i) - 'a') + 1) % 26));
-            }
+                sb.append((char) ('a' + ((sb.charAt(i) - 'a') + 1) % 26));            
+            } 
         }
         return (sb.charAt(k - 1));
     }
     public static void main(String[] args) {
-        
+        int k = 5;
+        System.out.println(KthCharacter.kthchar(k));
     }
 }
