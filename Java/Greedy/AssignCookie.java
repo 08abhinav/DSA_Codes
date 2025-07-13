@@ -19,6 +19,8 @@ public class AssignCookie {
         return happy;
     }
     public static void main(String[] args) {
-        
+        int[] g = {1, 2, 3};
+        int[] s = {1, 1};
+        System.out.println(AssignCookie.findContentChildren(g, s));
     }
 }
