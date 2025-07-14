@@ -1,3 +1,8 @@
+/**Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
+
+Return the decimal value of the number in the linked list.
+
+The most significant bit is at the head of the linked list. */
 import java.util.Scanner;
 
 public class BinaryList {
@@ -11,6 +16,7 @@ public class BinaryList {
     //     return Integer.parseInt(sb.toString(), 2);
     // }
 
+    //Method 2
     public static int getDecimalValue(L1.Node head){
         int res = head.data;
         L1.Node temp = head.next;
