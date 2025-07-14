@@ -1,14 +1,24 @@
 import java.util.Scanner;
 
 public class BinaryList {
+    // public static int getDecimalValue(L1.Node head){
+    //     L1.Node temp = head;
+    //     StringBuilder sb = new StringBuilder();
+    //     while(temp != null){
+    //         sb.append(temp.data);
+    //         temp = temp.next;
+    //     }
+    //     return Integer.parseInt(sb.toString(), 2);
+    // }
+
     public static int getDecimalValue(L1.Node head){
-        L1.Node temp = head;
-        StringBuilder sb = new StringBuilder();
+        int res = head.data;
+        L1.Node temp = head.next;
         while(temp != null){
-            sb.append(temp.data);
+            res = res * 2 + temp.data;
             temp = temp.next;
         }
-        return Integer.parseInt(sb.toString(), 2);
+        return res;
     }
     public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
