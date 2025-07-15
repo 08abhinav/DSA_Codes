@@ -15,6 +15,7 @@ public class ValidWord{
         return vowels >= 1 && consonants >= 1;
     }
     public static void main(String... args){
-
+        String word = "2a3bcde";
+        System.out.println(ValidWord.isValid(word));
     }
 }
