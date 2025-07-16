@@ -26,6 +26,7 @@ public class Sort0s1s2s {
         System.out.println(Arrays.toString(arr));
     }
     public static void main(String... args){
-
+        int[] arr = {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1};
+        Sort0s1s2s.sort012(arr);
     }
 }
