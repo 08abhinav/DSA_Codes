@@ -1,3 +1,6 @@
+/**Given an array arr[] containing only 0s, 1s, and 2s. Sort the array in ascending order.
+
+You need to solve this problem without utilizing the built-in sort function. */
 import java.util.Arrays;
 
 public class Sort0s1s2s {
@@ -49,6 +52,7 @@ public class Sort0s1s2s {
                 break;
             }
         }
+        System.out.println(Arrays.toString(arr));
     }
     
     public static void swap(int[] arr, int i ,int j){
