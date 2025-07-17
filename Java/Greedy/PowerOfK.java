@@ -15,6 +15,7 @@ public class PowerOfK {
         return power;
     }
     public static void main(String...ar){
-
+        int n = 7, k = 2;
+        System.out.println(PowerOfK.maxKPower(n, k));
     }
 }
