@@ -22,6 +22,8 @@ public class ValidSubsequenceII {
         return res;
     }
     public static void main(String... args){
-
+        int[] nums = {1, 2, 3, 4};
+        int k = 2;
+        System.out.println(ValidSubsequenceII.maxLength(nums, k));
     }
 }
