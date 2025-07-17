@@ -1,4 +1,7 @@
+/**Given two positive integers n and k, determine the highest value of x such that 
+ * kx divides n! (n factorial) completely (i.e., n % (kx) == 0). */
 import java.util.ArrayList;
+
 
 public class PowerOfK {
     // Approach 1
