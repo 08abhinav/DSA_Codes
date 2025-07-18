@@ -14,7 +14,7 @@ have at least k characters.
 
 Note that the character 'z' can be changed to 'a' in the operation. */
 public class KthCharacter{
-    public static char kthchar(int k){
+    public static char kthChar(int k){
         StringBuilder sb = new StringBuilder("a");
         while(sb.length() < k){
             int size = sb.length();
@@ -26,6 +26,6 @@ public class KthCharacter{
     }
     public static void main(String[] args) {
         int k = 5;
-        System.out.println(KthCharacter.kthchar(k));
+        System.out.println(KthCharacter.kthChar(k));
     }
 }
