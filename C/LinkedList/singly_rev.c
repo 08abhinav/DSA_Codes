@@ -46,7 +46,6 @@ node* insert(node *r){
 
         if(r==NULL){
             r = ptr;
-            return r;
         }else{
             r->next = ptr;
             r = ptr;
@@ -72,7 +71,7 @@ void display(node *h){
     }
 }
 
-void reverse(node *h){
+void reverse(node *h){  
     if(h==NULL){
         printf("List is empty\n");
         return;
