@@ -10,13 +10,14 @@ typedef struct list{
 }tree;
 
 tree* insert(tree *);
-void search(tree *);
+tree* search(tree *);
 void inorder(tree *);
+void delete(tree *);
 
 tree* p = NULL;
 
 int main(){
-    tree *root=NULL;
+    tree *root=NULL, *s=NULL;
     int ch;
     do{
         printf("1.Insert\n2.Search\n3.Inorder\nEnter your choice: ");
@@ -25,7 +26,7 @@ int main(){
             case 1: root = insert(root);
             break;
 
-            case 2: search(root);
+            case 2: s = search(root);
             break;
 
             case 3: inorder(root);
@@ -78,10 +79,10 @@ tree* insert(tree *root){
 }
 
 
-void search(tree *root){
+tree* search(tree *root){
     if(root == NULL){
         printf("Tree is empty\n");
-        return;
+        return NULL;
     }
 
     tree *c = NULL;
@@ -89,10 +90,12 @@ void search(tree *root){
     int value;
     printf("Enter the value to search: ");
     scanf("%d", &value);
+
     if(p->data == value){
         printf(" %d found\n %d is root node\n", p->data, value);
-        return;
+        return root;
     }
+
     while(c != NULL){
 
         if(c->data == value){
@@ -102,7 +105,7 @@ void search(tree *root){
             }else{
                 printf("%d is the parent of %d and %d is it's right child\n", p->data, value, value);
             }
-            return;
+            return c;
         }
         else if(value < c->data){
             p=c;
@@ -113,7 +116,6 @@ void search(tree *root){
             c = p->right;
         }
     }
-
     printf(" %d not found in the tree\n", value);
 }
 
@@ -122,5 +124,36 @@ void inorder(tree *root){
         inorder(root->left);
         printf("%d\t", root->data);
         inorder(root->right);
+    }
+}
+
+void delete(tree *root){
+    tree* d=NULL;
+    if(root==NULL){
+        printf("Tree is empty\n");
+        return;
+    }
+    else{
+        d = search(root);
+        if(d==NULL){
+            printf("Node not found\n");
+            return;
+        }
+        if(d->left == NULL && d->right == NULL){
+            if(d==p->left){
+                p->left = NULL;
+            }else{
+                p->right = NULL:
+            }
+            free(d);
+            return;
+        }
+        if(d->left == NULL && d->right != NULL){
+            if(d == p->left){
+                p->left = d->right;
+            }else{
+                p->left = d
+            }
+        }
     }
 }
