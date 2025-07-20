@@ -10,7 +10,7 @@ class Queue3{
     }
     
     void insertRear(){
-        if(f==size-1){
+        if(r==0){
             System.out.print("Queue is full\n");
         }else{
             int x;
@@ -19,6 +19,9 @@ class Queue3{
             x = sc.nextInt();
             r --;
             q[r] = x;
+            if(f==-1){
+                f=0;
+            }
         }
     }
 }
