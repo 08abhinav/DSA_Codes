@@ -1,3 +1,10 @@
+/* 
+what we have to do here is we have to find the rectangle with corners 1
+so the matrix is 1 0 0 1 0
+                 0 0 |1 0 1|
+                 0 0 |0 1 0|-> this is the valid rectangle 
+                 1 0 |1 0 1|
+*/ 
 class Rect{
     static boolean validCorner(int[][] mat){
         int rows = mat.length;
@@ -25,11 +32,3 @@ class Rect{
         System.out.println(Rect.validCorner(mat));
     }
 }
-
-/* 
-what we have to do here is we have to find the rectangle with corners 1
-so the matrix is 1 0 0 1 0
-                 0 0 |1 0 1|
-                 0 0 |0 1 0|-> this is the valid rectangle 
-                 1 0 |1 0 1|
-    */ 
