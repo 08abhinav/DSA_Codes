@@ -22,6 +22,7 @@ public class ErasureValue {
         return maxSum;
     }
     public static void main(String...args){
-
+        int[] nums = {5, 2, 1, 5, 2, 1, 1, 2, 5};
+        System.out.println(ErasureValue.maxUniqueSubarray(nums));
     }
 }
