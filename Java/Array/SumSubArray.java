@@ -23,6 +23,7 @@ public class SumSubArray {
         return sum;
     }
     public static void main(String... args) {
-        
+        int[] arr = {1, 2, 3};
+        System.out.println(SumSubArray.subArraySum(arr));
     }
 }
