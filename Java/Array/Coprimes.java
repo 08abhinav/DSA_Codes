@@ -14,6 +14,7 @@ public class Coprimes {
         else return gcd(b, a % b);
     }
     public static void main(String... args){
-
+        int[] arr = {1, 2, 3};
+        System.out.println(Coprimes.countCoPrimes(arr));
     }
 }
