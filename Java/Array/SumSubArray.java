@@ -1,3 +1,6 @@
+/**Given an array arr[], find the sum of all the subarrays of the given array.
+
+Note: It is guaranteed that the total sum will fit within a 32-bit integer range. */
 public class SumSubArray {
     // Approach 1
     // public static int subArraySum(int[] arr){
