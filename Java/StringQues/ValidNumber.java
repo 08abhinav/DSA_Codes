@@ -30,6 +30,9 @@ public class ValidNumber {
         return numberSeen && numberAfterE;
     }
     public static void main(String[] args) {
-        
+        String str = "-123.456e789";
+        String str2 = "99e2.5";
+        // System.out.println(ValidNumber.isNumber(str));
+        System.out.println(ValidNumber.isNumber(str2));
     }
 }
