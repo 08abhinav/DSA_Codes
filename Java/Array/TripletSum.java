@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class TripletSum {
-    public static boolean hasTriple(int[] arr, int target){
+    public static boolean hasTriplet(int[] arr, int target){
         Arrays.sort(arr);
         int n = arr.length;
 
@@ -21,5 +21,8 @@ public class TripletSum {
         return false;
     }
     public static void main(String[] args) {
+        int[] arr = {1, 4, 45, 6, 10, 8};
+        int target = 13;
+        System.out.println(TripletSum.hasTriplet(arr, target));
     }
 }
