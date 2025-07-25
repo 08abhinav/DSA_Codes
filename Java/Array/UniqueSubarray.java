@@ -26,6 +26,7 @@ public class UniqueSubarray{
         return currSum;
     }
     public static void main(String... args){
-
+        int[] arr = {1, 2, 3, 4 ,5};
+        System.out.println(UniqueSubarray.maxSum(arr));
     }
 }
