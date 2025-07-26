@@ -24,6 +24,7 @@ public class LongestSubstr {
         return maxLen;
     }
     public static void main(String[] args) {
-        
+        String s = "abcabcbb";
+        System.out.println(LongestSubstr.LengthOfLongestSubstring(s));
     }
 }
