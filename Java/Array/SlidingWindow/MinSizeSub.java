@@ -16,6 +16,7 @@ public class MinSizeSub{
 
     }
     public static void main(String[] args) {
-        
+        int[] arr = {2, 3, 1, 2, 4, 3};
+        System.out.println(MinSizeSub.minSubarray(arr, 7));
     }
 }
