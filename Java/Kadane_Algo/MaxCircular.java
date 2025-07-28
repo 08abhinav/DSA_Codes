@@ -22,6 +22,7 @@ public class MaxCircular{
         return Math.max(sum, circularSum);
     }
     public static void main(String[] args) {
-        
+       int[] nums = {8, -8, 9, -9, 10, -11, 12};
+       System.out.println(MaxCircular.maxCircularSum(nums));
     }
 }
