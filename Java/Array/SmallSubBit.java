@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SmallSubBit{
     public static int[] smallestSubarray(int[]nums){
         int n = nums.length;
@@ -14,6 +16,7 @@ public class SmallSubBit{
         return res;
     }
     public static void main(String...args){
-
+        int[] nums = {1,0,2,1,3};
+        System.out.println(Arrays.toString(SmallSubBit.smallestSubarray(nums)));
     }
 }
