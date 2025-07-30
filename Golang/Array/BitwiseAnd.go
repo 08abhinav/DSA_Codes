@@ -1,5 +1,12 @@
 package main
 
+func Max(a, b int)int{
+	if a > b{
+		return a
+	}
+	return b
+}
+
 func longestSubarray(nums []int)int{
 	maxLen, currLen, maxVal := 0, 0, 0
 
