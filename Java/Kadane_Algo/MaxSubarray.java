@@ -1,3 +1,6 @@
+/**53. Maximum Subarray
+
+Given an integer array nums, find the subarray with the largest sum, and return its sum. */
 public class MaxSubarray {
     public static int maxSubArray(int[] nums){
         int currSum = 0, maxSum = Integer.MIN_VALUE;
