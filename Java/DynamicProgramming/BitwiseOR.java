@@ -33,6 +33,7 @@ public class BitwiseOR{
         return resOr.size();
     }
     public static void main(String[] args) {
-        
+        int[] arr = {1, 1, 2};
+        System.out.println(BitwiseOR.subarrayBitwise(arr));
     }
 }
