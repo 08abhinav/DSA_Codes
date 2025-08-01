@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func gcd(a, b int)int{
 	if b == 0{
@@ -23,7 +23,7 @@ func countCoprime(nums []int)int{
 	return count
 }
 
-func main(){
-	nums := [...]int{1, 2, 3}
-	fmt.Println(countCoprime(nums[:]))
-}
+// func main(){
+// 	nums := [...]int{1, 2, 3}
+// 	fmt.Println(countCoprime(nums[:]))
+// }

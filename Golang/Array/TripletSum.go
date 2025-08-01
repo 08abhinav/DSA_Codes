@@ -29,7 +29,7 @@ func hasTriplet(arr []int, target int) bool {
 	return false
 }
 
-func main(){
-	arr := []int{1, 4, 45, 6, 10, 8}
-	fmt.Println(hasTriplet(arr, 13))
-}
+// func main(){
+// 	arr := []int{1, 4, 45, 6, 10, 8}
+// 	fmt.Println(hasTriplet(arr, 13))
+// }

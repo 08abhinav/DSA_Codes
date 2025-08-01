@@ -28,13 +28,13 @@ func rob(nums []int) int {
 
 	for i := 0; i < len(nums); i++ {
 		temp := prev
-		prev = max(prev2+nums[i], prev)
+		prev = max(prev2 + nums[i], prev)
 		prev2 = temp
 	}
 	return prev
 }
 
-func main() {
-	nums := []int{1, 2}
-	fmt.Println(rob(nums))
-}
+// func main() {
+// 	nums := []int{1, 2}
+// 	fmt.Println(rob(nums))
+// }

@@ -1,4 +1,4 @@
-class L1{
+public class L1{
     static class Node{
         int data;
         Node next;
@@ -20,6 +20,10 @@ class L1{
             }
             temp.next = newNode;
         }
+    }
+
+    public Node getHead(){
+        return head;
     }
 
     public void display(){

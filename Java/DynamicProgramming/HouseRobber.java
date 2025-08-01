@@ -17,7 +17,7 @@ public class HouseRobber {
         for(int i : nums){
             int temp = prev;
             prev = Math.max(prev2 + i, prev);
-            prev2 = prev;
+            prev2 = temp;
         }
         return prev;
     }

@@ -26,7 +26,7 @@ func countHillValley(nums []int) int {
 	return res
 }
 
-func main() {
-	nums := []int{2, 4, 1, 1, 6, 5}
-	fmt.Println(countHillValley(nums))
-}
+// func main() {
+// 	nums := []int{2, 4, 1, 1, 6, 5}
+// 	fmt.Println(countHillValley(nums))
+// }

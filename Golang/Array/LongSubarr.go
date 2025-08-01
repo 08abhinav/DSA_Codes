@@ -3,7 +3,7 @@
  * If there is no subarray with sum equal to k, return 0. */
 package main
 
-import "fmt"
+// import "fmt"
 
 func max(a, b int) int {
 	if a > b {
@@ -28,7 +28,7 @@ func longestSubarr(arr []int, k int) int {
 	return res
 }
 
-func main() {
-	arr := []int{10, 5, 2, 7, 1, -10}
-	fmt.Println(longestSubarr(arr, 15))
-}
+// func main() {
+// 	arr := []int{10, 5, 2, 7, 1, -10}
+// 	fmt.Println(longestSubarr(arr, 15))
+// }

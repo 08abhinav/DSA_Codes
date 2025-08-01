@@ -40,7 +40,7 @@ func maxCircular(arr []int) int {
 	return max(sum, circularSum)
 }
 
-func main() {
-	arr := []int{8, -8, 9, -9, 10, -11, 12}
-	fmt.Println(maxCircular(arr))
-}
+// func main() {
+// 	arr := []int{8, -8, 9, -9, 10, -11, 12}
+// 	fmt.Println(maxCircular(arr))
+// }

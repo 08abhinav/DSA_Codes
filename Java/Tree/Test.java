@@ -7,7 +7,7 @@ public class Test {
         T1.Node root = null;
         int ch, data;
         do{
-            System.out.print("1.Insert into Tree\n"+"2.Inorder Traversal\n"+"3.PostOrder Traversal\n"+"4.PreOrder Traversal\n"+"Enter your choice: ");
+            System.out.print("1.Insert into Tree\n2.Inorder Traversal\n3.PostOrder Traversal\n4.PreOrder Traversal\n5.Level Order Traversal\nEnter your choice: ");
             ch = sc.nextInt();
             switch (ch) {
                 case 1:
@@ -30,7 +30,12 @@ public class Test {
                 List<Integer> li3 = t.postorderTraversal(root);
                 System.out.println("Inorder Traversal: "+li3);
                 break;
+
+                case 5: 
+                List<List<Integer>> li4 = t.levelOrder(root);
+                System.out.println("Inorder Traversal: "+li4);
+                break;
             }
-        }while(ch<=4);
+        }while(ch>=1 && ch<=5);
     }
 }

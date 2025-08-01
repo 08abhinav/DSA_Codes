@@ -6,7 +6,7 @@ class SortSent{
 
         for(String word: str){
             int i = word.length()-1;
-            res[word.charAt(i)-'1'] = word.substring(0, i);
+            res[word.charAt(i) - '1'] = word.substring(0, i);
         }
 
         return String.join(" ", res);

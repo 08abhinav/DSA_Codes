@@ -17,19 +17,20 @@ public class RevVowels {
             }
         }
 
-        Collections.sort(arr);
+        Collections.sort(li);
 
         char[] arr = s.toCharArray();
         int j = 0;
 
         for(int i=0; i<arr.length; i++){
             if(vowelSet.contains(arr[i])){
-                arr[i] = vowelSet.get(j++);
+                arr[i] = li.get(j++);
             }
         }
         return new String(arr);
     }
     public static void main(String[] args) {
-        
+        String s = "lEetcOde";
+        System.out.println(RevVowels.reverseVowels(s));
     }
 }

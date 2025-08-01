@@ -2,7 +2,7 @@
 
 Given a string s, delete the minimum possible number of characters from s to make it fancy.
 
-Return the final string after the deletion. It can be shown that the answer will always be unique. */
+Return the final string after the deletion. It can be shown that the answer will always be unique.   */
 public class DeleteChar{
     public static String makeFancyString(String s){
         StringBuilder sb = new StringBuilder();

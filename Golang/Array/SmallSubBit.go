@@ -33,7 +33,7 @@ func smallestSubarray(nums []int) []int {
 	return res
 }
 
-func main() {
-	nums := []int{1, 0, 2, 1, 3}
-	fmt.Println(smallestSubarray(nums))
-}
+// func main() {
+// 	nums := []int{1, 0, 2, 1, 3}
+// 	fmt.Println(smallestSubarray(nums))
+// }
