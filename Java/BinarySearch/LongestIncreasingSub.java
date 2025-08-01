@@ -1,5 +1,6 @@
 package Java.BinarySearch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LongestIncreasingSub {
@@ -14,6 +15,22 @@ public class LongestIncreasingSub {
             }
         }
         return res.size();
+    }
+
+    public static int binarySearch(List<Integer> arr, int target){
+        int left = 0, right = arr.size() - 1;
+
+        while(left <= right){
+            int mid = (left + right) / 2;
+            if(arr.get(mid) == target){
+                return mid;
+            }else if(arr.get(mid) > target){
+                right = mid - 1;
+            }else{
+                left = mid + 1;
+            }
+        }
+        return left;
     }
     public static void main(String[] args) {
         
