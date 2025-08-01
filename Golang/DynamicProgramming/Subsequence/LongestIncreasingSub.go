@@ -1,5 +1,12 @@
 package main
 
+func Max(a, b int)int{
+	if a > b{
+		return a
+	}
+	return b
+}
+
 func lengthOfLIS(nums []int)int{
 	n := len(nums)
 	if n == 0 {
