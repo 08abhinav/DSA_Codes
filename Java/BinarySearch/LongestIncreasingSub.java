@@ -1,3 +1,6 @@
+/*300. Longest Increasing Subsequence
+
+Given an integer array nums, return the length of the longest strictly increasing subsequence. */
 package Java.BinarySearch;
 
 import java.util.ArrayList;
@@ -33,6 +36,7 @@ public class LongestIncreasingSub {
         return left;
     }
     public static void main(String[] args) {
-        
+       int[] nums = {10,9,2,5,3,7,101,18};
+       System.out.println(LongestIncreasingSub.lengthOfLIS(nums));
     }
 }
