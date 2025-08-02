@@ -39,6 +39,8 @@ public class RearrangeFruite{
     return totalCost;
 }
     public static void main(String... args){
-
+        int[] basket1 = {4,2,2,2};
+        int[] basket2 = {1,4,1,2};
+        System.out.println(RearrangeFruite.minCost(basket1, basket2));
     }
 }
