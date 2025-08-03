@@ -15,6 +15,11 @@ public class MaxFruite {
 
         return max;
     }
+    private int minSteps(int left, int right, int start) {
+        int goLeft = Math.abs(start - left) + (right - left);
+        int goRight = Math.abs(start - right) + (right - left);
+        return Math.min(goLeft, goRight);
+    }
     public static void main(String[] args) {
         
     }
