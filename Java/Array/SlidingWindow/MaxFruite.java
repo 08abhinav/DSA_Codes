@@ -15,12 +15,14 @@ public class MaxFruite {
 
         return max;
     }
-    private int minSteps(int left, int right, int start) {
+    private static int minSteps(int left, int right, int start) {
         int goLeft = Math.abs(start - left) + (right - left);
         int goRight = Math.abs(start - right) + (right - left);
         return Math.min(goLeft, goRight);
     }
     public static void main(String[] args) {
-        
+        int[][] fruits = {{0,9},{4,1},{5,7},{6,2},{7,4},{10,9}};
+        int startPos = 5, k = 4;
+        System.out.println(MaxFruite.maxTotalFruits(fruits, startPos, k));
     }
 }
