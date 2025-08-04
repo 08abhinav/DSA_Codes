@@ -13,6 +13,7 @@ public class FruitsInBask {
             
            while(count.size() > 2){
                 int leftFruit = fruits[left];
+                count.put(leftFruit, count.get(leftFruit) - 1);
                 if(count.get(leftFruit) == 0){
                     count.remove(leftFruit);
                 }
@@ -24,6 +25,7 @@ public class FruitsInBask {
         return maxLen;
     }
     public static void main(String...args){
-
+        int[] fruits = {1, 2, 1, 2, 3, 2, 2};
+        System.out.println(FruitsInBask.totalFruit(fruits));
     }
 }
