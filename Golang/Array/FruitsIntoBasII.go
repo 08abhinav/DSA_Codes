@@ -1,10 +1,12 @@
 package main
 
-func numOfUnplacedFruits(fruits[]int, baskets[]int)int{
+import "fmt"
+
+func numOfUnplacedFruits(fruits []int, baskets []int) int {
 	c := 0
-	for i := 0; i < len(fruits); i++{
-		for j :=0; j < len(baskets); j++{
-			if fruits[i] <= baskets[j]{
+	for i := 0; i < len(fruits); i++ {
+		for j := 0; j < len(baskets); j++ {
+			if fruits[i] <= baskets[j] {
 				c++
 				baskets[j] = 0
 				break
@@ -13,3 +15,4 @@ func numOfUnplacedFruits(fruits[]int, baskets[]int)int{
 	}
 	return len(fruits) - c
 }
+
