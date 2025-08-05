@@ -13,6 +13,8 @@ public class FruitsIntoBask{
         return fruits.length - c;
     }
     public static void main(String[] args) {
-        
+        int[] fruits = {4, 2, 5};
+        int[] baskets = {3, 5, 4};
+        System.out.println(FruitsIntoBask.numOfUnplacedFruits(fruits, baskets));
     }
 }
