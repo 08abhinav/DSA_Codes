@@ -16,3 +16,8 @@ func numOfUnplacedFruits(fruits []int, baskets []int) int {
 	return len(fruits) - c
 }
 
+func main() {
+	fruits := []int{4, 2, 5}
+	baskets := []int{3, 5, 4}
+	fmt.Println(numOfUnplacedFruits(fruits, baskets))
+}
