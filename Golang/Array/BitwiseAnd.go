@@ -26,3 +26,8 @@ func longestSubarray(nums []int) int {
 	return maxLen
 }
 
+
+// func main() {
+// 	nums := []int{1, 2, 3, 3, 2, 2}
+// 	fmt.Println(longestSubarray(nums))
+// }
