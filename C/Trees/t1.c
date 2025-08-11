@@ -11,12 +11,13 @@ node* insert(node*, int);
 void inOrder(node*);
 void postOrder(node*);
 void preOrder(node*);
+void inOrderSuccessor(node*);
 
 int main(){
     node *root = NULL;
     int ch, data;
     do{
-        printf("1.Insert\n2.Inorder\n3.Preorder\n4.Postorder\nEnter your choice: ");
+        printf("1.Insert\n2.Inorder\n3.Preorder\n4.Postorder\n5.Inorder Successor\nEnter your choice: ");
         scanf("%d", &ch);
         switch(ch){
             case 1: printf("Enter the value you want to insert: ");
@@ -47,8 +48,10 @@ int main(){
                 postOrder(root);
             }
             break;
+            case 5: inOrderSuccessor(root);
+            break;
         }
-    }while(ch>0 && ch<=4);
+    }while(ch>0 && ch<=5);
 }
 
 node* insert(node *root, int data){
@@ -75,6 +78,7 @@ void inOrder(node *root){
         printf("%d\t", root->data);
         inOrder(root->right);   
     }
+    printf("\n");
 }
 
 void preOrder(node *root){
@@ -83,6 +87,7 @@ void preOrder(node *root){
         preOrder(root->left);
         preOrder(root->right);
     }
+    printf("\n");
 }
 
 void postOrder(node *root){
@@ -91,4 +96,28 @@ void postOrder(node *root){
         postOrder(root->right);
         printf("%d\t", root->data);
     }
+    printf("\n");
+}
+
+void inOrderSuccessor(node *root){
+    if(root == NULL){
+        return;
+    }
+    printf("Inorder of tree is \n");
+    inOrder(root);
+    int x;
+    printf("Enter the value to find inorder of: \n");
+    scanf("%d", &x);
+    node *temp = root;
+    int successor;
+    while(temp != NULL){
+        if(x >= temp->data){
+            temp = temp->right;
+        }else{
+            successor = temp->data;
+            temp = temp->left;
+        }
+    }
+    printf("Inorder Successor of %d is: %d", x, successor);
+    printf("\n");
 }
