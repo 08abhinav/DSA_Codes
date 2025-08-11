@@ -29,3 +29,15 @@ func insert(head *List) *List{
 	temp.next = ptr;
 	return head;
 }
+
+func display(head *List){
+	if head == nil{
+		fmt.Println("List is empty")
+		return
+	}
+	i := head
+	for i != nil{
+		fmt.Println(i.data)
+		i = head.next
+	}
+}
