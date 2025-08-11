@@ -13,7 +13,7 @@ type List struct{
 func insert(head *List) *List{
 	var x int
 	fmt.Println("Enter the value to insert: ")
-	fmt.Scanf("%d", &x)
+	fmt.Scan(&x)
 
 	ptr := &List{
 		data: x,
@@ -50,7 +50,7 @@ func delete(head *List) *List{
 	display(head)
 	var x int
 	fmt.Println("Enter the value to delete: ")
-	fmt.Scanf("%d", &x)
+	fmt.Scan(&x)
 
 	if head.data == x{
 		return head.next
@@ -67,4 +67,26 @@ func delete(head *List) *List{
 	fmt.Println("After deletion")
 	display(head)
 	return head
+}
+
+func main(){
+	var Head *List
+	var ch int
+	for {
+		fmt.Println("\n1.Insert\n2.Delete\n3.Display\n4.Exit")
+		fmt.Scan(&ch)
+
+		switch ch {
+		case 1:
+			Head = insert(Head)
+		case 2:
+			Head = delete(Head)
+		case 3:
+			display(Head)
+		case 4:
+			return
+		default:
+			fmt.Println("Invalid choice")
+		}
+	}
 }
