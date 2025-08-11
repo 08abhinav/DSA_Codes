@@ -15,7 +15,10 @@ func insert(head *List) *List{
 	fmt.Println("Enter the value to insert: ")
 	fmt.Scanf("%d", &x)
 
-	ptr := &List{data: x}
+	ptr := &List{
+		data: x,
+		next: nil,
+	}
 
 	if head == nil{
 		return ptr
@@ -39,7 +42,7 @@ func display(head *List){
 	fmt.Println("Values in list")
 	for i != nil{
 		fmt.Println(i.data)
-		i = head.next
+		i = i.next
 	}
 }
 
