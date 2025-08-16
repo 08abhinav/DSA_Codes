@@ -9,6 +9,7 @@ public class Max69{
         return Integer.parseInt(new String(ch));
     }
     public static void main(String...args){
-
+        int num = 9669;
+        System.out.println(Max69.maximun69Num(num));
     }
 }
