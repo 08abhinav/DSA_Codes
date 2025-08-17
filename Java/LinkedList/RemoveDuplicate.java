@@ -1,4 +1,5 @@
-/*LeetCode Problem number 82 Remove Duplicate from sorted list II
+/*
+LeetCode Problem number 82 Remove Duplicate from sorted list II
  */
 class RemoveDuplicate{
     class Node{
