@@ -12,6 +12,7 @@ public class ZeroFilledSub {
         return ans;
     }
     public static void main(String...args){
-
+        int[] nums = {1, 3, 0, 0, 2, 0, 0, 4};
+        System.err.println(ZeroFilledSub.zeroFillSub(nums));;
     }
 }
