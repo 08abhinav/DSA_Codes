@@ -13,6 +13,8 @@ public class SearchInsertK{
        return res;
     }
     public static void main(String[] args) {
-        
+        int[] arr = {1, 3, 5, 7};
+        int k = 4;
+        System.out.println(SearchInsertK.searchK(arr, k));
     }
 }
