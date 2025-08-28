@@ -30,6 +30,23 @@ public class FirstLastOccur {
         }
         return res;
     }
+
+    public static int lastOccur(int[] arr, int x){
+        int low = 0, high = arr.length - 1, res = -1;
+        while(low <= high){
+            int mid = (low + high) / 2;
+            if(arr[mid] == x){
+                res = mid; 
+                low = mid + 1;
+            }
+            else if(arr[mid] < x){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return res;
+    }
     public static void main(String[] args) {
         
     }
