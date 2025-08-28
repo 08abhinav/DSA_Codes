@@ -12,7 +12,7 @@ public class FirstLastOccur {
         return res;
     }
 
-    public static int firstOccur(int[] arr, int x){
+    private static int firstOccur(int[] arr, int x){
         int low = 0, high = arr.length - 1, res = -1;
         while(low <= high){
             int mid = (low + high) / 2;
@@ -31,7 +31,7 @@ public class FirstLastOccur {
         return res;
     }
 
-    public static int lastOccur(int[] arr, int x){
+    private static int lastOccur(int[] arr, int x){
         int low = 0, high = arr.length - 1, res = -1;
         while(low <= high){
             int mid = (low + high) / 2;
@@ -48,6 +48,7 @@ public class FirstLastOccur {
         return res;
     }
     public static void main(String[] args) {
-        
+        int[] arr = {1, 3, 5, 5, 5, 5, 7, 138};
+        System.out.println(FirstLastOccur.findOcuur(arr, 7));
     }
 }
