@@ -1,3 +1,5 @@
+package main
+import "fmt"
 func areIsomophic(s1, s2 string)bool{
 	if len(s1) != len(s2){
 		return false;
@@ -15,11 +17,17 @@ func areIsomophic(s1, s2 string)bool{
 		c2 := s2[i]
 
 		if map1[c1] == -1 && map2[c2] == -1{
-			map1[c1] = (int)c2
-			map2[c2] = (int)c1
-		}else if map1[c1] != (int)c2 && map2[c2] != (int)c1{
+			map1[c1] = int(c2)
+			map2[c2] = int(c1)
+		}else if map1[c1] != int(c2) && map2[c2] != int(c1){
 			return false
 		}
 	}
 	return true;
+}
+
+func main(){
+	s1 := "aab"
+	s2 := "xxy"
+	fmt.Println(areIsomophic(s1, s2))
 }
