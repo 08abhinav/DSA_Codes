@@ -47,3 +47,8 @@ func findOccur(arr []int, x int) []int {
 	return res
 }
 
+func main() {
+	arr := []int{1, 3, 5, 5, 5, 5, 7, 123}
+	x := 5
+	fmt.Println(findOccur(arr, x))
+}
