@@ -88,10 +88,7 @@ void reverse(node *h){
 
         node *temp = h;
         printf("List after reversing\n");
-        while(temp!=NULL){
-            printf("%d\t", temp->data);
-            temp = temp->next;
-        }
+        display(*temp);
         printf("\n");
     }
 }
