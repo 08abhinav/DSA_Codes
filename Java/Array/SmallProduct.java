@@ -1,12 +1,13 @@
 /**Given two sorted 0-indexed integer arrays nums1 and nums2 as well as an integer k, 
- * return the kth (1-based) smallest product of nums1[i] * nums2[j] where 0 <= i < nums1.length and 0 <= j < nums2.length. */
+ * return the kth (1-based) smallest product of nums1[i] * nums2[j] 
+ * where 0 <= i < nums1.length and 0 <= j < nums2.length. */
 public class SmallProduct{
     public static long smallestProduct(int[] nums1, int[] nums2, int k){
         long left = -10000000000L;
         long right = 10000000000L;
 
         while(left < right){
-            long mid = left + (right - left) / 2;
+            long mid = (right + left) / 2;
             if(countProduct(nums1, nums2, mid) < k){
                 left = mid + 1;
             }else{
