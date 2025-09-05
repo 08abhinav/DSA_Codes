@@ -12,6 +12,7 @@ public class BrokenCal {
         return res + (startValue - target);
     }
     public static void main(String[] args){
-        
+        int startValue = 3, target = 10;
+        System.out.println(BrokenCal.brokenCalcu(startValue, target));
     }
 }
