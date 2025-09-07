@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class NUniqueIntegers {
     public static int[] sumZero(int n){
         int[] res = new int[n];
@@ -10,6 +12,7 @@ public class NUniqueIntegers {
         return res;
     }
     public static void main(String...args){
-
+        int n = 5;
+        System.out.println(Arrays.toString(NUniqueIntegers.sumZero(n)));
     }
 }
