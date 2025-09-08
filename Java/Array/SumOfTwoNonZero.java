@@ -8,6 +8,7 @@ class SumOfTwoNonZero{
         return new int[]{a, b};
     }
     public static void main(String[] args) {
-        
+        int n = 10000;
+        System.out.println(SumOfTwoNonZero.getNoZero(n));
     }
 }
