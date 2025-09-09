@@ -1,3 +1,6 @@
+/*Implement MinHeap
+Convert the given array of integers into min heap.
+ */
 import java.util.Arrays;
 
 public class MinHeap {
