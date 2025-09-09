@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MinHeap {
     public static void convertToMinHeap(int arr[], int n){
         for(int i = (n - 2) / 2; i >= 0; i--){
@@ -25,6 +27,9 @@ public class MinHeap {
         }
     }
     public static void main(String[] args) {
-        
+        int[] arr = {3, 1, 6, 5, 2, 4};
+        int n = arr.length;
+        MinHeap.convertToMinHeap(arr, n);
+        System.out.println(Arrays.toString(arr));
     }
 }
