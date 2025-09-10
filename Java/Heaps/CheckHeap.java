@@ -1,3 +1,4 @@
+/**Given an array arr of size n, the task is to check if the given array can be a level order representation of a Max Heap. */
 public class CheckHeap {
     public static boolean isHeap(int arr[], int n){
         for(int i = 0; i <= (n - 2) / 2; i++){
