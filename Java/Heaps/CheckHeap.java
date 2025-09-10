@@ -8,6 +8,8 @@ public class CheckHeap {
         return true;
     }
     public static void main(String...args){
-
+        int[] arr = {90, 15, 10, 7, 12, 2};
+        int n = arr.length;
+        System.out.println(CheckHeap.isHeap(arr, n));
     }
 }
