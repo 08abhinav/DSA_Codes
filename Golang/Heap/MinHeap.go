@@ -1,26 +1,37 @@
-func minHeapify(arr []int, i, n int){
-	left := 2 * i + 1
-	right := 2 * i + 2
+package main
+
+import "fmt"
+
+func minHeapify(arr []int, i, n int) {
+	left := 2*i + 1
+	right := 2*i + 2
 	small := i
 
-	if left < n && arr[left] < arr[small]{
+	if left < n && arr[left] < arr[small] {
 		small = left
 	}
 
-	if right < n && arr[right] < arr[small]{
+	if right < n && arr[right] < arr[small] {
 		small = right
 	}
 
-	if small != i{
-		int temp = arr[i]
+	if small != i {
+		temp := arr[i]
 		arr[i] = arr[small]
 		arr[small] = temp
 		minHeapify(arr, small, n)
 	}
 }
 
-func convertToMinHeap(arr []int, n int){
-	for i := (n - 2) / 2; i >= 0; i--{
+func convertToMinHeap(arr []int, n int) {
+	for i := (n - 2) / 2; i >= 0; i-- {
 		minHeapify(arr, i, n)
 	}
+}
+
+func main() {
+	arr := []int{3, 1, 6, 5, 2, 4}
+	n := len(arr)
+	convertToMinHeap(arr, n)
+	fmt.Println(arr);
 }
