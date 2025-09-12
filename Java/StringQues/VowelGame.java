@@ -7,5 +7,8 @@ public class VowelGame{
         }
         return false;
     }
-    public static void main(String...args){}
+    public static void main(String...args){
+        String s = "leetcoder";
+        System.out.println(VowelGame.doesAlicWin(s));
+    }
 }
