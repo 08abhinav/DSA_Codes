@@ -1,6 +1,6 @@
 import java.util.*;
 class VowelSpell{
-    public String[] spellchecker(String[] wordlist, String[] queries) {
+    public static String[] spellchecker(String[] wordlist, String[] queries) {
         Set<String> exact = new HashSet<>(Arrays.asList(wordlist));
         Map<String, String> caseMap = new HashMap<>();
         Map<String, String> vowelMap = new HashMap<>();
@@ -27,10 +27,11 @@ class VowelSpell{
         return result;
     }
 
-    private String toLower(String s) {
+    private static String toLower(String s) {
         return s.toLowerCase();
     }
-    private String deVowel(String s) {
+    
+    private static String deVowel(String s) {
         char[] ch = s.toCharArray();
         for (int i = 0; i < ch.length; i++) {
             if (isVowel(ch[i])) ch[i] = '*';
@@ -38,11 +39,13 @@ class VowelSpell{
         return new String(ch);
     }
     
-    private boolean isVowel(char c) {
+    private static boolean isVowel(char c) {
         return "aeiou".indexOf(Character.toLowerCase(c)) >= 0;
     }
 
     public static void main(String[] args) {
-        
+        String []wordlist = {"KiTe","kite","hare","Hare"};
+        String []queries = {"kite","Kite","KiTe","Hare","HARE","Hear","hear","keti","keet","keto"};
+        System.out.println(Arrays.toString(VowelSpell.spellchecker(wordlist, queries)));
     }
 }
