@@ -38,6 +38,9 @@ class VowelSpell{
         return new String(ch);
     }
     
+    private boolean isVowel(char c) {
+        return "aeiou".indexOf(Character.toLowerCase(c)) >= 0;
+    }
 
     public static void main(String[] args) {
         
