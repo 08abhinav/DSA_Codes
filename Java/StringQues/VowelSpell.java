@@ -1,3 +1,4 @@
+import java.util.*;
 class VowelSpell{
     public String[] spellchecker(String[] wordlist, String[] queries) {
         Set<String> exact = new HashSet<>(Arrays.asList(wordlist));
@@ -25,6 +26,11 @@ class VowelSpell{
         }
         return result;
     }
+
+    private String toLower(String s) {
+        return s.toLowerCase();
+    }
+
 
     public static void main(String[] args) {
         
