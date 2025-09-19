@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class PlusOne{
     public static int[] plusOne(int[] digits){
         for(int i = digits.length - 1; i >= 0; i--){
@@ -13,6 +15,7 @@ class PlusOne{
         return newDigits;
     }
     public static void main(String[] args) {
-        
+        int[] digits = {1, 2, 3};
+        System.out.println(Arrays.toString(PlusOne.plusOne(digits)));
     }
 }
