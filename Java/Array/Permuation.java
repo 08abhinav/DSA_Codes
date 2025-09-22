@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Permuation{
     public static void nextPermuation(int[] nums){
         int ind1 = -1, ind2 = -1;
@@ -14,7 +16,7 @@ public class Permuation{
         }else{
             for(int i = nums.length - 1; i >= 0; i--){
                 if(nums[i] > nums[ind1]){
-                    ind2 = 1;
+                    ind2 = i;
                     break;
                 }
             }
@@ -29,7 +31,7 @@ public class Permuation{
         nums[j] = temp;
     }
 
-    public static reverse(int[] nums, int s){
+    public static void reverse(int[] nums, int s){
         int l = s;
         int r = nums.length - 1;
         while(l < r){
@@ -39,6 +41,8 @@ public class Permuation{
         }
     }
     public static void main(String[] args) {
-        
+        int[] nums = {1, 2, 3};
+        Permuation.nextPermuation(nums);
+        System.err.println(Arrays.toString(nums));
     }
 }
