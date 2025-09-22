@@ -28,6 +28,16 @@ public class Permuation{
         nums[i] = nums[j];
         nums[j] = temp;
     }
+
+    public static reverse(int[] nums, int s){
+        int l = s;
+        int r = nums.length - 1;
+        while(l < r){
+            swap(nums, l, r);
+            l++;
+            r--;
+        }
+    }
     public static void main(String[] args) {
         
     }
