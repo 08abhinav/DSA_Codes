@@ -13,6 +13,7 @@ public class ToHexaDecimal {
         return res.reverse().toString();
     }
     public static void main(String...args){
-
+        int num = 26;
+        System.out.println(ToHexaDecimal.toHex(num));
     }
 }
