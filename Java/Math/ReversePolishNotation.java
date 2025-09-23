@@ -24,6 +24,7 @@ public class ReversePolishNotation {
         return stk.pop();
     }
     public static void main(String...args){
-
+        String[] s = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
+        System.out.println(ReversePolishNotation.evalRPN(s));
     }
 }
