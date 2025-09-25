@@ -12,3 +12,13 @@ func isHappyNumber(n int) bool {
 	}
 	return slow == 1
 }
+
+func square(n int)int{
+	ans := 0
+	for n > 0{
+		rem := n % 10
+		ans += rem * rem
+		n /= 10
+	}
+	return n
+}
