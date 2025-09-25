@@ -1,5 +1,7 @@
 package Java.Array;
 
+import java.util.Arrays;
+
 public class MergeTwoSorted {
     public static void mergeArrays(int[] nums1, int m, int nums2[], int n){
         int i = m - 1;
@@ -22,8 +24,15 @@ public class MergeTwoSorted {
             k -= 1;
             j -= 1;
         }
+
+        System.out.println("After sorting" + Arrays.toString(nums1));
     }
     public static void main(String[] args) {
-        
+        int[] nums1 = {10, 20, 20, 40, 0, 0};
+        int m = 4;
+        int[] nums2 = {1, 2};
+        int n = 2;
+
+        MergeTwoSorted.mergeArrays(nums1, m, nums2, n);
     }
 }
