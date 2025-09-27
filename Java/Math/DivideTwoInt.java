@@ -29,7 +29,7 @@ class DivideTwoInt{
         return ans*sign;
     }
     public static void main(String[] args) {
-        
-        
+        int dividend = 10, divisor = 3;
+        System.out.println(DivideTwoInt.divide(dividend, divisor));
     }
 }
