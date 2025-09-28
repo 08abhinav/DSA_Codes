@@ -1,3 +1,4 @@
+/*To check whether a given string is palindrome or not*/
 package main
 
 import "fmt"
