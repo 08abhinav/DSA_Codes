@@ -1,30 +1,40 @@
-func maxArea(height []int)int{
-	l, res, r := 0, 0, len(height)
+package main
 
-	for l < r{
+import "fmt"
+
+func maxArea(height []int) int {
+	l, res, r := 0, 0, len(height) - 1
+
+	for l < r {
 		area := min(height[l], height[r]) * (r - l)
-		res : max(area, res)
+		res = max(area, res)
 
-		if height[l] > height[r]{
+		if height[l] > height[r] {
 			r -= 1
-		}else{
+		} else {
 			l += 1
 		}
 	}
+	return res
 }
 
-func min(a, b int)int{
-	if a < b{
+func min(a, b int) int {
+	if a < b {
 		return a
-	}else{
+	} else {
 		return b
 	}
 }
 
-func max(a, b int)int{
-	if a > b{
+func max(a, b int) int {
+	if a > b {
 		return a
-	}else{
+	} else {
 		return b
 	}
+}
+
+func main() {
+	height := []int{1, 8, 6, 3, 5, 4, 8, 3, 7}
+	fmt.Println(maxArea(height))
 }
