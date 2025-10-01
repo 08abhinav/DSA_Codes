@@ -5,6 +5,10 @@ public class GcdStrings {
         int g = gcd(str1.length(), str2.length());
         return str2.substring(0, g);
     }
+    
+    public static int gcd(int a, int b){
+        return b == 0 ? a : gcd(b, a % b);
+    }
     public static void main(String[] args) {
         
     }
