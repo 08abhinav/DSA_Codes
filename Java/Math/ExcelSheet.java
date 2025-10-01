@@ -10,6 +10,7 @@ class ExcelSheet{
         return res.reverse().toString();
     }
     public static void main(String... args){
-
+        int num = 701;
+        System.out.println(ExcelSheet.convertToTitle(num));
     }
 }
