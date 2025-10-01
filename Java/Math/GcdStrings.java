@@ -10,6 +10,7 @@ public class GcdStrings {
         return b == 0 ? a : gcd(b, a % b);
     }
     public static void main(String[] args) {
-        
+        String s1 = "ABABABAB", s2 = "AB";
+        System.out.println(GcdStrings.gcdOfStrings(s1, s2));
     }
 }
