@@ -1,5 +1,17 @@
 class WaterBottles{
+    public int numWaterBottles(int numBottles, int numExchange) {
+        int drinked = 0;
+        int empty = 0;
+        while(numBottles > 0){
+            drinked += numBottles;
+            empty += numBottles;
+
+            numBottles = empty / numExchange;
+            empty = empty % numExchange;
+        }
+        return drinked;
+    }
     public static void main(String... args){
-        
+
     }
 }
