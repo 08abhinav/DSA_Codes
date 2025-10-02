@@ -1,5 +1,5 @@
 class WaterBottles{
-    public int numWaterBottles(int numBottles, int numExchange) {
+    public static int numWaterBottles(int numBottles, int numExchange) {
         int drinked = 0;
         int empty = 0;
         while(numBottles > 0){
@@ -12,6 +12,7 @@ class WaterBottles{
         return drinked;
     }
     public static void main(String... args){
-
+        int numBottles = 15, numExchange = 4;
+        System.out.println(WaterBottles.numWaterBottles(numBottles, numExchange));
     }
 }
