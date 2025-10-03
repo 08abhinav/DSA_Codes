@@ -10,6 +10,7 @@ class WaterBottleII{
         return numBottles;
     }
     public static void main(String... ags){
-
+        int numBottles = 13, numExchange = 6;
+        System.out.println(WaterBottleII.maxBottleDrunk(numBottles, numExchange));
     }
 }
