@@ -118,6 +118,7 @@ void inOrderSuccessor(node *root){
             temp = temp->left;
         }
     }
+    
     printf("Inorder Successor of %d is: %d", x, successor);
     printf("\n");
 }
