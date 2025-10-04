@@ -17,13 +17,13 @@ class DivideTwoInt{
         if(divisor == 1) return dividend;
         if(dividend == -1) return -dividend;
         int sign = 1;
-        if(dividend>0 && divisor<0) sign = -1;
-        if(dividend<0 && divisor>0) sign = -1;
+        if(dividend > 0 && divisor < 0) sign = -1;
+        if(dividend < 0 && divisor > 0) sign = -1;
 
         long n = Math.abs((long)dividend);
         long d = Math.abs((long)divisor);
         int ans = 0;
-        while(n>=d)
+        while(n >= d)
         {
             int p = 0;
             while(n >= d<<p)
