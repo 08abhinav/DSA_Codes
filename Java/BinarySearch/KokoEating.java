@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 class KokoEating{
-    public static int minEatingSpped(int[] piles, int h){
+    public static int minEatingSpeed(int[] piles, int h){
         int low = 1;
         int high = Arrays.stream(piles).max().getAsInt();
 
@@ -22,6 +22,8 @@ class KokoEating{
         return low;
     }
     public static void main(String[] args) {
-        
+        int[] piles = {25,10,23,4};
+        int h = 4;
+        System.out.println(KokoEating.minEatingSpeed(piles, h));
     }
 }
