@@ -3,7 +3,6 @@ public class L1{
         int data;
         Node next;
     }
-
     Node head = null;
     
     public void insert(int x){
@@ -27,15 +26,23 @@ public class L1{
     }
 
     public void display(){
-        if(head.next == null){
+        if(head == null){
             System.out.print("List is empty\n");
         }else{
             Node temp = head;
             System.out.print("Nodes are\n");
-            while(temp.next != null){
+            while(temp != null){
                 System.out.print(temp.data+"\t");
                 temp = temp.next;
             }
         }
     }
+
+    public void delete(Node node){
+        node.data = node.next.data;
+        node.next = node.next.next;
+        System.out.println("Node deleted");
+        display();
+    }
+
 }
