@@ -3,7 +3,9 @@ Implemented Linked list in go where insert, delete and display functions are cre
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type List struct{
 	data int
@@ -69,11 +71,28 @@ func delete(head *List) *List{
 	return head
 }
 
+func reverse(head *List) *List{
+	if head == nil{
+		return head
+	}
+
+	curr := head
+	var prev *List = nil
+
+	for curr != nil{
+		temp := curr.next
+		curr.next = prev
+		prev = curr
+		curr = temp
+	}
+	return prev
+}
+
 func main(){
 	var Head *List
 	var ch int
 	for {
-		fmt.Println("\n1.Insert\n2.Delete\n3.Display\n4.Exit")
+		fmt.Println("\n1.Insert\n2.Delete\n3.Display\n4.Reverse\n5.Exit")
 		fmt.Scan(&ch)
 
 		switch ch {
@@ -84,6 +103,9 @@ func main(){
 		case 3:
 			display(Head)
 		case 4:
+			Head = reverse(Head)
+			display(Head)
+		case 5:
 			return
 		default:
 			fmt.Println("Invalid choice")
