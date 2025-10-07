@@ -45,4 +45,20 @@ public class L1{
         display();
     }
 
+    public void reverse(){
+        if(head == null){
+            return ;
+        }
+        Node curr = head;
+        Node prev = null;
+
+        while(curr != null){
+            Node temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        head = prev;
+        display();
+    }
 }
