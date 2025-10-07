@@ -45,6 +45,7 @@ public class L1{
         display();
     }
 
+    // Using iteration method
     public void reverse(){
         if(head == null){
             return ;
@@ -60,5 +61,19 @@ public class L1{
         }
         head = prev;
         display();
+    }
+
+    // Using recursion
+    public Node reverseRecurr(Node node){
+        if(node == null || node.next == null){
+            head = node;
+            return node;
+        }
+
+        Node newNode = reverseRecurr(node.next);
+        node.next.next = node;
+        node.next = null;
+
+        return newNode;
     }
 }
