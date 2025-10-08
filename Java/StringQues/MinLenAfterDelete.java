@@ -8,7 +8,7 @@ The prefix and the suffix should not intersect at any index.
 The characters from the prefix and suffix must be the same.
 Delete both the prefix and the suffix.
 Return the minimum length of s after performing the above operation any number of times (possibly zero times). */
-package StringQues;
+
 
 public class MinLenAfterDelete {
     public static int minLen(String s){
