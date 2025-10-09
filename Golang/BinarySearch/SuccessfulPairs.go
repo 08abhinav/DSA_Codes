@@ -7,7 +7,7 @@ import (
 func successfulPairs(potions, spells []int, success int64) []int{
     sort.Ints(potions)
     m := len(potions)
-    res := make([]int, m)
+    res := make([]int, len(spells))
 
     for i := 0; i < len(spells); i++{
         strength := (int64)(spells[i])
@@ -34,4 +34,11 @@ func binarySearch(potions []int, strength, success int64) int{
         }
     }
     return idx
+}
+
+func main(){
+    potions := []int{2, 4, 5, 1, 3}
+    spells := []int{5, 1, 3}
+    success := 7
+    fmt.Print(successfulPairs(potions, spells, int64(success)))
 }
