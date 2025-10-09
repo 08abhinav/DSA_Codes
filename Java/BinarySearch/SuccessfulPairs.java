@@ -12,7 +12,7 @@ public class SuccessfulPairs {
         for(int i = 0; i < n; i++){
             int idx = binarySearch(potions, spells[i], success);
             if(idx != -1){
-                res[i] = m - i;
+                res[i] = m - idx;
             }
         }
         return res;
@@ -34,6 +34,9 @@ public class SuccessfulPairs {
     }
 
     public static void main(String... args){
-
+        int[] potions = {2, 1, 3, 5, 4};
+        int[] spells = {5, 1, 3};
+        int success = 7;
+        System.out.println(Arrays.toString(SuccessfulPairs.successPairs(potions, spells, success)));
     }
 }
