@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class L1{
     static class Node{
         int data;
@@ -5,7 +7,7 @@ public class L1{
     }
     Node head = null;
     
-    public void insert(int x){
+    public Node insert(int x){
         Node newNode = new Node();
         newNode.data = x;
         newNode.next = null;
@@ -19,6 +21,7 @@ public class L1{
             }
             temp.next = newNode;
         }
+        return head;
     }
 
     public Node getHead(){
@@ -75,5 +78,34 @@ public class L1{
         node.next = null;
 
         return newNode;
+    }
+
+    // 876. Leetcode problem to find middle of a linked list
+    public int getMiddle(Node node){
+        if(node == null || node.next == null){
+            return node.data;
+        }
+        Node slow = node;
+        Node fast = node;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow.data;
+    }
+
+    public boolean isPalindrome(Node node){
+        Stack<Integer> stk = new Stack<>();
+        Node temp = node;
+        while(temp != null){
+            stk.push(temp.data);
+            temp = temp.next;
+        }
+        temp = node;
+        while(temp != null && stk.pop() == temp.data){
+            temp = temp.next;
+        }
+        return temp == null;
     }
 }
