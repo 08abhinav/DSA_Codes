@@ -7,6 +7,7 @@ public class ColumnSheet {
         return res;
     }
     public static void main(String[] args) {
-        
+        String s = "ZY";
+        System.out.println(ColumnSheet.titleNumber(s));
     }
 }
