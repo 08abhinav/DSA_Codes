@@ -1,7 +1,16 @@
-func excelSheetNum(s string)int{
+package main
+
+import "fmt"
+
+func excelSheetNum(s string) int {
 	res := 0
-	for i := 0; i < len(s) - 1; i++{
-		res = res * 26 + (s[i] - 'A' + 1)
+	for i := 0; i < len(s); i++ {
+		res = res*26 + (int)(s[i]-'A'+1)
 	}
 	return res
+}
+
+func main() {
+	s := "AB"
+	fmt.Println(excelSheetNum(s))
 }
