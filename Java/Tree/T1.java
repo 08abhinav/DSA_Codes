@@ -90,4 +90,28 @@ class T1{
         }
         return res;
     }
+
+    public int maxDepth(Node root){
+        Queue<Node> queue = new LinkedList<>();
+        int level = 0;
+        
+        if(root == null) return 0;
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            int size = queue.size();
+
+            for(int i = 0; i < size; i++){
+                Node r = queue.poll();
+                if(r.left != null){
+                    queue.add(r.left);
+                }
+                if(r.right != null){
+                    queue.add(r.right);
+                }
+            }
+            level += 1;
+        }
+        return level;
+    }
 }
