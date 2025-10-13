@@ -15,7 +15,7 @@ class T1{
             this.data = data;
             left = right = null;
         }
-    }
+    }   
 
     public Node insertNode(Node root, int data){
         if(root == null){
@@ -43,14 +43,14 @@ class T1{
     }
 
     public List<Integer> inorderTraversal(Node root) {
-    List<Integer> result = new ArrayList<>();
-    if (root != null) {
-        result.addAll(inorderTraversal(root.left));
-        result.add(root.data);
-        result.addAll(inorderTraversal(root.right));
+        List<Integer> result = new ArrayList<>();
+        if (root != null) {
+            result.addAll(inorderTraversal(root.left));
+            result.add(root.data);
+            result.addAll(inorderTraversal(root.right));
+        }
+        return result;
     }
-    return result;
-}
 
     public List<Integer> preorderTraversal(Node root){
         List<Integer> li = new ArrayList<>();
