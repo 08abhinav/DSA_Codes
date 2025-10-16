@@ -1,5 +1,5 @@
-/**Implement Max Heap
-Convert the given array into max heap.
+/**Implement Max Heap 
+ Convert the given array into max heap. 
  */
 import java.util.Arrays;
 
