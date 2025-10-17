@@ -12,4 +12,9 @@ class PerfectSquare{
         }
         return res;
     }
+
+    public static void main(String... args){
+        int n = 11;
+        System.out.println(floorSqrt(n));
+    }
 }
