@@ -9,7 +9,7 @@ public class CharsByFreq {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        PriorityQueue<Map.Entry<Character, Integer>> heap = new PriorityQueue<>();
+        PriorityQueue<Map.Entry<Character, Integer>> heap = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
         heap.addAll(map.entrySet());
 
         StringBuilder res = new StringBuilder();
@@ -21,6 +21,7 @@ public class CharsByFreq {
         return res.toString();
     }
     public static void main(String[] args) {
-        
+        String s = "tree";
+        System.out.println(CharsByFreq.frequencySort(s));
     }
 }
