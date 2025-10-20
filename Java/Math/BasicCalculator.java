@@ -31,6 +31,7 @@ class BasicCalculator{
         return sum;
     }
     public static void main(String[] args) {
-        
+        String s = "3 * 3 / 3";
+        System.out.println(BasicCalculator.calculate(s));
     }
 }
