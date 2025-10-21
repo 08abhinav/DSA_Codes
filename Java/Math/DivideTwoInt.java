@@ -30,13 +30,13 @@ class DivideTwoInt{
             p++;
 
             p--;
-            n -= d<<p;
-            ans += 1<<p;
+            n -= d << p;
+            ans += 1 << p;
         }
         if(ans>=Math.pow(2,31) && sign==1) return Integer.MAX_VALUE;
         if(ans>=Math.pow(2,31) && sign==-1) return Integer.MIN_VALUE;
 
-        return ans*sign;
+        return ans * sign;
     }
     public static void main(String[] args) {
         int dividend = 10, divisor = 3;
