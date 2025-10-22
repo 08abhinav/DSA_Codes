@@ -23,7 +23,7 @@ public class RemoveAnagrams {
         return res;
     }
     public static void main(String[] args) {
-        String[] words = {"abba", "baba", "bbaa", "cd", "cd"};
+        String[] words = {"abba", "baba", "bbaa", "dc", "dc"};
         System.out.println(RemoveAnagrams.removeAnagrams(words));
     }
 }
