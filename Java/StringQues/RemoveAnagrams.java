@@ -16,13 +16,14 @@ public class RemoveAnagrams {
         res.add(words[0]);
 
         for(int i = 1; i < n; i++){
-            if(!ana[i - 1].equals(i)){
+            if(!ana[i - 1].equals(ana[i])){
                 res.add(words[i]);
             }
         }
         return res;
     }
     public static void main(String[] args) {
-        
+        String[] words = {"abba", "baba", "bbaa", "cd", "cd"};
+        System.out.println(RemoveAnagrams.removeAnagrams(words));
     }
 }
