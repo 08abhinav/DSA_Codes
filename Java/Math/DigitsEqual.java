@@ -1,6 +1,6 @@
 public class DigitsEqual{
     public static boolean hasSameDigits(String s){
-        int iterations = 0;
+        int iteration = 0;
         char[] arr = s.toCharArray();
 
         while (arr.length - iteration != 2) {
@@ -12,6 +12,7 @@ public class DigitsEqual{
         return arr[0] == arr[1];
     }
     public static void main(String[] args) {
-        
+        String s = "3902";
+        System.out.println(DigitsEqual.hasSameDigits(s));
     }
 }
