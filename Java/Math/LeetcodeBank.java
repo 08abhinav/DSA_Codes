@@ -5,6 +5,7 @@ public class LeetcodeBank {
         return (w * (49 + 7 * w) + d * (2 * w + d + 1)) / 2;
     }
     public static void main(String... args){
-
+        int n = 4;
+        System.out.println(LeetcodeBank.totalMoney(n));
     }
 }
