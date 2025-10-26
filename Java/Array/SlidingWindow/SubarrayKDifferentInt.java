@@ -3,29 +3,35 @@ import java.util.Map;
 
 public class SubarrayKDifferentInt{
     public static int kDistinct(int[] nums, int k){
-        return atMostK(nums, k) - atMostK(nums, k - 1);
+        int subWithMaxK = atMostK(nums, k);
+        int reducedSubWithMaxK = atMostK(nums, k - 1);
+        return subWithMaxK - reducedSubWithMaxK;
     }
 
     public static int atMostK(int[] nums, int K){
-        int left = 0, right = 0, res = 0;
-        Map<Integer, Integer> count = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
+        int left = 0, right = 0, ans = 0;
         
-        while(right < nums.length){
-            count.put(nums[right], count.getOrDefault(count, 0) + 1);
-
-            while(count.size() > K){
-                count.put(nums[left], count.get(nums[left]) - 1);
-                if(count.get(nums[left]) == 0){
-                    count.remove(nums[left]);
+        while (right < nums.length) {
+            map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
+            
+            while (map.size() > K) {
+                map.put(nums[left], map.get(nums[left]) - 1);
+                if (map.get(nums[left]) == 0) {
+                    map.remove(nums[left]);
                 }
-                left += 1;
+                left++;
             }
-            res += right - left  + 1;
-            right += 1;
+            
+            ans += right - left + 1; 
+            right++;
         }
-        return res;
+        
+        return ans;
     }
     public static void main(String[] args) {
-        
+        int[] nums = {1,2,1,3,4};
+        int k = 3;
+        System.out.println(SubarrayKDifferentInt.kDistinct(nums, k));
     }
 }
