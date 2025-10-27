@@ -6,7 +6,7 @@ public class EvenOddChars{
         Map<Character, Integer> freq = new HashMap<>();
         
         for(char c : s.toCharArray()){
-            freq.put(c, freq.getOrDefault(freq, 0) + 1);
+            freq.put(c, freq.getOrDefault(c, 0) + 1);
         }
 
         int max = Integer.MIN_VALUE;
@@ -23,6 +23,7 @@ public class EvenOddChars{
         return Math.abs(max - min);
     }
     public static void main(String[] args) {
-        
+        String s = "aartfu";
+        System.out.println(EvenOddChars.absDiff(s));
     }
 }
