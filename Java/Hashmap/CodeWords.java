@@ -27,6 +27,7 @@ public class CodeWords {
         return key;
     }
     public static void main(String[] args) {
-        
+        String s = "apple banana are my favourite fruit anywhere";
+        System.out.println(CodeWords.winAll(s));
     }
 }
