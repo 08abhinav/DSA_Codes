@@ -14,6 +14,7 @@ public class DigitSum{
         return s;
     }
     public static void main(String...args){
-
+        String s = "11111222223";
+        System.out.println(DigitSum.digitSum(s, 3));
     }
 }
