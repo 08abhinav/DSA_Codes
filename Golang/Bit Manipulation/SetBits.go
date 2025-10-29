@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Approach 1
 // func smallNum(n int)int{
 // 	for i := 0; i <= n; i++{
@@ -17,4 +19,9 @@ func smallNum(n int)int{
 		n |= n + 1
 	}
 	return n
+}
+
+func main(){
+	n := 5
+	fmt.Println(smallNum(n))
 }
