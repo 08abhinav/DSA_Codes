@@ -36,6 +36,7 @@ public class RemoveStars{
         return res.toString();
     }
     public static void main(String[] args) {
-        
+        String s = "leet**cod*e";
+        System.out.println(RemoveStars.removeStar(s));
     }
 }
