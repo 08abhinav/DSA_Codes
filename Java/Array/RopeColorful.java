@@ -13,6 +13,8 @@ public class RopeColorful{
         return minTime;
     }
     public static void main(String[] args) {
-        
+        int[] neededTime = {1, 2, 3, 4, 1};
+        String s = "aabaa";
+        System.out.println(ropeColorful(s, neededTime));
     }
 }
