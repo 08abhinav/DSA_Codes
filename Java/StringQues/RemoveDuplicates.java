@@ -30,6 +30,7 @@ public class RemoveDuplicates{
         return sb.toString();
     }
     public static void main(String[] args) {
-        
+        String s = "bcabc";
+        System.out.println(removeDuplicateLetters(s));
     }
 }
