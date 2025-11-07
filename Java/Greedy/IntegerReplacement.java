@@ -13,6 +13,7 @@ public class IntegerReplacement {
         return count;
     }
     public static void main(String[] args) {
-        
+        int n = 11;
+        System.out.println(integerReplace(n));
     }
 }
