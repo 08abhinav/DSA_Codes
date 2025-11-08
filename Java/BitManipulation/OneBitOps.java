@@ -8,6 +8,7 @@ public class OneBitOps {
         return res;
     }
     public static void main(String...args){
-
+        int n = 15;
+        System.out.println(minOneBitOps(n));
     }
 }
