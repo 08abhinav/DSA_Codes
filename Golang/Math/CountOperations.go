@@ -1,0 +1,9 @@
+func countOps(num1, num2 int)int{
+	res := 0
+	for num1 > 0 && num2 > 0{
+		res += num1 / num2
+		num1 %= num2
+		num1, num2 = num2, num1
+	}
+	return res
+}
