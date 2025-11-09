@@ -11,6 +11,8 @@ public class CountOperations{
         return res;
     }
     public static void main(String[] args) {
-        
+        int num1 = 2;
+        int num2 = 3;
+        System.out.println(countOps(num1, num2));
     }
 }
