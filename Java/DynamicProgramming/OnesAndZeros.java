@@ -17,6 +17,8 @@ public class OnesAndZeros{
         return dp[m][n];
     }
     public static void main(String[] args) {
-        
+        String strs[] = {"10","0001","111001","1","0"};
+        int m = 5, n = 3;
+        System.out.println(findMaxForm(strs, m, n));
     }
 }
