@@ -29,6 +29,7 @@ public class ArrayEleZero{
         return b == 0 ? a : gcd(b, b % a);
     }
     public static void main(String[] args) {
-        
+        int[] nums = {2, 6, 3, 4};
+        System.out.println(minOps(nums));
     }
 }
