@@ -24,6 +24,10 @@ public class ArrayEleZero{
         return (minLen - 1) + (n - 1);
 
     }
+
+    private static int gcd(int a, int b){
+        return b == 0 ? a : gcd(b, b % a);
+    }
     public static void main(String[] args) {
         
     }
