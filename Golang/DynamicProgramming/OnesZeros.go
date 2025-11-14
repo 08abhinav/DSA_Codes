@@ -17,3 +17,14 @@ func findMaxForm(strs []string, m int, n int) int {
     }
     return dp[m][n];
 }
+func countBits(s string)(int, int){
+    zeros, ones := 0, 0
+    for _, i := range s{
+        if i == '0'{
+            zeros += 1
+        }else{
+            ones += 1
+        }
+    }
+    return zeros, ones
+}
