@@ -17,6 +17,7 @@ public class NextGreaterEle{
         return res;
     }
     public static void main(String[] args) {
-        
+        int[] nums = {2, 1, 5, 3, 6, 4, 8};
+        System.out.println(Arrays.toString(nextGreater(nums)));
     }
 }
