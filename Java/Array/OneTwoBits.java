@@ -9,6 +9,7 @@ public class OneTwoBits {
         return i == n - 1;
     }
     public static void main(String... args){
-
+        int[] bits = {1, 1, 1, 0};
+        System.out.println(isOneBitCharacter(bits));
     }
 }
