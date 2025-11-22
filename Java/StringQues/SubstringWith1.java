@@ -12,6 +12,7 @@ public class SubstringWith1{
         return (int)total;
     }
     public static void main(String[] args) {
-        
+        String s = "0110111";
+        System.out.println(numSub(s));
     }
 }
