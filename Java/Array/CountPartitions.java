@@ -16,6 +16,7 @@ public class CountPartitions{
         return count;
     }
     public static void main(String[] args) {
-        
+        int[] nums = {10, 10, 3, 7, 6};
+        System.out.println(partitions(nums));
     }
 }
