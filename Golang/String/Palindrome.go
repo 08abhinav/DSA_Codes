@@ -15,7 +15,7 @@ func isPalindromic(s string) bool {
 	return true
 }
 
-func main() {
-	s := "abcba"
-	fmt.Println(isPalindromic(s));
-}
+// func main() {
+// 	s := "abcba"
+// 	fmt.Println(isPalindromic(s));
+// }
