@@ -12,3 +12,8 @@ func countSquare(n int) int{
 	}
 	return count
 }
+
+func main(){
+	n := 5
+	fmt.Println(countSquare(n))
+}
