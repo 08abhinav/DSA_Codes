@@ -20,6 +20,8 @@ public class ContiguousSum{
         return false;
     }
     public static void main(String[] args) {
-        
+        int[] nums = {23,2,6,4,7};
+        int k = 6;
+        System.out.println(checkSubArray(nums, k));
     }
 }
