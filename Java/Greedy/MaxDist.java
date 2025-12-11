@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MaxDist{
@@ -20,6 +22,10 @@ public class MaxDist{
         return result;
     }
     public static void main(String...args){
-
+        List<List<Integer>> li = new ArrayList<>();
+        li.add(Arrays.asList(1, 2, 3));
+        li.add(Arrays.asList(4, 5));
+        li.add(Arrays.asList(1, 2, 3));
+        System.out.println(maxDistance(li));
     }
 }
