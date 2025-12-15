@@ -16,6 +16,8 @@ public class ProductK {
         return res;
     }
     public static void main(String[] args) {
-        
+        int[] nums = {10, 5, 2, 5};
+        int k = 100;
+        System.out.println(getProduct(nums, k));
     }
 }
