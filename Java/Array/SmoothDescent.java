@@ -12,6 +12,7 @@ public class SmoothDescent {
         return res;
     }
     public static void main(String... args){
-
+        int[] prices = {5, 3, 2, 1, 7, 6};
+        System.out.println(getDescentPeriod(prices));
     }
 }
