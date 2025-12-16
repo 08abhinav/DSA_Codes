@@ -1,3 +1,8 @@
+/*581. Shortest Unsorted Continuous Subarray
+Given an integer array nums, you need to find one continuous subarray such that if you only sort 
+this subarray in non-decreasing order, then the whole array will be sorted in non-decreasing order.
+
+Return the shortest such subarray and output its length. */
 public class ShortestUnsorted {
     public static int findUnsortedArray(int[] nums){
         int n = nums.length, end = -2, beg = -1, max = nums[0], min = nums[n - 1];
