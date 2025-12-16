@@ -10,6 +10,7 @@ public class ShortestUnsorted {
         return end - beg + 1;
     }
     public static void main(String... args){
-
+        int[] nums = {2, 6, 4, 8, 10, 9, 15};
+        System.out.println(findUnsortedArray(nums));
     }
 }
