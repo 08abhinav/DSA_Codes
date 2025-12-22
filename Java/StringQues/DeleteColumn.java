@@ -15,6 +15,7 @@ public class DeleteColumn {
         return count;
     }
     public static void main(String...args){
-
+        String strs[] = {"cba", "daf", "ghi"};
+        System.out.println(minDeletion(strs));
     }
 }
