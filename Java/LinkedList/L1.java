@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class L1{
@@ -110,6 +111,22 @@ public class L1{
     }
 
     /*Leetcode problem 1019. Next Greater Node in Linked List */
+    public int[] nextLargetNode(Node head){
+        ArrayList<Integer> list = new ArrayList<>();
+        for(Node i = head; i != null; i = head.next){
+            list.add(i.data);
+        }
+
+        int[] res = new int[list.size()];
+        Stack<Integer> stk = new Stack<>();
+        for(int i = 0; i < list.size(); ++i){
+            while(!stk.isEmpty() && list.get(stk.peek()) < list.get(i)){
+                res[stk.pop()] = list.get(i);
+            }
+            stk.push(i);
+        }
+        return res;
+    }
 
     
 }
