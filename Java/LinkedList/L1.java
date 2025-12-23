@@ -109,5 +109,7 @@ public class L1{
         return temp == null;
     }
 
+    /*Leetcode problem 1019. Next Greater Node in Linked List */
+
     
 }
