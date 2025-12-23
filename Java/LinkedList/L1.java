@@ -111,7 +111,7 @@ public class L1{
     }
 
     /*Leetcode problem 1019. Next Greater Node in Linked List */
-    public int[] nextLargetNode(Node head){
+    public int[] nextLargestNode(Node head){
         ArrayList<Integer> list = new ArrayList<>();
         for(Node i = head; i != null; i = head.next){
             list.add(i.data);
