@@ -19,6 +19,8 @@ public class RedistributionApple {
         return res;
     }
     public static void main(String...args){
-
+        int[] apple = {5, 5, 5};
+        int[] capacity = {2, 4, 2, 7};
+        System.out.println(minBoxes(apple, capacity));
     }
 }
