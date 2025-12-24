@@ -1,3 +1,9 @@
+package main
+import ( "fmt"
+"sort"
+
+)
+
 func minBoxes(apple, capacity []int)int{
 	sort.Ints(capacity)
 	sum := 0
@@ -14,4 +20,10 @@ func minBoxes(apple, capacity []int)int{
 		}
 	}
 	return res
+}
+
+func main(){
+	apple := []int{5, 5, 5}
+	capacity := []int{2, 4, 2, 7}
+	fmt.Println(minBoxes(apple, capacity))
 }
