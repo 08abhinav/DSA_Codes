@@ -15,6 +15,8 @@ public class MaximizeHappiness {
         return res;
     }
     public static void main(String[] args) {
-        
+        int[] happiness = {2, 4, 5, 3};
+        int k = 2;
+        System.out.println(maximizeHappiness(happiness, k));
     }
 }
