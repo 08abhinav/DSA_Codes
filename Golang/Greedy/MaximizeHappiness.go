@@ -1,6 +1,10 @@
+package main
+import ("sort"
+"fmt")
+
 func maximizeHappiness(happiness []int, k int)int64{
 	sort.Ints(happiness)
-	n := happiness.length - 1
+	n := len(happiness) - 1
 	var res int64
 
 	for i := 0; i < k; i++{
@@ -11,4 +15,9 @@ func maximizeHappiness(happiness []int, k int)int64{
 		}
 	}
 	return res
+}
+
+func main(){
+	happiness, k := []int{2, 4, 5, 3}, 2
+	fmt.Println(maximizeHappiness(happiness, k))
 }
