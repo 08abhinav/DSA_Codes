@@ -17,6 +17,8 @@ public class ArrayForm {
         return res;
     }
     public static void main(String... args){
-
+        int[] num = {1, 2, 0, 0};
+        int k = 34;
+        System.out.println(addToArrayForm(num, k));
     }
 }
