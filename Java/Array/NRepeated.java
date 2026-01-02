@@ -12,6 +12,7 @@ public class NRepeated{
         return nums[nums.length - 1];
     }
     public static void main(String[] args) {
-        
+        int[] nums = {5,1,5,2,5,3,5,4};
+        System.out.println(repeatedNTimes(nums));
     }
 }
