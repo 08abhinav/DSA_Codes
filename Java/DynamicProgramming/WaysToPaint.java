@@ -11,6 +11,7 @@ public class WaysToPaint {
         return (int)((a[n - 1] + b[n - 1]) % MOD);
     }
     public static void main(String... args){
-
+        int n = 5000;
+        System.out.println(numOfWays(n));
     }
 }
