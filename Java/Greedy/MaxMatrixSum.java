@@ -18,6 +18,7 @@ public class MaxMatrixSum {
         return negCount % 2 == 0 ? totalSum : totalSum - 2 * minAbs;
     }
     public static void main(String[] args) {
-        
+        int matrix[][] = {{1, -1}, {-1, 1}};
+        System.out.println(maxSum(matrix));
     }
 }
