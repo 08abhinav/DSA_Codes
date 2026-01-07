@@ -11,3 +11,10 @@ func distMoney(money, children int)int{
 
 	return min(children - 1, money / 7)
 }
+
+func min(a, b int)int{
+	if a > b{
+		return b
+	}
+	return a
+}
