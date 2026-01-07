@@ -13,6 +13,7 @@ public class DistributeMoney {
         return Math.min(children - 1, money / 7);
     }
     public static void main(String...args){
-
+        int money = 20, children = 3;
+        System.out.println(distMoney(money, children));
     }
 }
