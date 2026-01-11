@@ -19,6 +19,7 @@ public class MinASCII {
         return total - 2 * dp[0][0];
     }
     public static void main(String...args){
-
+        String s1 = "sea", s2 = "eat";
+        System.out.println(minDelete(s1, s2));
     }
 }
