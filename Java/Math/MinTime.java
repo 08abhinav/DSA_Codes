@@ -7,6 +7,7 @@ public class MinTime {
         return res;
     }
     public static void main(String...args){
-        
+        int [][]points = new int[][]{{1, 2}, {3, 4}, {-1, 0}};
+        System.out.println(minTimeToVisitAllPoints(points));
     }
 }
