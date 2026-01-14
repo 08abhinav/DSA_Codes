@@ -1,5 +1,7 @@
-/*168. Excel Sheet Column Title
-Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet. */
+/*
+168. Excel Sheet Column Title
+Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet. 
+*/
 class ExcelSheet{
     public static String convertToTitle(int columnNumber){
         StringBuilder res = new StringBuilder();
