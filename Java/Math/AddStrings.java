@@ -1,8 +1,10 @@
-/*415. Add Strings
-Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
+/*
+415. Add Strings
+Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 
+as a string.
 
-You must solve the problem without using any built-in library for handling large integers (such as BigInteger). 
-You must also not convert the inputs to integers directly. */
+You must solve the problem without using any built-in library for handling large integers 
+(such as BigInteger). You must also not convert the inputs to integers directly. */
 public class AddStrings {
     public static String add(String num1, String num2){
         int i = num1.length() - 1, j = num2.length() - 1;
