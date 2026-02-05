@@ -8,6 +8,7 @@ public class TransformArray{
         return res;
     }
     public static void main(String... args){
-        
+        int[] nums = {3, -2, 1, 1};
+        System.out.println(constructTransformedArray(num));
     }
 }
