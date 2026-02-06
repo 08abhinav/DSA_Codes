@@ -11,6 +11,8 @@ public class BalanceArray{
         return nums.length - maxLen;
     }
     public static void main(String... args){
-        
+        int[] nums = {2, 1, 5};
+        int k = 2;
+        System.out.println(minRemoval(nums, k));
     }
 }
