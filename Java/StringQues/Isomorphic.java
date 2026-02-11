@@ -1,4 +1,5 @@
-/**Isomorphic String 
+/*
+Leetcode Problem-> Isomorphic String 
  * Two strings are said to be isomorphic if characters in String s1 can be changed to get s2.
  */
 public class Isomorphic {
