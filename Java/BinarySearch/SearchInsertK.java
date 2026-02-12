@@ -1,8 +1,10 @@
 package Java.BinarySearch;
 
-/*Given a sorted array arr[] (0-index based) of distinct integers and an integer k, 
- find the index of k if it is present in the arr[]. If not, return the index where k 
- should be inserted to maintain the sorted order. */
+/*
+Given a sorted array arr[] (0-index based) of distinct integers and an integer k, 
+find the index of k if it is present in the arr[]. 
+If not, return the index where k should be inserted to maintain the sorted order. 
+*/
 public class SearchInsertK{
     public static int searchK(int[] arr, int k){
         int low = 0, high = arr.length - 1, res = arr.length;
