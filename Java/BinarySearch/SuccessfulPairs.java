@@ -7,7 +7,8 @@ You are also given an integer success. A spell and potion pair is considered suc
 of their strengths is at least success.
 
 Return an integer array pairs of length n where pairs[i] is the number of potions that will form a 
-successful pair with the ith spell. */
+successful pair with the ith spell. 
+*/
 
 package Java.BinarySearch;
 
