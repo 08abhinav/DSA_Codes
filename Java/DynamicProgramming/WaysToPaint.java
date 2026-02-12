@@ -5,7 +5,8 @@ the three colors: Red, Yellow, or Green while making sure that no two adjacent c
 same color (i.e., no two cells that share vertical or horizontal sides have the same color).
 
 Given n the number of rows of the grid, return the number of ways you can paint this grid. 
-As the answer may grow large, the answer must be computed modulo 109 + 7. */
+As the answer may grow large, the answer must be computed modulo 109 + 7. 
+*/
 public class WaysToPaint {
     static final int MOD = 1000000007;
     public static int numOfWays(int n){
