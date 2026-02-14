@@ -10,3 +10,10 @@ func findClosestEle(arr []int, k, x int)int{
 	}
 	return arr[l : r+1]
 }
+
+func abs(a int)int{
+	if a < 0{
+		return -a
+	}
+	return a
+}
