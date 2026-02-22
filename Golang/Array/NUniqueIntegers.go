@@ -1,8 +1,10 @@
-/*1304. Find N Unique Integers Sum up to Zero
-Given an integer n, return any array containing n unique integers such that they add up to 0.*/
+/*
+1304. Find N Unique Integers Sum up to Zero
+Given an integer n, return any array containing n unique integers such that they add up to 0.
+*/
 package main
 
-import "fmt"
+// import "fmt"
 
 func sumZeros(n int) []int {
 	k := 1
@@ -16,7 +18,7 @@ func sumZeros(n int) []int {
 	return res
 }
 
-func main() {
-	n := 5
-	fmt.Println(sumZeros(n))
-}
+// func main() {
+// 	n := 5
+// 	fmt.Println(sumZeros(n))
+// }
