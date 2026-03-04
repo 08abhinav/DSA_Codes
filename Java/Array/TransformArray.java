@@ -1,4 +1,5 @@
-/*3379. Transformed Array
+/*
+3379. Transformed Array
 You are given an integer array nums that represents a circular array. Your task is to create a new array result of the same size, 
 following these rules:
 
@@ -11,7 +12,8 @@ If nums[i] == 0: Set result[i] to nums[i].
 Return the new array result.
 
 Note: Since nums is circular, moving past the last element wraps around to the beginning, 
-and moving before the first element wraps back to the end.*/
+and moving before the first element wraps back to the end.
+*/
 public class TransformArray{
     public static int[] constructTransformedArray(int[] nums){
         int n = nums.length;
