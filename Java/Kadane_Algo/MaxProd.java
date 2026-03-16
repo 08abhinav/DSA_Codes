@@ -1,4 +1,5 @@
-/* Maximum product of subarray 
+/*
+Maximum product of subarray 
  */
 class MaxProd{
     public static int calcProd(int[] nums){
