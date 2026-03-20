@@ -1,4 +1,5 @@
-/**2651.
+/*
+2651.
 You have two fruit baskets containing n fruits each. 
 You are given two 0-indexed integer arrays basket1 and basket2 representing the 
 \cost of fruit in each basket. You want to make both baskets equal. 
@@ -9,7 +10,8 @@ The cost of the swap is min(basket1[i],basket2[j]).
 Two baskets are considered equal if sorting them according to the 
 fruit cost makes them exactly the same baskets.
 
-Return the minimum cost to make both the baskets equal or -1 if impossible. */
+Return the minimum cost to make both the baskets equal or -1 if impossible. 
+*/
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
