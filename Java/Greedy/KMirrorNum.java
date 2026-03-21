@@ -6,7 +6,8 @@ For example, 9 is a 2-mirror number. The representation of 9 in base-10 and base
 respectively, which read the same both forward and backward.
 On the contrary, 4 is not a 2-mirror number. The representation of 4 in base-2 is 100, 
 which does not read the same both forward and backward.
-Given the base k and the number n, return the sum of the n smallest k-mirror numbers */
+Given the base k and the number n, return the sum of the n smallest k-mirror numbers 
+*/
 public class KMirrorNum {
     public static long kMirror(int k, int n){
         long sum = 0;
