@@ -1,6 +1,8 @@
-/*Given a sorted array arr[] (0-index based) of distinct integers and an integer k, 
+/*
+Given a sorted array arr[] (0-index based) of distinct integers and an integer k, 
 find the index of k if it is present in the arr[]. If not, return the index where k 
-should be inserted to maintain the sorted order.*/
+should be inserted to maintain the sorted order.
+*/
 package main
 
 import "fmt"
