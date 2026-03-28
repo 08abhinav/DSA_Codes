@@ -8,7 +8,8 @@ All money must be distributed.
 Everyone must receive at least 1 dollar.
 Nobody receives 4 dollars.
 Return the maximum number of children who may receive exactly 8 dollars if you distribute the money according 
-to the aforementioned rules. If there is no way to distribute the money, return -1. */
+to the aforementioned rules. If there is no way to distribute the money, return -1. 
+*/
 public class DistributeMoney {
     public static int distMoney(int money, int children){
         money -= children;
