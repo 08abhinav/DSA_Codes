@@ -3,7 +3,8 @@ You are given an array arr[] of positive integers, where each element arr[i] rep
 the number written on the i-th ball, and a positive integer k.
 Your task is to determine whether it is possible to rearrange all the balls into groups such that:
 Each group contains exactly k balls.
-The numbers in each group are consecutive integers */
+The numbers in each group are consecutive integers 
+*/
 public class GroupBalls {
     public static boolean groupBalls(int[] arr, int k){
         if(arr.length % k != 0) return false;
