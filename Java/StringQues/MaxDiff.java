@@ -1,4 +1,5 @@
-/** Maximum Difference between even and odd frequency
+/*
+Maximum Difference between even and odd frequency
  */
 class MaxDiff{
     public static int maxDifference(String s){
