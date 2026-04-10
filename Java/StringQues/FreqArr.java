@@ -1,4 +1,6 @@
-/**Implementing java code for counting frequency of each character using array */
+/*
+Implementing java code for counting frequency of each character using array 
+*/
 import java.util.Arrays;
 class FreqArr{
     public static void main(String...args){
