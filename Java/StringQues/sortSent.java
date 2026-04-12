@@ -1,4 +1,6 @@
-/*Give a string with numbers we have to sort the string according the place of that number */
+/*
+Give a string with numbers we have to sort the string according the place of that number 
+*/
 class SortSent{
     public String sortSentence(String s){
         String[] str = s.split(" ");
