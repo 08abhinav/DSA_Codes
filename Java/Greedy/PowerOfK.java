@@ -1,6 +1,7 @@
 /*
 Given two positive integers n and k, determine the highest value of x such that kx divides n! 
-(n factorial) completely (i.e., n % (kx) == 0). */
+(n factorial) completely (i.e., n % (kx) == 0). 
+*/
 import java.util.ArrayList;
 
 
