@@ -3,7 +3,8 @@ Given an array arr[], where each element contains either a 'P' for policeman or 
 Find the maximum number of thieves that can be caught by the police. 
 Keep in mind the following conditions :
 Each policeman can catch only one thief.
-A policeman cannot catch a thief who is more than k units away from him. */
+A policeman cannot catch a thief who is more than k units away from him. 
+*/
 public class PolThief{
     public static int catchThief(char[] arr, int k){
         int n = arr.length;
