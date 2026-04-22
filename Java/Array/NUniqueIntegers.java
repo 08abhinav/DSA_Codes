@@ -1,5 +1,7 @@
-/**1304. Find N Unique Integers Sum up to Zero
-Given an integer n, return any array containing n unique integers such that they add up to 0. */
+/*
+1304. Find N Unique Integers Sum up to Zero
+Given an integer n, return any array containing n unique integers such that they add up to 0. 
+*/
 import java.util.Arrays;
 
 public class NUniqueIntegers {
