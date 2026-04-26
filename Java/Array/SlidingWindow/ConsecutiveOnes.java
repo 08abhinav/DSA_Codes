@@ -1,5 +1,6 @@
-/**Given a binary array nums and an integer k, return the maximum number of consecutive 1's in t
- * he array  you can flip at most k 0's. */
+/*
+Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array  you can flip at most k 0's. 
+*/
 public class ConsecutiveOnes {
     public static int longestOnes(int[] nums, int k){
         int left = 0, maxLen = 0, zeroCount = 0;
