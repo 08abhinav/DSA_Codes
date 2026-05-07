@@ -1,4 +1,6 @@
-/*LeetCode 171 — Excel Sheet Column Number*/
+/*
+LeetCode 171 — Excel Sheet Column Number
+*/
 package main
 
 import "fmt"
